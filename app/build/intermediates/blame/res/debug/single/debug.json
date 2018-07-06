@@ -4,6 +4,10 @@
         "source": "C:\\work\\Articles\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\layout_feed_layout.xml.flat",
+        "source": "C:\\work\\Articles\\app\\src\\main\\res\\layout\\feed_layout.xml"
+    },
+    {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3212402afce9e77de51a19ff791901a3\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },

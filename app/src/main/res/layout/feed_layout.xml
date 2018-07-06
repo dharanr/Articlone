@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    >
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity">
+
+            <View
+                android:id="@+id/topborder"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topborder"
+                android:gravity="left"
+                android:padding="15dp"
+                android:text="Passing the buck: on governments' response to lynchings "
+                android:textColor="@android:color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                card_view:fontFamily="@font/rufina_bold" />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:text="Editorial"
+                android:background="@drawable/label"
+                android:textSize="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@id/title1"
+                android:id="@+id/label"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label"
+                android:layout_marginTop="10dp"
+                android:id="@+id/divider"
+                android:weightSum="10">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="5"
+                    android:layout_marginLeft="15dp"
+                    android:background="@android:color/darker_gray"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:padding="15dp"
+                android:text=" Political messaging and administrative alerts are key to stopping the string of lynchings "
+                card_view:fontFamily="monospace" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:paddingRight="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:padding="15dp"
+                    android:text="Thu, 05 Jul 2018 23:47:27 +0530"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    android:typeface="normal"
+                    card_view:fontFamily="sans-serif-smallcaps" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/savebutton"
+                    android:layout_alignParentRight="true"
+                    android:text="Save"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
