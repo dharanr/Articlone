@@ -60,4 +60,12 @@ public class TheHinduArticle {
     {
        return Title;
     }
+    public String getAuthor() {return Author;}
+    public String getCategory() {return Category;}
+    public String getLink() {return Link;}
+    public String getDescription() {return Description;}
+    public String getPubDate() {return PubDate;}
+
+
+
 }

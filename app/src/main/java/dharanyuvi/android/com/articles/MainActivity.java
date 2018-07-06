@@ -5,6 +5,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -24,6 +27,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import dharanyuvi.android.com.articles.adpaters.HomeAdapter;
 import dharanyuvi.android.com.articles.models.TheHinduArticle;
 import dharanyuvi.android.com.articles.sampledata.XmlParser;
 
@@ -31,25 +35,25 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String a;
     TextView textView;
-    ProgressBar simpleProgressBar;
-
+    private ProgressBar simpleProgressBar;
+    private RecyclerView recyclerView;
+    private HomeAdapter homeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //TextView titleText = findViewById(R.id.titleapp);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setElevation(0);
 
         simpleProgressBar=findViewById(R.id.progressBar); // initiate the progress bar
         simpleProgressBar.setMax(100); // 100 maximum value for the progress value
-        simpleProgressBar.setProgress(50); // 50 default progress value for the progress bar
+        simpleProgressBar.setProgress(20); // 50 default progress value for the progress bar
 
 
-        textView = (TextView) findViewById(R.id.content);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,10 +74,15 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        recyclerView = findViewById(R.id.recycler_view);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
+        recyclerView.setLayoutManager(mLayoutManager);
 
         TheHindu task =new TheHindu();
         task.setProgressBar(simpleProgressBar);
         task.execute();
+
+
 
 
     }
@@ -138,7 +147,7 @@ public class MainActivity extends AppCompatActivity
 
 
     //AsyncTask class to run the background task to obtain the rss data
-    public static class TheHindu extends AsyncTask<String, String, String> {
+    public class TheHindu extends AsyncTask<String, String, String> {
         private List<TheHinduArticle> list = new ArrayList<>();
         @SuppressLint("StaticFieldLeak")
         ProgressBar bar;
@@ -155,20 +164,23 @@ public class MainActivity extends AppCompatActivity
         @Override
         protected void onPreExecute() {
             bar.setVisibility(View.VISIBLE);
+            bar.setProgress(50);
         }
 
         @Override
         protected String doInBackground(String... strings) {
             try {
-
+                bar.setProgress(60);
                 URL url = new URL(AppConstants.TheHinduUrl);
 
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 try {
+                    bar.setProgress(80);
                     urlConnection.setRequestMethod("GET");
                     urlConnection.connect();
 
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                    bar.setProgress(90);
                     list = XmlParser.Instance.parse(in);
                 } finally {
                     urlConnection.disconnect();
@@ -187,6 +199,14 @@ public class MainActivity extends AppCompatActivity
 
             if (result.equals("success"))
                 setList(list);
+
+            homeAdapter = new HomeAdapter(MainActivity.this,list);
+
+            //recyclerView.setItemAnimator(new DefaultItemAnimator());
+            recyclerView.setAdapter(homeAdapter);
+
+            bar.setProgress(100);
+
         }
 
         private void setProgressBar(ProgressBar bar) {
