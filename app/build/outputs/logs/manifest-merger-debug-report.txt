@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\52eb3163ed5248ae68a834b241cbea39\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3212402afce9e77de51a19ff791901a3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\cfe7cf263c9519207405560b0bf6ab9e\AndroidManifest.xml:2:1-11:12
@@ -23,20 +23,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\dharan.r\.grad
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\7160c2f9335a55154f9b12f8e7539d40\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\33fc9634aa0e89066cb21d712b15efd7\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\aace944a978938c04eb352cbff2f1754\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:11-69
@@ -44,56 +44,60 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:4:5-67
 	android:name
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:5:5-78
+	android:name
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:5:22-76
 application
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:6:5-30:19
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:7:5-31:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\cfe7cf263c9519207405560b0bf6ab9e\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\cfe7cf263c9519207405560b0bf6ab9e\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\45a6948ca1fcec7584d02b2cdca608b3\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\45a6948ca1fcec7584d02b2cdca608b3\AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:10:9-41
-	android:fullBackupContent
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:11:9-41
+	android:fullBackupContent
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:12:9-54
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:14:9-40
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:15:9-40
 	android:name
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:7:9-69
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:8:9-69
 activity#dharanyuvi.android.com.articles.MainActivity
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:16:9-25:20
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:17:9-26:20
 	android:label
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:18:13-45
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:19:13-45
 	android:theme
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:19:13-56
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:20:13-56
 	android:name
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:17:13-41
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:18:13-41
 intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.LAUNCHER
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:21:17-69
-	android:name
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:21:25-66
-action#android.intent.action.VIEW
 ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:22:25-66
+action#android.intent.action.VIEW
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:23:17-69
+	android:name
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:24:27-74
 meta-data#preloaded_fonts
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:26:9-28:57
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:27:9-29:57
 	android:resource
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:28:13-54
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:29:13-54
 	android:name
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:27:13-43
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:28:13-43
 uses-sdk
 INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml

@@ -1,10 +1,15 @@
 package dharanyuvi.android.com.articles;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,8 +22,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
@@ -27,9 +35,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import dharanyuvi.android.com.articles.XmlParsing.XmlParser;
 import dharanyuvi.android.com.articles.adpaters.HomeAdapter;
 import dharanyuvi.android.com.articles.models.TheHinduArticle;
-import dharanyuvi.android.com.articles.sampledata.XmlParser;
+import dharanyuvi.android.com.articles.utilities.NetInfo;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,20 +47,37 @@ public class MainActivity extends AppCompatActivity
     private ProgressBar simpleProgressBar;
     private RecyclerView recyclerView;
     private HomeAdapter homeAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    RelativeLayout relativeLayout;
+    WebView webView;
+    TextView no_connection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //TextView titleText = findViewById(R.id.titleapp);
+
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
+
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setElevation(0);
 
+
+
         simpleProgressBar=findViewById(R.id.progressBar); // initiate the progress bar
         simpleProgressBar.setMax(100); // 100 maximum value for the progress value
         simpleProgressBar.setProgress(20); // 50 default progress value for the progress bar
+
+        simpleProgressBar.getProgressDrawable().setColorFilter(
+                Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+
+        relativeLayout = findViewById(R.id.web);
+        webView = findViewById(R.id.nointernet);
+        no_connection =findViewById(R.id.nointernettext);
+
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -78,11 +104,31 @@ public class MainActivity extends AppCompatActivity
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
 
-        TheHindu task =new TheHindu();
-        task.setProgressBar(simpleProgressBar);
-        task.execute();
+        //checking for the internet connection for the application
+        if(NetInfo.Instance.checkConnection(getApplicationContext()))
+        {
+            TheHindu task =new TheHindu();
+            task.setProgressBar(simpleProgressBar);
+            task.execute();
+        }
+        else
+        {
+            webView.loadDataWithBaseURL("file:///android_res/drawable/", "<img src='"+ "nointernet" + "' style='width:100%' />", "text/html", "utf-8", null);
+            relativeLayout.setVisibility(View.VISIBLE);
+            no_connection.setVisibility(View.VISIBLE);
+        }
 
 
+        swipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        doYourUpdate();
+                    }
+
+
+                }
+        );
 
 
     }
@@ -146,9 +192,36 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    private void doYourUpdate() {
+        swipeRefreshLayout.setRefreshing(false);
+        if(NetInfo.Instance.checkConnection(getApplicationContext()))
+        {
+            if(relativeLayout.getVisibility()==View.VISIBLE) {
+                relativeLayout.setVisibility(View.GONE);
+                no_connection.setVisibility(View.GONE);
+            }
+            recyclerView.setVisibility(View.VISIBLE);
+            TheHindu task =new TheHindu();
+            task.setProgressBar(simpleProgressBar);
+            task.execute();
+        }
+        else
+        {
+            recyclerView.setVisibility(View.GONE);
+            webView.loadDataWithBaseURL("file:///android_res/drawable/", "<img src='"+ "nointernet" + "' style='width:100%' />", "text/html", "utf-8", null);
+            relativeLayout.setVisibility(View.VISIBLE);
+            no_connection.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+
+
+
     //AsyncTask class to run the background task to obtain the rss data
     public class TheHindu extends AsyncTask<String, String, String> {
         private List<TheHinduArticle> list = new ArrayList<>();
+
         @SuppressLint("StaticFieldLeak")
         ProgressBar bar;
 
@@ -164,24 +237,28 @@ public class MainActivity extends AppCompatActivity
         @Override
         protected void onPreExecute() {
             bar.setVisibility(View.VISIBLE);
-            bar.setProgress(50);
+            bar.setProgress(10);
         }
 
         @Override
         protected String doInBackground(String... strings) {
             try {
-                bar.setProgress(60);
+                bar.setProgress(30);
                 URL url = new URL(AppConstants.TheHinduUrl);
+                list=null;
 
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 try {
-                    bar.setProgress(80);
+                    bar.setProgress(50);
                     urlConnection.setRequestMethod("GET");
                     urlConnection.connect();
 
+
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                    bar.setProgress(90);
-                    list = XmlParser.Instance.parse(in);
+                    bar.setProgress(60);
+
+                    list = XmlParser.Instance.parse(in,bar);
+
                 } finally {
                     urlConnection.disconnect();
                 }

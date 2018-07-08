@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,15 +15,50 @@
         android:layout_height="wrap_content"
         android:scrollbars="vertical" />
 
+    <RelativeLayout
+        android:layout_width="275dp"
+        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_layout"
+        android:id="@+id/web"
+        android:visibility="gone"
+        >
+
+        <WebView
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nointernet"
+            android:visibility="visible"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nointernettext"
+        android:text="No Internet Connection  \n         try again later!!"
+        android:layout_below="@id/web"
+        android:fontFamily="@font/rufina_bold"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"/>
+
+
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
         tools:layout_editor_absoluteX="168dp"
         tools:layout_editor_absoluteY="191dp"
-        android:visibility="gone"
+        android:visibility="visible"
         tools:ignore="MissingConstraints" />
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

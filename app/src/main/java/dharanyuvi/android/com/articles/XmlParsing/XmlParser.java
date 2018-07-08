@@ -1,6 +1,7 @@
-package dharanyuvi.android.com.articles.sampledata;
+package dharanyuvi.android.com.articles.XmlParsing;
 
 import android.util.Xml;
+import android.widget.ProgressBar;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -14,30 +15,34 @@ import dharanyuvi.android.com.articles.models.TheHinduArticle;
 
 public class XmlParser {
     // We don't use namespaces
-    private List<TheHinduArticle> entries = new ArrayList<>();
     private TheHinduArticle theHinduArticle;
 
     private static final String ns = null;
     public static XmlParser Instance = new XmlParser();
 
-    public List<TheHinduArticle> parse(InputStream in) throws XmlPullParserException, IOException {
+    public List<TheHinduArticle> parse(InputStream in,ProgressBar bar) throws XmlPullParserException, IOException {
         try {
             XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(in, null);
+            bar.setProgress(70);
             parser.nextTag();
-            return readFeed(parser);
+            return readFeed(parser,bar);
         } finally {
             in.close();
         }
     }
 
-    private List<TheHinduArticle> readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private List<TheHinduArticle> readFeed(XmlPullParser parser,ProgressBar bar) throws XmlPullParserException, IOException {
+        List<TheHinduArticle> entries = new ArrayList<>();
 
 
         try {
+
             String text = "";
             int flag=0;
+            bar.setProgress(80);
+
             int eventType = parser.getEventType();
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
