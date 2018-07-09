@@ -4,7 +4,7 @@
             "outputFile": "C:\\work\\Articles\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn\\values-kn.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3212402afce9e77de51a19ff791901a3\\res\\values-kn\\values-kn.xml",
+                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5f1f65eba463524c512fa783c65abff0\\res\\values-kn\\values-kn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\92e709a91636b20208c4005ab40b2b91\\res\\values-kn\\values-kn.xml",
+                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\54e785a75ace9ad26f902f1a8b12125f\\res\\values-kn\\values-kn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

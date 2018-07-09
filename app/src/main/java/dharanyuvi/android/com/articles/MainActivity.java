@@ -2,6 +2,7 @@ package dharanyuvi.android.com.articles;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -65,21 +66,20 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setElevation(0);
 
-
-
+        //progress bar
         simpleProgressBar=findViewById(R.id.progressBar); // initiate the progress bar
         simpleProgressBar.setMax(100); // 100 maximum value for the progress value
         simpleProgressBar.setProgress(20); // 50 default progress value for the progress bar
-
         simpleProgressBar.getProgressDrawable().setColorFilter(
                 Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
 
+        //declaration
         relativeLayout = findViewById(R.id.web);
         webView = findViewById(R.id.nointernet);
         no_connection =findViewById(R.id.nointernettext);
 
 
-
+        //fab
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,11 +98,13 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
 
+        //navigationBar
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         recyclerView = findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
+
 
         //checking for the internet connection for the application
         if(NetInfo.Instance.checkConnection(getApplicationContext()))
@@ -119,6 +121,7 @@ public class MainActivity extends AppCompatActivity
         }
 
 
+        //function for the refresh bar actions
         swipeRefreshLayout.setOnRefreshListener(
                 new SwipeRefreshLayout.OnRefreshListener() {
                     @Override
@@ -177,7 +180,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
-
+            Intent intent = new Intent(MainActivity.this,Article_Webview.class);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -192,6 +196,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    //Function to update the refresh activity
     private void doYourUpdate() {
         swipeRefreshLayout.setRefreshing(false);
         if(NetInfo.Instance.checkConnection(getApplicationContext()))
