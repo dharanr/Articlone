@@ -1,0 +1,136 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<android.support.design.widget.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:elevation="0dp"
+    android:id="@+id/appbar"
+    android:theme="@style/AppTheme.NoActionBar">
+
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="@android:color/white"-->
+    <!--app:popupTheme="@style/AppTheme.PopupOverlay"-->
+    <!--app:title="sdc"-->
+    <!--app:titleTextColor="@color/colorPrimaryDark" />-->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+        <TextView
+            android:id="@+id/titleapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Articlone"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:textSize="35dp"
+            android:textColor="@android:color/holo_red_dark"
+            app:fontFamily="@font/dancing_script_bold" />
+
+
+    </android.support.v7.widget.Toolbar>
+
+</android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingstext"
+        android:layout_below="@id/appbar">
+        <TextView
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings "
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/rufina_bold"
+            android:textSize="15sp"/>
+        <View
+            android:id="@+id/under"
+            android:layout_width="50dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@id/settings"
+            android:background="@color/colorPrimaryDark"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimary"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/check"
+            />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/wish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/settingstext"
+        android:clickable="true"
+        android:background="@drawable/ripple"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/heart"
+            android:layout_centerVertical="true"
+            android:src="@drawable/smile"
+            />
+
+        <TextView
+            android:id="@+id/wishlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/heart"
+            android:fontFamily="@font/rufina_bold"
+            android:text="WishList"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            app:fontFamily="@font/neuton" />
+        <ImageView
+            android:id="@+id/down"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/down"/>
+
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/wish"/>
+    <include
+        android:id="@+id/list"
+        layout="@layout/list_of_wishlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/wish"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

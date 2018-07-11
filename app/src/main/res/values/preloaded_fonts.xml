@@ -2,5 +2,6 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/dancing_script_bold</item>
+        <item>@font/neuton</item>
     </array>
 </resources>

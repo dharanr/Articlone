@@ -101,6 +101,8 @@ public class MainActivity extends AppCompatActivity
         //navigationBar
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //RecyclerView
         recyclerView = findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -143,7 +145,7 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            super.onBackPressed();    //close the app with the alert box in it
         }
     }
 
@@ -178,7 +180,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            Intent intent = new Intent(MainActivity.this,Settings.class);
+            startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
             Intent intent = new Intent(MainActivity.this,Article_Webview.class);
             startActivity(intent);
@@ -284,7 +287,7 @@ public class MainActivity extends AppCompatActivity
 
             homeAdapter = new HomeAdapter(MainActivity.this,list);
 
-            //recyclerView.setItemAnimator(new DefaultItemAnimator());
+//            recyclerView.setAnimation(new DefaultItemAnimator());
             recyclerView.setAdapter(homeAdapter);
 
             bar.setProgress(100);
