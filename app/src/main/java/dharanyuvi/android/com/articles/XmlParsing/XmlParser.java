@@ -20,20 +20,20 @@ public class XmlParser {
     private static final String ns = null;
     public static XmlParser Instance = new XmlParser();
 
-    public List<TheHinduArticle> parse(InputStream in,ProgressBar bar) throws XmlPullParserException, IOException {
+    public List<TheHinduArticle> parse(InputStream in,ProgressBar bar,String Name) throws XmlPullParserException, IOException {
         try {
             XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(in, null);
             bar.setProgress(70);
             parser.nextTag();
-            return readFeed(parser,bar);
+            return readFeed(parser,bar,Name);
         } finally {
             in.close();
         }
     }
 
-    private List<TheHinduArticle> readFeed(XmlPullParser parser,ProgressBar bar) throws XmlPullParserException, IOException {
+    private List<TheHinduArticle> readFeed(XmlPullParser parser,ProgressBar bar,String Name) throws XmlPullParserException, IOException {
         List<TheHinduArticle> entries = new ArrayList<>();
 
 
@@ -74,7 +74,7 @@ public class XmlParser {
                             } else if (tagname.equalsIgnoreCase("author")) {
                                 theHinduArticle.SetAuthor(text.trim());
                             } else if (tagname.equalsIgnoreCase("category")) {
-                                theHinduArticle.SetCategory(text.trim());
+                                theHinduArticle.SetCategory(Name+" - " + text.trim());
                             } else if (tagname.equalsIgnoreCase("link")) {
                                 theHinduArticle.SetLink(text.trim());
                             } else if (tagname.equalsIgnoreCase("description")) {

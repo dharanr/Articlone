@@ -322,11 +322,11 @@ public class MainActivity extends AppCompatActivity
                             urlConnection.connect();
 
                             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                            bar.setProgress(40);
+                            bar.setProgress(70);
                             if(list==null)
-                                list=(XmlParser.Instance.parse(in,bar));
+                                list=(XmlParser.Instance.parse(in,bar,name));
                             else
-                            list.addAll(XmlParser.Instance.parse(in,bar));
+                            list.addAll(XmlParser.Instance.parse(in,bar,name));
 
                             count++;
                         }

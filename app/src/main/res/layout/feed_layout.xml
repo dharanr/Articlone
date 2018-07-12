@@ -45,11 +45,13 @@
                 card_view:fontFamily="@font/rufina_bold" />
 
             <Button
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:text="Editorial"
                 android:background="@drawable/label"
                 android:textSize="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_below="@id/title1"
                 android:id="@+id/label"/>
