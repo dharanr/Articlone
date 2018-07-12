@@ -49,6 +49,37 @@
         android:layout_centerHorizontal="true"/>
 
 
+    <RelativeLayout
+        android:id="@+id/NoArticles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        >
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Articles Today,it Seems"
+            android:fontFamily="@font/neuton"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/black"
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/tryagain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Try Again Later"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/neuton"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/message"
+            android:textSize="20dp"/>
+
+    </RelativeLayout>
+
 
     <ProgressBar
         android:id="@+id/progressBar"

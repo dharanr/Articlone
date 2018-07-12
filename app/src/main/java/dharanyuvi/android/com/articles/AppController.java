@@ -12,7 +12,7 @@ public class AppController extends Application {
 
     private RequestQueue mRequestQueue;
 
-    private static AppController mInstance;
+    public static AppController mInstance=new AppController();
 
     @Override
     public void onCreate() {

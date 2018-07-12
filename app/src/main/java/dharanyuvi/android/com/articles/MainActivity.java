@@ -3,17 +3,20 @@ package dharanyuvi.android.com.articles;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -29,17 +32,27 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.xmlpull.v1.XmlPullParserException;
+
 import java.io.BufferedInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import dharanyuvi.android.com.articles.XmlParsing.XmlParser;
 import dharanyuvi.android.com.articles.adpaters.HomeAdapter;
 import dharanyuvi.android.com.articles.models.TheHinduArticle;
 import dharanyuvi.android.com.articles.utilities.NetInfo;
+import dharanyuvi.android.com.articles.utilities.SharedPreference;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,7 +62,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private HomeAdapter homeAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
-    RelativeLayout relativeLayout;
+    RelativeLayout relativeLayout,NoArticles;
     WebView webView;
     TextView no_connection;
 
@@ -61,6 +74,7 @@ public class MainActivity extends AppCompatActivity
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
 
+        SharedPreference.Instance.FirstTime(getApplicationContext());
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -77,6 +91,10 @@ public class MainActivity extends AppCompatActivity
         relativeLayout = findViewById(R.id.web);
         webView = findViewById(R.id.nointernet);
         no_connection =findViewById(R.id.nointernettext);
+
+        //Layouts if there is No Artices
+        NoArticles = findViewById(R.id.NoArticles);
+
 
 
         //fab
@@ -111,7 +129,12 @@ public class MainActivity extends AppCompatActivity
         //checking for the internet connection for the application
         if(NetInfo.Instance.checkConnection(getApplicationContext()))
         {
-            TheHindu task =new TheHindu();
+
+            Map<String,String> URLlist = new HashMap<String,String>();
+            //accessing the wishlist
+            URLlist = LoadSharedPreferences();
+
+            TheHindu task =new TheHindu(URLlist);
             task.setProgressBar(simpleProgressBar);
             task.execute();
         }
@@ -209,7 +232,12 @@ public class MainActivity extends AppCompatActivity
                 no_connection.setVisibility(View.GONE);
             }
             recyclerView.setVisibility(View.VISIBLE);
-            TheHindu task =new TheHindu();
+
+            Map<String,String> URLlist = new HashMap<String,String>();
+            //accessing the wishlist
+            URLlist = LoadSharedPreferences();
+
+            TheHindu task =new TheHindu(URLlist);
             task.setProgressBar(simpleProgressBar);
             task.execute();
         }
@@ -223,12 +251,36 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    //return the list to the url to get loaded in the feed
+    private Map<String,String> LoadSharedPreferences(){
+
+        Map<String ,String> URLlist = new HashMap<String, String>();
+        if(SharedPreference.Instance.read(getApplicationContext(),"TheHindu").equals("true"))
+        {
+            List<String> list = AppConstants.Instance.LoadHindu();
+
+            for(int i=0;i<list.size();i++)
+                URLlist.put("TheHindu",list.get(i));
+
+        }
+        else
+        {
+            Toast.makeText(MainActivity.this,"sharedPreferences- false",Toast.LENGTH_LONG).show();
+        }
+        return URLlist;
+    }
 
 
 
     //AsyncTask class to run the background task to obtain the rss data
     public class TheHindu extends AsyncTask<String, String, String> {
         private List<TheHinduArticle> list = new ArrayList<>();
+        private Map<String,String> map;
+
+        private TheHindu(Map<String,String> map)
+        {
+            this.map = map;
+        }
 
         @SuppressLint("StaticFieldLeak")
         ProgressBar bar;
@@ -252,27 +304,50 @@ public class MainActivity extends AppCompatActivity
         protected String doInBackground(String... strings) {
             try {
                 bar.setProgress(30);
-                URL url = new URL(AppConstants.TheHinduUrl);
-                list=null;
 
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                try {
-                    bar.setProgress(50);
-                    urlConnection.setRequestMethod("GET");
-                    urlConnection.connect();
+                list = null;
+
+                Iterator it = map.entrySet().iterator();
+                while (it.hasNext()) {
+
+                    Map.Entry pair = (Map.Entry) it.next();
+                    String Key = pair.getKey().toString();  //gets the key from the map
+
+                    URL url = new URL(pair.getValue().toString());
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+
+                    try {
+                        bar.setProgress(50);
+                        urlConnection.setRequestMethod("GET");
+                        urlConnection.connect();
 
 
-                    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                    bar.setProgress(60);
+                        InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                        bar.setProgress(60);
 
-                    list = XmlParser.Instance.parse(in,bar);
+                        if(Key.equals("TheHindu"))
+                        {
+                            list = XmlParser.Instance.parse(in,bar);
+                        }
 
-                } finally {
-                    urlConnection.disconnect();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.d("Error",e.getMessage());
+                    }
+                    finally{
+                        urlConnection.disconnect();
+                    }
+
+                    Log.d("The Key-Value Pair",pair.getKey() + " = " + pair.getValue());
+                    it.remove(); // avoids a ConcurrentModificationException
                 }
 
-            } catch (Exception e) {
-                e.printStackTrace();
+
+            }
+            catch (Exception e)
+            {
+                Log.d("Catch - Error",e.getMessage());
             }
             return "success";
         }
@@ -285,11 +360,20 @@ public class MainActivity extends AppCompatActivity
             if (result.equals("success"))
                 setList(list);
 
-            homeAdapter = new HomeAdapter(MainActivity.this,list);
+            if(list!=null)
+            {
+                if(NoArticles.getVisibility()==View.VISIBLE)
+                    NoArticles.setVisibility(View.GONE);
+                homeAdapter = new HomeAdapter(MainActivity.this,list);
 
 //            recyclerView.setAnimation(new DefaultItemAnimator());
-            recyclerView.setAdapter(homeAdapter);
-
+                recyclerView.setAdapter(homeAdapter);
+            }
+            else
+            {
+                NoArticles.setVisibility(View.VISIBLE);
+                Toast.makeText(MainActivity.this,"No Articles today. Enjoy!!",Toast.LENGTH_LONG).show();
+            }
             bar.setProgress(100);
 
         }

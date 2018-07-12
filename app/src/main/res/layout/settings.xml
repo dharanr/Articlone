@@ -65,15 +65,7 @@
             android:layout_below="@id/settings"
             android:background="@color/colorPrimaryDark"
             />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_alignParentRight="true"
-            android:background="@color/colorPrimary"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/check"
-            />
+
     </RelativeLayout>
 
 

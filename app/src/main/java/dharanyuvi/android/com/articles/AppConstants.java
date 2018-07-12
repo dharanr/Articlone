@@ -5,6 +5,7 @@ import java.util.List;
 
 public class AppConstants {
 
+    public static AppConstants Instance = new AppConstants();
     public static String TheHinduUrl = "https://www.thehindu.com/opinion/editorial/feeder/default.rss";
 
     public static String TheHinduLeadUrl = "https://www.thehindu.com/opinion/lead/feeder/default.rss";
@@ -13,7 +14,7 @@ public class AppConstants {
     {
         List<String> list = new ArrayList<>();
         list.add(TheHinduUrl);
-        list.add(TheHinduLeadUrl);
+        //list.add(TheHinduLeadUrl);
 
         return list;
     }

@@ -13,10 +13,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
+
+import dharanyuvi.android.com.articles.utilities.SharedPreference;
 
 public class Settings extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     @Override
@@ -25,10 +28,6 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         setContentView(R.layout.settins_main);
         final LinearLayout linearLayout = findViewById(R.id.list);
         final ImageView imageView = findViewById(R.id.down);
-
-        Switch theHindu = findViewById(R.id.SwitchHindu);
-        Switch theIndianExpress = findViewById(R.id.SwitchIndianExpress);
-
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,6 +44,16 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         //navigationBar
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Switch sh = findViewById(R.id.SwitchHindu);
+        Switch sh1 = findViewById(R.id.SwitchIndianExpress);
+        String TheHinduToggleValue = SharedPreference.Instance.read(getApplicationContext(),"TheHindu");
+        if(TheHinduToggleValue.equals("true"))
+        {
+            sh.setChecked(true);
+        }
+        else
+            sh.setChecked(false);
 
         RelativeLayout relativeLayout = findViewById(R.id.wish);
         relativeLayout.setOnClickListener(new View.OnClickListener(){
@@ -63,6 +72,24 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                 }
             }
         });
+
+
+
+
+        //Toggle function for the hindu
+        sh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"TheHindu",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"TheHindu",false);
+                }
+            }
+        });
+
+
+
+
 
     }
 
@@ -110,6 +137,8 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
             finish();
         }
     }
+
+
 
 
 }
