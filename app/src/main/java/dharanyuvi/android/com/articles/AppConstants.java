@@ -14,7 +14,7 @@ public class AppConstants {
     {
         List<String> list = new ArrayList<>();
         list.add(TheHinduUrl);
-        //list.add(TheHinduLeadUrl);
+        list.add(TheHinduLeadUrl);
 
         return list;
     }

@@ -83,6 +83,11 @@ public class XmlParser {
                                 theHinduArticle.SetPubDate(text.trim());
                             }
                         }
+//                        else
+//                        {
+//                            if(tagname.equalsIgnoreCase("title"))
+//
+//                        }
                         break;
                     default:
                         break;

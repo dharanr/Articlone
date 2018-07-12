@@ -37,23 +37,38 @@ public class TheHinduArticle {
     }
     public void SetAuthor(String author)
     {
+        if(author!=null)
          this.Author=author;
+        else
+            this.Author = "111";
     }
     public void SetCategory(String category)
     {
+        if(category!=null)
         this.Category=category;
+        else
+            this.Category = "111";
     }
     public void SetLink(String link)
     {
+        if(link!=null)
         this.Link=link;
+        else
+            this.Link="111";
     }
     public void SetDescription(String description)
     {
+        if(description!=null)
         this.Description=description;
+        else
+            this.Description="111";
     }
     public void SetPubDate(String pubDate)
     {
+        if(pubDate!=null)
         this.PubDate=pubDate;
+        else
+            this.PubDate="111";
     }
 
     public String getTitle()

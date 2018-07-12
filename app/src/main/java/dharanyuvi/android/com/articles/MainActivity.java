@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity
         if(NetInfo.Instance.checkConnection(getApplicationContext()))
         {
 
-            Map<String,String> URLlist = new HashMap<String,String>();
+            List<String> URLlist = new ArrayList<String>();
             //accessing the wishlist
             URLlist = LoadSharedPreferences();
 
@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity
             }
             recyclerView.setVisibility(View.VISIBLE);
 
-            Map<String,String> URLlist = new HashMap<String,String>();
+            List<String> URLlist = new ArrayList<>();
             //accessing the wishlist
             URLlist = LoadSharedPreferences();
 
@@ -251,17 +251,13 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    //return the list to the url to get loaded in the feed
-    private Map<String,String> LoadSharedPreferences(){
+    //returns the list of selected agencies
+    private List<String> LoadSharedPreferences(){
 
-        Map<String ,String> URLlist = new HashMap<String, String>();
+        List<String> URLlist = new ArrayList<>();
         if(SharedPreference.Instance.read(getApplicationContext(),"TheHindu").equals("true"))
         {
-            List<String> list = AppConstants.Instance.LoadHindu();
-
-            for(int i=0;i<list.size();i++)
-                URLlist.put("TheHindu",list.get(i));
-
+           URLlist.add("TheHindu");
         }
         else
         {
@@ -275,11 +271,11 @@ public class MainActivity extends AppCompatActivity
     //AsyncTask class to run the background task to obtain the rss data
     public class TheHindu extends AsyncTask<String, String, String> {
         private List<TheHinduArticle> list = new ArrayList<>();
-        private Map<String,String> map;
+        private List<String> listOfSelect;
 
-        private TheHindu(Map<String,String> map)
+        private TheHindu(List<String> list)
         {
-            this.map = map;
+            this.listOfSelect = list;
         }
 
         @SuppressLint("StaticFieldLeak")
@@ -302,53 +298,52 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         protected String doInBackground(String... strings) {
-            try {
+            HttpURLConnection urlConnection;
+        try {
                 bar.setProgress(30);
 
                 list = null;
 
-                Iterator it = map.entrySet().iterator();
-                while (it.hasNext()) {
+                for(int i=0;i<listOfSelect.size();i++) {
+                    String name = listOfSelect.get(i);
+                    List<String> HinduURLlist;
+                    HinduURLlist = AppConstants.Instance.LoadHindu();
 
-                    Map.Entry pair = (Map.Entry) it.next();
-                    String Key = pair.getKey().toString();  //gets the key from the map
-
-                    URL url = new URL(pair.getValue().toString());
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-
-                    try {
-                        bar.setProgress(50);
-                        urlConnection.setRequestMethod("GET");
-                        urlConnection.connect();
-
-
-                        InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                        bar.setProgress(60);
-
-                        if(Key.equals("TheHindu"))
+                    if(name.equals("TheHindu")) {
+                       int count=0;
+                        while(count<2)
                         {
-                            list = XmlParser.Instance.parse(in,bar);
+                            String geturl = HinduURLlist.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(40);
+                            if(list==null)
+                                list=(XmlParser.Instance.parse(in,bar));
+                            else
+                            list.addAll(XmlParser.Instance.parse(in,bar));
+
+                            count++;
                         }
 
-                    }
-                    catch (Exception e)
-                    {
-                        Log.d("Error",e.getMessage());
-                    }
-                    finally{
-                        urlConnection.disconnect();
+                        //hindueditorial
+
+
+
                     }
 
-                    Log.d("The Key-Value Pair",pair.getKey() + " = " + pair.getValue());
-                    it.remove(); // avoids a ConcurrentModificationException
                 }
-
-
             }
             catch (Exception e)
             {
-                Log.d("Catch - Error",e.getMessage());
+                Log.d("Error",e.getMessage());
             }
+
             return "success";
         }
 

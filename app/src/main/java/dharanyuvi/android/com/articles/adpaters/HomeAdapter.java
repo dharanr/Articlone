@@ -18,13 +18,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
     private Context context;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, description, time;
+        public TextView title, description, time,label;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title1);
             description = (TextView) view.findViewById(R.id.description);
             time = (TextView) view.findViewById(R.id.time);
+            label = (TextView) view.findViewById(R.id.label);
         }
     }
 
@@ -43,7 +44,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             holder.title.setText(theHinduArticle.getTitle());
             holder.description.setText(theHinduArticle.getDescription());
             holder.time.setText(theHinduArticle.getPubDate());
-
+            holder.label.setText(theHinduArticle.getCategory());
     }
 
     public HomeAdapter(Context context,List<TheHinduArticle> list) {
