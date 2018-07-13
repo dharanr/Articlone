@@ -126,10 +126,11 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setLayoutManager(mLayoutManager);
 
 
+
+
         //checking for the internet connection for the application
         if(NetInfo.Instance.checkConnection(getApplicationContext()))
         {
-
             List<String> URLlist = new ArrayList<String>();
             //accessing the wishlist
             URLlist = LoadSharedPreferences();

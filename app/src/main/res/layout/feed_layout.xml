@@ -101,6 +101,7 @@
                     android:typeface="normal"
                     card_view:fontFamily="sans-serif-smallcaps" />
                 <Button
+                    android:id="@+id/save"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:layout_centerVertical="true"

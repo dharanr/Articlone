@@ -10,7 +10,6 @@ import android.widget.ImageView;
 
 public class Article_Webview extends AppCompatActivity {
 
-    public static Article_Webview Instance = new Article_Webview();
     WebView webView;
 
     @Override
@@ -18,7 +17,7 @@ public class Article_Webview extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.article);
 
-        ImageView imageView =findViewById(R.id.cancel);
+        ImageView imageView = findViewById(R.id.cancel);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,12 +25,15 @@ public class Article_Webview extends AppCompatActivity {
             }
         });
 
+        WebView webView = findViewById(R.id.web);
+        String url = "";
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            url = extras.getString("URL");
+            webView.getSettings().setUseWideViewPort(true);
+            webView.loadUrl(url);
 
-    }
+        }
 
-    public void LoadWebUrl (String Url)
-    {
-        webView =(WebView) findViewById(R.id.web);
-        webView.loadUrl(Url);
     }
 }
