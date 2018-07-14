@@ -210,7 +210,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this,Article_Webview.class);
             startActivity(intent);
         } else if (id == R.id.nav_manage) {
-
+            Intent intent = new Intent(MainActivity.this,Splash.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

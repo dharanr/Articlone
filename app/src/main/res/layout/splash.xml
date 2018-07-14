@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Articlone"
+        android:textSize="55dp"
+        android:fontFamily="@font/dancing_script_bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="?attr/actionBarSize"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0 - Beta Version"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"/>
+</RelativeLayout>

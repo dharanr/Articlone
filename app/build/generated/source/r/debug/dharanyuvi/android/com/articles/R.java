@@ -4075,7 +4075,8 @@ public final class R {
     public static final int select_dialog_singlechoice_material=0x7f0c0041;
     public static final int settings=0x7f0c0042;
     public static final int settins_main=0x7f0c0043;
-    public static final int support_simple_spinner_dropdown_item=0x7f0c0044;
+    public static final int splash=0x7f0c0044;
+    public static final int support_simple_spinner_dropdown_item=0x7f0c0045;
   }
   public static final class menu {
     public static final int activity_main_drawer=0x7f0d0000;

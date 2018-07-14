@@ -41,6 +41,10 @@
             android:name="dharanyuvi.android.com.articles.Settings"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="dharanyuvi.android.com.articles.Splash"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\ab871aaaf8049098e6037c1a3b480ca4\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\5f1f65eba463524c512fa783c65abff0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\371fcdac73b40b5af851b6448519d858\AndroidManifest.xml:2:1-11:12
@@ -23,20 +23,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\dharan.r\.grad
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\99ef7e0285b42b3327b56c687a088dc8\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\44d8969222f6fb4a8952605fd788c99c\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\5c3b2c7abc991564d554f11ce3f4cfc2\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
 	package
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-43:12
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:2:11-69
@@ -49,7 +49,7 @@ ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:5:5-78
 	android:name
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:5:22-76
 application
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:7:5-41:19
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:7:5-44:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\371fcdac73b40b5af851b6448519d858\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\371fcdac73b40b5af851b6448519d858\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.0] C:\Users\dharan.r\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\af4a6b298a63ed01d02dd722fcd5658c\AndroidManifest.xml:9:5-20
@@ -108,12 +108,20 @@ ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:32:9-34:58
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:34:13-56
 	android:name
 		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:32:19-43
-meta-data#preloaded_fonts
-ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:37:9-39:57
-	android:resource
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:39:13-54
+activity#dharanyuvi.android.com.articles.Splash
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:36:9-38:58
+	android:label
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:37:13-45
+	android:theme
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:38:13-56
 	android:name
-		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:38:13-43
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:36:19-41
+meta-data#preloaded_fonts
+ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:40:9-42:57
+	android:resource
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:42:13-54
+	android:name
+		ADDED from C:\work\Articles\app\src\main\AndroidManifest.xml:41:13-43
 uses-sdk
 INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\work\Articles\app\src\main\AndroidManifest.xml

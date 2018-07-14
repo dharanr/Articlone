@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +26,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
         public TextView title, description, time,label;
-
+        public Button save;
         private click clickListener;
 
         public MyViewHolder(View view) {
@@ -33,21 +35,28 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             description = (TextView) view.findViewById(R.id.description);
             time = (TextView) view.findViewById(R.id.time);
             label = (TextView) view.findViewById(R.id.label);
+            save =(Button)view.findViewById(R.id.save);
+
             view.setTag(view);
             view.setOnClickListener(this);
             view.setOnLongClickListener(this);
+            save.setOnClickListener(this);
         }
         public void setClickListener(click itemClickListener) {
             this.clickListener = itemClickListener;
         }
         @Override
         public void onClick(View v) {
-            clickListener.onClick(v,getAdapterPosition(),false);
+
+            if(v.getId()==save.getId())
+                Toast.makeText(context,"Available from the next version",Toast.LENGTH_LONG).show();
+            else
+                clickListener.onClick(v,getAdapterPosition(),getItemId(),false);
         }
 
         @Override
         public boolean onLongClick(View v) {
-            clickListener.onClick(v, getAdapterPosition(),true);
+            clickListener.onClick(v, getAdapterPosition(),getItemId(),true);
             return true;
         }
     }
@@ -71,17 +80,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
         holder.setClickListener(new click() {
             @Override
-            public void onClick(View view, int position, Boolean longClick) {
+            public void onClick(View view, int position,long id, Boolean longClick) {
                 //Toast.makeText(context,position+"   "+longClick,Toast.LENGTH_LONG).show();
-                if(view==view.findViewById(R.id.save)){
-                    Toast.makeText(context,"Available from next version",Toast.LENGTH_LONG).show();
-                }
-                else
-                {
+
                     Intent intent = new Intent(context,Article_Webview.class);
                     intent.putExtra("URL",list.get(position).getLink());
                     context.startActivity(intent);
-                }
 
             }
         });
