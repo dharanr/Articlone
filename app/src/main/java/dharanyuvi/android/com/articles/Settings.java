@@ -47,9 +47,12 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
 
         Switch sh = findViewById(R.id.SwitchHindu);
         Switch sh1 = findViewById(R.id.SwitchIndianExpress);
+        Switch sh2 = findViewById(R.id.SwitchLiveMint);
         String TheHinduToggleValue = SharedPreference.Instance.read(getApplicationContext(),"TheHindu");
         String TheIndianExpress =SharedPreference.Instance.read(getApplicationContext(),"IE");
+        String LiveMint =SharedPreference.Instance.read(getApplicationContext(),"LiveMint");
 
+        //Toggle control - the hindu
         if(TheHinduToggleValue.equals("true"))
         {
             sh.setChecked(true);
@@ -57,12 +60,21 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         else
             sh.setChecked(false);
 
+        //Toggle control - IndianExpress
         if(TheIndianExpress.equals("true"))
         {
             sh1.setChecked(true);
         }
         else
             sh1.setChecked(false);
+
+        //Toggle control - LivesMint
+        if(LiveMint.equals("true"))
+        {
+            sh2.setChecked(true);
+        }
+        else
+            sh2.setChecked(false);
 
         RelativeLayout relativeLayout = findViewById(R.id.wish);
         relativeLayout.setOnClickListener(new View.OnClickListener(){
@@ -107,7 +119,16 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
             }
         });
 
-
+        //Toggle function for the LM
+        sh2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"LiveMint",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"LiveMint",false);
+                }
+            }
+        });
 
     }
 

@@ -92,8 +92,7 @@ public class IndianExpress {
                                     count=0;
                                 }
                             } else if (tagname.equalsIgnoreCase("pubDate")) {
-                                  String str = getYesterdayDateString();
-                                if(text.contains(str))
+                                if(text.contains(DateString(true)) || text.contains(DateString(false)) )
                                   theHinduArticle.SetPubDate(text.trim());
                                 else
                                     limit =1;
@@ -121,9 +120,12 @@ public class IndianExpress {
 
 
 
-private String getYesterdayDateString() {
+private String DateString(Boolean isToday) {
     final Calendar cal = Calendar.getInstance();
-    cal.add(Calendar.DATE, -1);
+    if(isToday)
+        cal.add(Calendar.DATE, 0);
+    else
+        cal.add(Calendar.DATE, -1);
     Date str = cal.getTime();
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM");

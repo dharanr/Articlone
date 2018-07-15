@@ -50,6 +50,7 @@ import java.util.List;
 import java.util.Map;
 
 import dharanyuvi.android.com.articles.XmlParsing.IndianExpress;
+import dharanyuvi.android.com.articles.XmlParsing.LiveMint;
 import dharanyuvi.android.com.articles.XmlParsing.XmlParser;
 import dharanyuvi.android.com.articles.adpaters.HomeAdapter;
 import dharanyuvi.android.com.articles.models.TheHinduArticle;
@@ -267,6 +268,11 @@ public class MainActivity extends AppCompatActivity
         {
             URLlist.add("IE");
         }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"LiveMint").equals("true"))
+        {
+            URLlist.add("LiveMint");
+        }
         else
         {
             Toast.makeText(MainActivity.this,"sharedPreferences- false",Toast.LENGTH_LONG).show();
@@ -320,6 +326,9 @@ public class MainActivity extends AppCompatActivity
                     List<String> IE;
                     IE = AppConstants.Instance.LoadIE();
 
+                    List<String> LMList;
+                    LMList=AppConstants.Instance.LoadLM();
+
                     if(name.equals("TheHindu")) {
                        int count=0;
                         while(count<2)
@@ -345,7 +354,7 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("IE")){
                         int count=0;
-                        while(count<1)
+                        while(count<2)
                         {
                             String geturl = IE.get(count);
                             URL url = new URL(geturl);
@@ -358,10 +367,47 @@ public class MainActivity extends AppCompatActivity
                             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
                             bar.setProgress(70);
                             if(list==null)
-                                list=(IndianExpress.Instance.parse(in,bar,name));
+                            {
+                                List<TheHinduArticle> temp =IndianExpress.Instance.parse(in,bar,name);
+                                if(temp!=null)
+                                    list=(temp);
+                            }
                             else
-                                list.addAll(IndianExpress.Instance.parse(in,bar,name));
+                            {
+                                List<TheHinduArticle> temp =IndianExpress.Instance.parse(in,bar,name);
+                                if(temp!=null)
+                                    list.addAll(temp);
+                            }
+                            count++;
+                        }
+                    }
+                    else if(name.equals("LiveMint"))
+                    {
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = LMList.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
 
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name);
+                                if(temp!=null)
+                                    list=(temp);
+                            }
+                            else
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name);
+                                if(temp!=null)
+                                    list.addAll(temp);
+                            }
                             count++;
                         }
                     }
