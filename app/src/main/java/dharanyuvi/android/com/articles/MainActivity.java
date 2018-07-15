@@ -1,6 +1,7 @@
 package dharanyuvi.android.com.articles;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -48,6 +49,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import dharanyuvi.android.com.articles.XmlParsing.IndianExpress;
 import dharanyuvi.android.com.articles.XmlParsing.XmlParser;
 import dharanyuvi.android.com.articles.adpaters.HomeAdapter;
 import dharanyuvi.android.com.articles.models.TheHinduArticle;
@@ -75,7 +77,6 @@ public class MainActivity extends AppCompatActivity
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
 
         SharedPreference.Instance.FirstTime(getApplicationContext());
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setElevation(0);
@@ -261,6 +262,11 @@ public class MainActivity extends AppCompatActivity
         {
            URLlist.add("TheHindu");
         }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"IE").equals("true"))
+        {
+            URLlist.add("IE");
+        }
         else
         {
             Toast.makeText(MainActivity.this,"sharedPreferences- false",Toast.LENGTH_LONG).show();
@@ -311,6 +317,9 @@ public class MainActivity extends AppCompatActivity
                     List<String> HinduURLlist;
                     HinduURLlist = AppConstants.Instance.LoadHindu();
 
+                    List<String> IE;
+                    IE = AppConstants.Instance.LoadIE();
+
                     if(name.equals("TheHindu")) {
                        int count=0;
                         while(count<2)
@@ -333,10 +342,28 @@ public class MainActivity extends AppCompatActivity
                             count++;
                         }
 
-                        //hindueditorial
+                    }
+                    else if(name.equals("IE")){
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = IE.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
 
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
 
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                                list=(IndianExpress.Instance.parse(in,bar,name));
+                            else
+                                list.addAll(IndianExpress.Instance.parse(in,bar,name));
 
+                            count++;
+                        }
                     }
 
                 }
@@ -355,16 +382,20 @@ public class MainActivity extends AppCompatActivity
             bar.setVisibility(View.INVISIBLE);
 
             if (result.equals("success"))
-                setList(list);
+                    setList(list);
 
             if(list!=null)
             {
                 if(NoArticles.getVisibility()==View.VISIBLE)
                     NoArticles.setVisibility(View.GONE);
+
+
                 homeAdapter = new HomeAdapter(MainActivity.this,list);
 
-//            recyclerView.setAnimation(new DefaultItemAnimator());
+            //recyclerView.setAnimation(new DefaultItemAnimator());
                 recyclerView.setAdapter(homeAdapter);
+
+
             }
             else
             {

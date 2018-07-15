@@ -48,12 +48,21 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         Switch sh = findViewById(R.id.SwitchHindu);
         Switch sh1 = findViewById(R.id.SwitchIndianExpress);
         String TheHinduToggleValue = SharedPreference.Instance.read(getApplicationContext(),"TheHindu");
+        String TheIndianExpress =SharedPreference.Instance.read(getApplicationContext(),"IE");
+
         if(TheHinduToggleValue.equals("true"))
         {
             sh.setChecked(true);
         }
         else
             sh.setChecked(false);
+
+        if(TheIndianExpress.equals("true"))
+        {
+            sh1.setChecked(true);
+        }
+        else
+            sh1.setChecked(false);
 
         RelativeLayout relativeLayout = findViewById(R.id.wish);
         relativeLayout.setOnClickListener(new View.OnClickListener(){
@@ -87,7 +96,16 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
             }
         });
 
-
+        //Toggle function for the IE
+        sh1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"IE",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"IE",false);
+                }
+            }
+        });
 
 
 

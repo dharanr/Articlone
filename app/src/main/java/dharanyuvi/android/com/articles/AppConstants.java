@@ -10,6 +10,8 @@ public class AppConstants {
 
     public static String TheHinduLeadUrl = "https://www.thehindu.com/opinion/lead/feeder/default.rss";
 
+    public static String IEUrl ="https://indianexpress.com/section/opinion/feed/";
+
     public List<String> LoadHindu()
     {
         List<String> list = new ArrayList<>();
@@ -18,5 +20,14 @@ public class AppConstants {
 
         return list;
     }
+
+    public List<String> LoadIE()
+    {
+        List<String> list = new ArrayList<>();
+        list.add(IEUrl);
+
+        return list;
+    }
+
 
 }

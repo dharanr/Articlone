@@ -1,5 +1,7 @@
 package dharanyuvi.android.com.articles.adpaters;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -23,11 +25,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
     private List<TheHinduArticle> list;
     private Context context;
+    private AlertDialog dialog;
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
         public TextView title, description, time,label;
         public Button save;
         private click clickListener;
+
 
         public MyViewHolder(View view) {
             super(view);
@@ -49,7 +53,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         public void onClick(View v) {
 
             if(v.getId()==save.getId())
-                Toast.makeText(context,"Available from the next version",Toast.LENGTH_LONG).show();
+            {
+                Toast.makeText(context,"Available from the stable version",Toast.LENGTH_LONG).show();
+            }
             else
                 clickListener.onClick(v,getAdapterPosition(),getItemId(),false);
         }
@@ -94,6 +100,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
     public HomeAdapter(Context context,List<TheHinduArticle> list) {
         this.context = context;
         this.list = list;
+
     }
 
     @Override
@@ -101,3 +108,4 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         return list.size();
     }
 }
+

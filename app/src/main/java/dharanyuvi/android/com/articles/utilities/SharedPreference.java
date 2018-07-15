@@ -53,6 +53,7 @@ public class SharedPreference   {
         if(str==null)
         {
             storeWishList(context,"TheHindu",true);
+            storeWishList(context,"IE",true);
             storeWishList(context,"TheFirstTime",true);
         }
     }
