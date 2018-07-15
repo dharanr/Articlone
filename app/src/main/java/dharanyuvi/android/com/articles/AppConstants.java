@@ -18,6 +18,12 @@ public class AppConstants {
 
     public static String BusinessLine ="https://www.thehindubusinessline.com/opinion/feeder/default.rss";
 
+    public static String HindustanUrl = "https://www.hindustantimes.com/rss/editorials/rssfeed.xml";
+
+    public static String HindustanLeadUrl = "https://www.hindustantimes.com/rss/opinion/rssfeed.xml";
+
+    public static String BusinessWorldUrl = "http://www.businessworld.in/rss/todays-article.xml";
+
     //public static String IELeadUrl ="https://indianexpress.com/section/opinion/editorials/feed/";
 
     public List<String> LoadHindu()
@@ -40,7 +46,6 @@ public class AppConstants {
     {
         List<String> list = new ArrayList<>();
         list.add(LMUrl);
-        //list.add(IELeadUrl);
         return list;
     }
 
@@ -48,7 +53,21 @@ public class AppConstants {
     {
         List<String> list = new ArrayList<>();
         list.add(BusinessLine);
-        //list.add(IELeadUrl);
+        return list;
+    }
+
+    public List<String> LoadHindustan()
+    {
+        List<String> list = new ArrayList<>();
+        list.add(HindustanUrl);
+        list.add(HindustanLeadUrl);
+        return list;
+    }
+
+    public List<String> LoadBusinessWorld()
+    {
+        List<String> list = new ArrayList<>();
+        list.add(BusinessWorldUrl);
         return list;
     }
 

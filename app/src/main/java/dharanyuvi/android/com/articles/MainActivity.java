@@ -278,6 +278,16 @@ public class MainActivity extends AppCompatActivity
         {
             URLlist.add("BusinessLine");
         }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"Hindustan").equals("true"))
+        {
+            URLlist.add("Hindustan");
+        }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"BusinessWorld").equals("true"))
+        {
+            URLlist.add("BusinessWorld");
+        }
         else
         {
             Toast.makeText(MainActivity.this,"sharedPreferences- false",Toast.LENGTH_LONG).show();
@@ -336,6 +346,12 @@ public class MainActivity extends AppCompatActivity
 
                     List<String> BusinessLine;
                     BusinessLine=AppConstants.Instance.LoadBusinessLine();
+
+                    List<String> Hindustan;
+                    Hindustan=AppConstants.Instance.LoadHindustan();
+
+                    List<String> BusinessWorld;
+                    BusinessWorld=AppConstants.Instance.LoadBusinessWorld();
 
                     if(name.equals("TheHindu")) {
                        int count=0;
@@ -406,7 +422,7 @@ public class MainActivity extends AppCompatActivity
                             bar.setProgress(70);
                             if(list==null)
                             {
-                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name);
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  OPINION");
                                 if(temp!=null)
                                     list=(temp);
                             }
@@ -448,6 +464,70 @@ public class MainActivity extends AppCompatActivity
                                         iter.remove();
                                     }
                                 }
+
+                                if(list==null)
+                                    list=(temp);
+                                else
+                                    list.addAll(temp);
+                            }
+
+                            count++;
+                        }
+                    }
+                    else if(name.equals("Hindustan"))
+                    {
+                        int count=0;
+                        while(count<2)
+                        {
+                            String geturl = Hindustan.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+
+                            List<TheHinduArticle> temp;
+                            if(count==0)
+                            temp=LiveMint.Instance.parse(in,bar,name+" -  EDITORIAL");
+                            else
+                                temp=LiveMint.Instance.parse(in,bar,name+" -  OPINION");
+
+                            if(temp!=null)
+                            {
+                                if(list==null)
+                                    list=(temp);
+                                else
+                                    list.addAll(temp);
+                            }
+
+                            count++;
+                        }
+                    }
+                    else if(name.equals("BusinessWorld"))
+                    {
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = BusinessWorld.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+
+
+
+                            List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" - ARTICLES");
+                            if(temp!=null)
+                            {
 
                                 if(list==null)
                                     list=(temp);

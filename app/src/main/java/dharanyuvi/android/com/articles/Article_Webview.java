@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 public class Article_Webview extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class Article_Webview extends AppCompatActivity {
         if (extras != null) {
             url = extras.getString("URL");
             webView.getSettings().setUseWideViewPort(true);
+            webView.setWebViewClient(new WebViewClient());
             webView.loadUrl(url);
 
         }

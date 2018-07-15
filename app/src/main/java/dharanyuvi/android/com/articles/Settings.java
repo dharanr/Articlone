@@ -49,10 +49,17 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         Switch sh1 = findViewById(R.id.SwitchIndianExpress);
         Switch sh2 = findViewById(R.id.SwitchLiveMint);
         Switch sh3 = findViewById(R.id.SwitchBusinessLine);
+        Switch sh4 = findViewById(R.id.SwitchHindustan);
+        Switch sh5 = findViewById(R.id.SwitchBusinessWorld);
+
+
         String TheHinduToggleValue = SharedPreference.Instance.read(getApplicationContext(),"TheHindu");
         String TheIndianExpress =SharedPreference.Instance.read(getApplicationContext(),"IE");
         String LiveMint =SharedPreference.Instance.read(getApplicationContext(),"LiveMint");
         String BusinessLine =SharedPreference.Instance.read(getApplicationContext(),"BusinessLine");
+        String Hindustan =SharedPreference.Instance.read(getApplicationContext(),"Hindustan");
+        String BusinessWorld =SharedPreference.Instance.read(getApplicationContext(),"BusinessWorld");
+
 
         //Toggle control - the hindu
         if(TheHinduToggleValue.equals("true"))
@@ -85,6 +92,22 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         }
         else
             sh3.setChecked(false);
+
+        //Toggle control - Hindustan
+        if(Hindustan.equals("true"))
+        {
+            sh4.setChecked(true);
+        }
+        else
+            sh4.setChecked(false);
+
+        //Toggle control - BusinessWorld
+        if(BusinessWorld.equals("true"))
+        {
+            sh5.setChecked(true);
+        }
+        else
+            sh5.setChecked(false);
 
         RelativeLayout relativeLayout = findViewById(R.id.wish);
         relativeLayout.setOnClickListener(new View.OnClickListener(){
@@ -147,6 +170,28 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                     SharedPreference.Instance.storeWishList(getApplicationContext(),"BusinessLine",true);
                 } else {
                     SharedPreference.Instance.storeWishList(getApplicationContext(),"BusinessLine",false);
+                }
+            }
+        });
+
+        //Toggle function for the Hindustan
+        sh4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Hindustan",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Hindustan",false);
+                }
+            }
+        });
+
+        //Toggle function for the BusinessWorld
+        sh5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"BusinessWorld",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"BusinessWorld",false);
                 }
             }
         });

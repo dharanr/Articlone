@@ -50,11 +50,11 @@ public class LiveMint {
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 String tagname = parser.getName();
 
-                if(limit==1)
-                {
-                    entries.remove(entries.size() - 1);
-                    break;
-                }
+//                if(limit==1)
+//                {
+//                    entries.remove(entries.size() - 1);
+//                    break;
+//                }
 
                 switch (eventType) {
                     case XmlPullParser.START_TAG:
@@ -71,36 +71,43 @@ public class LiveMint {
                         break;
 
                     case XmlPullParser.END_TAG:
-                        if (tagname.equals("item")) {
-                            entries.add(theHinduArticle);
-                            flag=0;
-                        }
-                        if(flag==1)
+                        if(limit==0)
                         {
-                            if (tagname.equalsIgnoreCase("title")) {
-                                theHinduArticle.SetTitle(text.trim());
-                            } else if (tagname.equalsIgnoreCase("author")) {
-                                theHinduArticle.SetAuthor(text.trim());
-                            } else if (tagname.equalsIgnoreCase("category")) {
-                                theHinduArticle.SetCategory(Name+" - " + text.trim());
-                            } else if (tagname.equalsIgnoreCase("link")) {
-                                theHinduArticle.SetLink(text.trim());
-                            } else if (tagname.equalsIgnoreCase("description")) {
-                                String[] str=text.split(">");
-                                theHinduArticle.SetDescription(str[str.length-1].trim());
-                            } else if (tagname.equalsIgnoreCase("pubDate")) {
-                                theHinduArticle.SetCategory(Name+" - " + "Opinion");
-                                if(text.contains(DateString(true)) || text.contains(DateString(false)) )
-                                    theHinduArticle.SetPubDate(text.trim());
-                                else
-                                    limit =1;
+                            if (tagname.equals("item")) {
+                                entries.add(theHinduArticle);
+                                flag=0;
                             }
-                        }
+
+                            if(flag==1)
+                            {
+                                if (tagname.equalsIgnoreCase("title")) {
+                                    theHinduArticle.SetTitle(text.trim());
+                                } else if (tagname.equalsIgnoreCase("author")) {
+                                    theHinduArticle.SetAuthor(text.trim());
+                                } else if (tagname.equalsIgnoreCase("category")) {
+                                    theHinduArticle.SetCategory(Name+" - " + text.trim());
+                                } else if (tagname.equalsIgnoreCase("link")) {
+                                    theHinduArticle.SetLink(text.trim());
+                                } else if (tagname.equalsIgnoreCase("description")) {
+                                    String[] str=text.split(">");
+                                    theHinduArticle.SetDescription(str[str.length-1].trim());
+                                } else if (tagname.equalsIgnoreCase("pubDate")) {
+                                    theHinduArticle.SetCategory(Name);
+                                    if(text.contains(DateString(true)) || text.contains(DateString(false)) )
+                                        theHinduArticle.SetPubDate(text.trim());
+                                    else
+                                        limit =1;
+                                }
+                            }
 //                        else
 //                        {
 //                            if(tagname.equalsIgnoreCase("title"))
 //
 //                        }
+                        }
+                        else
+                            break;
+
                         break;
                     default:
                         break;
