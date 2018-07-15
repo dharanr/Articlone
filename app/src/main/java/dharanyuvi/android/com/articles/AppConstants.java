@@ -16,6 +16,8 @@ public class AppConstants {
 
     public static String LMUrl ="https://www.livemint.com/rss/opinion";
 
+    public static String BusinessLine ="https://www.thehindubusinessline.com/opinion/feeder/default.rss";
+
     //public static String IELeadUrl ="https://indianexpress.com/section/opinion/editorials/feed/";
 
     public List<String> LoadHindu()
@@ -38,6 +40,14 @@ public class AppConstants {
     {
         List<String> list = new ArrayList<>();
         list.add(LMUrl);
+        //list.add(IELeadUrl);
+        return list;
+    }
+
+    public List<String> LoadBusinessLine()
+    {
+        List<String> list = new ArrayList<>();
+        list.add(BusinessLine);
         //list.add(IELeadUrl);
         return list;
     }

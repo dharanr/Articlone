@@ -273,6 +273,11 @@ public class MainActivity extends AppCompatActivity
         {
             URLlist.add("LiveMint");
         }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"BusinessLine").equals("true"))
+        {
+            URLlist.add("BusinessLine");
+        }
         else
         {
             Toast.makeText(MainActivity.this,"sharedPreferences- false",Toast.LENGTH_LONG).show();
@@ -328,6 +333,9 @@ public class MainActivity extends AppCompatActivity
 
                     List<String> LMList;
                     LMList=AppConstants.Instance.LoadLM();
+
+                    List<String> BusinessLine;
+                    BusinessLine=AppConstants.Instance.LoadBusinessLine();
 
                     if(name.equals("TheHindu")) {
                        int count=0;
@@ -408,6 +416,45 @@ public class MainActivity extends AppCompatActivity
                                 if(temp!=null)
                                     list.addAll(temp);
                             }
+                            count++;
+                        }
+                    }
+                    else if(name.equals("BusinessLine"))
+                    {
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = BusinessLine.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+
+
+
+                            List<TheHinduArticle> temp =XmlParser.Instance.parse(in,bar,name);
+                            if(temp!=null)
+                            {
+
+                                for (Iterator<TheHinduArticle> iter = temp.listIterator(); iter.hasNext(); ) {
+                                    TheHinduArticle a = iter.next();
+                                    if( !(("BusinessLine - EDITORIAL".equalsIgnoreCase(a.getCategory())) || ("BusinessLine - OPINION".equalsIgnoreCase(a.getCategory()))) )
+                                    {
+                                        iter.remove();
+                                    }
+                                }
+
+                                if(list==null)
+                                    list=(temp);
+                                else
+                                    list.addAll(temp);
+                            }
+
                             count++;
                         }
                     }

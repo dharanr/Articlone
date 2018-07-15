@@ -48,9 +48,11 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         Switch sh = findViewById(R.id.SwitchHindu);
         Switch sh1 = findViewById(R.id.SwitchIndianExpress);
         Switch sh2 = findViewById(R.id.SwitchLiveMint);
+        Switch sh3 = findViewById(R.id.SwitchBusinessLine);
         String TheHinduToggleValue = SharedPreference.Instance.read(getApplicationContext(),"TheHindu");
         String TheIndianExpress =SharedPreference.Instance.read(getApplicationContext(),"IE");
         String LiveMint =SharedPreference.Instance.read(getApplicationContext(),"LiveMint");
+        String BusinessLine =SharedPreference.Instance.read(getApplicationContext(),"BusinessLine");
 
         //Toggle control - the hindu
         if(TheHinduToggleValue.equals("true"))
@@ -75,6 +77,14 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         }
         else
             sh2.setChecked(false);
+
+        //Toggle control - BusinessLine
+        if(BusinessLine.equals("true"))
+        {
+            sh3.setChecked(true);
+        }
+        else
+            sh3.setChecked(false);
 
         RelativeLayout relativeLayout = findViewById(R.id.wish);
         relativeLayout.setOnClickListener(new View.OnClickListener(){
@@ -126,6 +136,17 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                     SharedPreference.Instance.storeWishList(getApplicationContext(),"LiveMint",true);
                 } else {
                     SharedPreference.Instance.storeWishList(getApplicationContext(),"LiveMint",false);
+                }
+            }
+        });
+
+        //Toggle function for the BusinessLine
+        sh3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"BusinessLine",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"BusinessLine",false);
                 }
             }
         });

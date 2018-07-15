@@ -55,6 +55,7 @@ public class SharedPreference   {
             storeWishList(context,"TheHindu",true);
             storeWishList(context,"IE",true);
             storeWishList(context,"LiveMint",true);
+            storeWishList(context,"BusinessLine",true);
             storeWishList(context,"TheFirstTime",true);
         }
     }
