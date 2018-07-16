@@ -90,7 +90,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
                 //Toast.makeText(context,position+"   "+longClick,Toast.LENGTH_LONG).show();
 
                     Intent intent = new Intent(context,Article_Webview.class);
-                    intent.putExtra("URL",list.get(position).getLink());
+                    intent.putExtra("Bhaskar",false+"");
+                    intent.putExtra("ETNow",false+"");
+
+                if((list.get(position).getCategory().equalsIgnoreCase("Bhaskar -  editorial")))
+                    {
+                        intent.putExtra("Bhaskar",true+"");
+                    }
+                    else if(list.get(position).getCategory().equalsIgnoreCase("ETNow -  opinion"))
+                    {
+                        intent.putExtra("ETNow",true+"");
+                    }
+
+                        intent.putExtra("URL",list.get(position).getLink());
                     context.startActivity(intent);
 
             }

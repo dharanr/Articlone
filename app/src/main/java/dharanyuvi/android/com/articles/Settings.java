@@ -51,6 +51,15 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         Switch sh3 = findViewById(R.id.SwitchBusinessLine);
         Switch sh4 = findViewById(R.id.SwitchHindustan);
         Switch sh5 = findViewById(R.id.SwitchBusinessWorld);
+        Switch sh6 = findViewById(R.id.SwitchTamilHindu);
+        Switch sh7 = findViewById(R.id.SwitchDinakaran);
+        Switch sh8 = findViewById(R.id.SwitchJagraan);
+        Switch sh9 = findViewById(R.id.SwitchLiveHindustan);
+        Switch sh10 = findViewById(R.id.SwitchTelegraph);
+        Switch sh11 = findViewById(R.id.SwitchBhaskar);
+        Switch sh12 = findViewById(R.id.SwitchETNow);
+        Switch sh13 = findViewById(R.id.SwitchTribune);
+
 
 
         String TheHinduToggleValue = SharedPreference.Instance.read(getApplicationContext(),"TheHindu");
@@ -59,6 +68,14 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         String BusinessLine =SharedPreference.Instance.read(getApplicationContext(),"BusinessLine");
         String Hindustan =SharedPreference.Instance.read(getApplicationContext(),"Hindustan");
         String BusinessWorld =SharedPreference.Instance.read(getApplicationContext(),"BusinessWorld");
+        String TamilHindu =SharedPreference.Instance.read(getApplicationContext(),"TamilHindu");
+        String Dinakaran =SharedPreference.Instance.read(getApplicationContext(),"Dinakaran");
+        String Jagraan =SharedPreference.Instance.read(getApplicationContext(),"Jagraan");
+        String LiveHindustan =SharedPreference.Instance.read(getApplicationContext(),"LiveHindustan");
+        String Telegraph =SharedPreference.Instance.read(getApplicationContext(),"Telegraph");
+        String Bhaskar =SharedPreference.Instance.read(getApplicationContext(),"Bhaskar");
+        String ETNow =SharedPreference.Instance.read(getApplicationContext(),"ETNow");
+        String Tribune =SharedPreference.Instance.read(getApplicationContext(),"Tribune");
 
 
         //Toggle control - the hindu
@@ -108,6 +125,72 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         }
         else
             sh5.setChecked(false);
+
+        //Toggle control - TamilHindu
+        if(TamilHindu.equals("true"))
+        {
+            sh6.setChecked(true);
+        }
+        else
+            sh6.setChecked(false);
+
+        //Toggle control - Dinakaran
+        if(Dinakaran.equals("true"))
+        {
+            sh7.setChecked(true);
+        }
+        else
+            sh7.setChecked(false);
+
+        //Toggle control - Jagraan
+        if(Jagraan.equals("true"))
+        {
+            sh8.setChecked(true);
+        }
+        else
+            sh8.setChecked(false);
+
+        //Toggle control - LiveHindustan
+        if(LiveHindustan.equals("true"))
+        {
+            sh9.setChecked(true);
+        }
+        else
+            sh9.setChecked(false);
+
+        //Toggle control - Telegraph
+        if(Telegraph.equals("true"))
+        {
+            sh10.setChecked(true);
+        }
+        else
+            sh10.setChecked(false);
+
+
+        //Toggle control - Bhaskar
+        if(Bhaskar.equals("true"))
+        {
+            sh11.setChecked(true);
+        }
+        else
+            sh11.setChecked(false);
+
+        //Toggle control - ETNow
+        if(ETNow.equals("true"))
+        {
+            sh12.setChecked(true);
+        }
+        else
+            sh12.setChecked(false);
+
+        //Toggle control - BS
+        if(Tribune.equals("true"))
+        {
+            sh13.setChecked(true);
+        }
+        else
+            sh13.setChecked(false);
+
 
         RelativeLayout relativeLayout = findViewById(R.id.wish);
         relativeLayout.setOnClickListener(new View.OnClickListener(){
@@ -196,6 +279,94 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
             }
         });
 
+        //Toggle function for the TamilHindu
+        sh6.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"TamilHindu",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"TamilHindu",false);
+                }
+            }
+        });
+
+        //Toggle function for the Dinakaran
+        sh7.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Dinakaran",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Dinakaran",false);
+                }
+            }
+        });
+
+        //Toggle function for the Jagraan
+        sh8.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Jagraan",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Jagraan",false);
+                }
+            }
+        });
+
+        //Toggle function for the LiveHindustan
+        sh9.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"LiveHindustan",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"LiveHindustan",false);
+                }
+            }
+        });
+
+        //Toggle function for the Telegraph
+        sh10.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Telegraph",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Telegraph",false);
+                }
+            }
+        });
+
+
+        //Toggle function for the Telegraph
+        sh11.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Bhaskar",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Bhaskar",false);
+                }
+            }
+        });
+
+        //Toggle function for the ETNow
+        sh12.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"ETNow",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"ETNow",false);
+                }
+            }
+        });
+
+        //Toggle function for the ETNow
+        sh13.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Tribune",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Tribune",false);
+                }
+            }
+        });
     }
 
 //    @Override

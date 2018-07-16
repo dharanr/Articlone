@@ -31,6 +31,8 @@ public class Article_Webview extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             url = extras.getString("URL");
+            if( (extras.getString("Bhaskar").equalsIgnoreCase(true+"")) || (extras.getString("ETNow").equalsIgnoreCase(true+"")))
+                webView.getSettings().setJavaScriptEnabled(true);
             webView.getSettings().setUseWideViewPort(true);
             webView.setWebViewClient(new WebViewClient());
             webView.loadUrl(url);

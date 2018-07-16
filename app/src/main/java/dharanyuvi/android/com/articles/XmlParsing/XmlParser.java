@@ -78,8 +78,14 @@ public class XmlParser {
                             } else if (tagname.equalsIgnoreCase("link")) {
                                 theHinduArticle.SetLink(text.trim());
                             } else if (tagname.equalsIgnoreCase("description")) {
-                                theHinduArticle.SetDescription(text.trim());
+                                if(Name.equalsIgnoreCase("Tribune -  Editorial"))
+                                    theHinduArticle.SetDescription(text.trim().substring(0,150)+"...");
+                                else    
+                                    theHinduArticle.SetDescription(text.trim());
                             } else if (tagname.equalsIgnoreCase("pubDate")) {
+                                if(Name.equalsIgnoreCase("Tribune -  Editorial"))
+                                    theHinduArticle.SetCategory(Name);
+
                                 theHinduArticle.SetPubDate(text.trim());
                             }
                         }

@@ -49,6 +49,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import dharanyuvi.android.com.articles.XmlParsing.DinaKaran;
 import dharanyuvi.android.com.articles.XmlParsing.IndianExpress;
 import dharanyuvi.android.com.articles.XmlParsing.LiveMint;
 import dharanyuvi.android.com.articles.XmlParsing.XmlParser;
@@ -288,6 +289,46 @@ public class MainActivity extends AppCompatActivity
         {
             URLlist.add("BusinessWorld");
         }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"TamilHindu").equals("true"))
+        {
+            URLlist.add("TamilHindu");
+        }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"Dinakaran").equals("true"))
+        {
+            URLlist.add("Dinakaran");
+        }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"Jagraan").equals("true"))
+        {
+            URLlist.add("Jagraan");
+        }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"LiveHindustan").equals("true"))
+        {
+            URLlist.add("LiveHindustan");
+        }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"Telegraph").equals("true"))
+        {
+            URLlist.add("Telegraph");
+        }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"Bhaskar").equals("true"))
+        {
+            URLlist.add("Bhaskar");
+        }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"ETNow").equals("true"))
+        {
+            URLlist.add("ETNow");
+        }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"Tribune").equals("true"))
+        {
+            URLlist.add("Tribune");
+        }
         else
         {
             Toast.makeText(MainActivity.this,"sharedPreferences- false",Toast.LENGTH_LONG).show();
@@ -352,6 +393,30 @@ public class MainActivity extends AppCompatActivity
 
                     List<String> BusinessWorld;
                     BusinessWorld=AppConstants.Instance.LoadBusinessWorld();
+
+                    List<String> TamilHindu;
+                    TamilHindu=AppConstants.Instance.LoadTamilHindu();
+
+                    List<String> Dinakaran;
+                    Dinakaran=AppConstants.Instance.LoadDinakaran();
+
+                    List<String> Jagraan;
+                    Jagraan=AppConstants.Instance.LoadJagraan();
+
+                    List<String> LiveHindustan;
+                    LiveHindustan=AppConstants.Instance.LoadLiveHindustan();
+
+                    List<String> TelegraphList;
+                    TelegraphList = AppConstants.Instance.LoadTelegraph();
+
+                    List<String> BhaskarList;
+                    BhaskarList = AppConstants.Instance.LoadBhaskar();
+
+                    List<String> ETNow;
+                    ETNow = AppConstants.Instance.LoadETNow();
+
+                    List<String> Tribune;
+                    Tribune = AppConstants.Instance.LoadTribune();
 
                     if(name.equals("TheHindu")) {
                        int count=0;
@@ -538,6 +603,261 @@ public class MainActivity extends AppCompatActivity
                             count++;
                         }
                     }
+                    else if(name.equals("TamilHindu")) {
+                        int count=0;
+                        while(count<2)
+                        {
+                            String geturl = TamilHindu.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                                list=(XmlParser.Instance.parse(in,bar,name));
+                            else
+                                list.addAll(XmlParser.Instance.parse(in,bar,name));
+
+                            count++;
+                        }
+
+                    }
+                    else if(name.equals("Dinakaran"))
+                    {
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = Dinakaran.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+
+                            List<TheHinduArticle> temp = DinaKaran.Instance.parse(in,bar,name+" -  OPINION");
+                            String str;
+
+                            if(temp!=null)
+                            {
+                                for(int k=0;k<temp.size();k++)
+                                {
+                                    TheHinduArticle theHinduArticle = temp.get(k);
+                                    if(theHinduArticle.getDescription().length()>150)
+                                        str=theHinduArticle.getDescription().substring(0,150)+"...";
+                                    else
+                                        str = theHinduArticle.getDescription();
+                                    theHinduArticle.SetDescription(str);
+                                }
+
+                            }
+
+                            if(list==null)
+                            {
+                                list=(temp);
+                            }
+                            else
+                            {
+                                list.addAll(temp);
+                            }
+                            count++;
+                        }
+                    }
+                    else if(name.equals("Jagraan"))
+                    {
+                        int count=0;
+                        while(count<2)
+                        {
+                            String geturl = Jagraan.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  OPINION");
+                                if(temp!=null)
+                                    list=(temp);
+                            }
+                            else
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name);
+                                if(temp!=null)
+                                    list.addAll(temp);
+                            }
+                            count++;
+                        }
+                    }
+                    else if(name.equals("LiveHindustan"))
+                    {
+                        int count=0;
+                        while(count<2)
+                        {
+                            String geturl = LiveHindustan.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  OPINION");
+                                if(temp!=null)
+                                    list=(temp);
+                            }
+                            else
+                            {
+                                List<TheHinduArticle> temp;
+                                if(count==0)
+                                   temp=LiveMint.Instance.parse(in,bar,name+" - EDITORIAL");
+                                else
+                                    temp =LiveMint.Instance.parse(in,bar,name+" - OPINION");
+
+                                if(temp!=null)
+                                    list.addAll(temp);
+                            }
+                            count++;
+                        }
+                    }
+                    else if(name.equals("Telegraph")) {
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = TelegraphList.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  OPINION");
+                                if(temp!=null)
+                                    list=(temp);
+                            }
+                            else
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name);
+                                if(temp!=null)
+                                    list.addAll(temp);
+                            }
+                            count++;
+                        }
+
+                    }
+                    else if(name.equals("Bhaskar")) {
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = BhaskarList.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  EDITORIAL");
+                                if(temp!=null)
+                                    list=(temp);
+                            }
+                            else
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  EDITORIAL");
+                                if(temp!=null)
+                                    list.addAll(temp);
+                            }
+                            count++;
+                        }
+
+                    }
+
+                    else if(name.equals("ETNow")) {
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = ETNow.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  Opinion");
+                                if(temp!=null)
+                                    list=(temp);
+                            }
+                            else
+                            {
+                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  Opinion");
+                                if(temp!=null)
+                                    list.addAll(temp);
+                            }
+                            count++;
+                        }
+
+                    }
+
+                    else if(name.equals("Tribune")) {
+                        int count=0;
+                        while(count<1)
+                        {
+                            String geturl = Tribune.get(count);
+                            URL url = new URL(geturl);
+                            urlConnection = (HttpURLConnection) url.openConnection();
+
+                            bar.setProgress(50);
+                            urlConnection.setRequestMethod("GET");
+                            urlConnection.connect();
+
+                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                            bar.setProgress(70);
+                            if(list==null)
+                            {
+                                List<TheHinduArticle> temp =XmlParser.Instance.parse(in,bar,name+" -  EDITORIAL");
+                                if(temp!=null)
+                                    list=(temp);
+                            }
+                            else
+                            {
+                                List<TheHinduArticle> temp =XmlParser.Instance.parse(in,bar,name+" -  EDITORIAL");
+                                if(temp!=null)
+                                    list.addAll(temp);
+                            }
+                            count++;
+                        }
+
+                    }
+
 
                 }
             }

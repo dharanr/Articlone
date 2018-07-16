@@ -90,7 +90,16 @@ public class LiveMint {
                                     theHinduArticle.SetLink(text.trim());
                                 } else if (tagname.equalsIgnoreCase("description")) {
                                     String[] str=text.split(">");
+                                    String string;
+                                    if(Name.equalsIgnoreCase("Bhaskar -  EDITORIAL"))
+                                    {
+                                        string = str[3].trim();
+                                        string = string.replaceAll("<br/","");
+                                        theHinduArticle.SetDescription(string);
+                                    }
+                                    else
                                     theHinduArticle.SetDescription(str[str.length-1].trim());
+
                                 } else if (tagname.equalsIgnoreCase("pubDate")) {
                                     theHinduArticle.SetCategory(Name);
                                     if(text.contains(DateString(true)) || text.contains(DateString(false)) )

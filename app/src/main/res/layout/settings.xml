@@ -1,3 +1,4 @@
+
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -42,11 +43,13 @@
     </android.support.v7.widget.Toolbar>
 
 </android.support.design.widget.AppBarLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/settingstext"
-        android:layout_below="@id/appbar">
+        android:layout_below="@id/appbar"
+        >
         <TextView
             android:id="@+id/settings"
             android:layout_width="wrap_content"
@@ -70,12 +73,17 @@
 
 
 
+        <RelativeLayout
+            android:id="@+id/wishlist1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/settingstext"
+            >
     <RelativeLayout
         android:id="@+id/wish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/settingstext"
         android:clickable="true"
         android:background="@drawable/ripple"
         android:padding="10dp">
@@ -116,13 +124,22 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
         android:layout_below="@id/wish"/>
+        </RelativeLayout>
+            <ScrollView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_below="@id/wishlist1"
+                >
     <include
         android:id="@+id/list"
         layout="@layout/list_of_wishlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/wish"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
 
+
+    </ScrollView>
 </RelativeLayout>
+

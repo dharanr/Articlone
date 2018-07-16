@@ -58,6 +58,14 @@ public class SharedPreference   {
             storeWishList(context,"BusinessLine",true);
             storeWishList(context,"Hindustan",true);
             storeWishList(context,"BusinessWorld",true);
+            storeWishList(context,"TamilHindu",true);
+            storeWishList(context,"Dinakaran",true);
+            storeWishList(context,"Jagraan",true);
+            storeWishList(context,"LiveHindustan",true);
+            storeWishList(context,"Telegraph",true);
+            storeWishList(context,"Bhaskar",true);
+            storeWishList(context,"ETNow",true);
+            storeWishList(context,"Tribune",true);
 
             storeWishList(context,"TheFirstTime",true);
         }
