@@ -9,7 +9,16 @@
                      *Business Line
                      *Business World
                      *Hindustan Times
-                     
+                     *Business World
+                     *The Hindu(Tamil)
+                     *Dinakaran
+                     *Jagraan
+                     *LiveHindustan
+                     *Telegraph
+                     *Bhaskar
+                     *ETNow
+                     *Business-Standard
+                     *Tribune
                 -->Still more to come!!
    
     Bookmark this page for the future updates
