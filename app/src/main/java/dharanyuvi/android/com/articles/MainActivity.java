@@ -33,6 +33,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.commons.io.Charsets;
+import org.apache.commons.io.IOUtils;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.BufferedInputStream;
@@ -50,6 +52,7 @@ import java.util.List;
 import java.util.Map;
 
 import dharanyuvi.android.com.articles.XmlParsing.DinaKaran;
+import dharanyuvi.android.com.articles.XmlParsing.DinaManis;
 import dharanyuvi.android.com.articles.XmlParsing.IndianExpress;
 import dharanyuvi.android.com.articles.XmlParsing.LiveMint;
 import dharanyuvi.android.com.articles.XmlParsing.XmlParser;
@@ -329,6 +332,11 @@ public class MainActivity extends AppCompatActivity
         {
             URLlist.add("Tribune");
         }
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"DinaMani").equals("true"))
+        {
+            URLlist.add("DinaMani");
+        }
         else
         {
             Toast.makeText(MainActivity.this,"sharedPreferences- false",Toast.LENGTH_LONG).show();
@@ -417,6 +425,10 @@ public class MainActivity extends AppCompatActivity
 
                     List<String> Tribune;
                     Tribune = AppConstants.Instance.LoadTribune();
+
+                    List<String> DinaMani;
+                    DinaMani = AppConstants.Instance.LoadDinamani();
+
 
                     if(name.equals("TheHindu")) {
                        int count=0;
@@ -854,6 +866,33 @@ public class MainActivity extends AppCompatActivity
                                     list.addAll(temp);
                             }
                             count++;
+                        }
+
+                    }
+                    else if(name.equals("DinaMani"))
+                    {
+                        String geturl = DinaMani.get(0);
+                        URL url = new URL(geturl);
+                        urlConnection = (HttpURLConnection) url.openConnection();
+
+                        bar.setProgress(50);
+                        urlConnection.setRequestMethod("GET");
+                        urlConnection.connect();
+
+                        InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                        bar.setProgress(70);
+
+                        if(list==null)
+                        {
+                            List<TheHinduArticle> temp = DinaManis.Instance.parse(in,bar,name+" -  EDITORIAl");
+                            if(temp!=null)
+                                list=(temp);
+                        }
+                        else
+                        {
+                            List<TheHinduArticle> temp =DinaManis.Instance.parse(in,bar,name+" -  EDITORIAl");
+                            if(temp!=null)
+                                list.addAll(temp);
                         }
 
                     }

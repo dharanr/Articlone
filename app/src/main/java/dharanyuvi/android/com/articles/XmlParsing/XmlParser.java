@@ -80,7 +80,7 @@ public class XmlParser {
                             } else if (tagname.equalsIgnoreCase("description")) {
                                 if(Name.equalsIgnoreCase("Tribune -  Editorial"))
                                     theHinduArticle.SetDescription(text.trim().substring(0,150)+"...");
-                                else    
+                                else
                                     theHinduArticle.SetDescription(text.trim());
                             } else if (tagname.equalsIgnoreCase("pubDate")) {
                                 if(Name.equalsIgnoreCase("Tribune -  Editorial"))

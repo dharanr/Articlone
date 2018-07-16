@@ -46,6 +46,8 @@ public class AppConstants {
 
     public static String BS ="https://www.tribuneindia.com/rss/feed.aspx?cat_id=34&mid=70";
 
+    public static String Dinamani ="http://www.dinamani.com/%E0%AE%A4%E0%AE%B2%E0%AF%88%E0%AE%AF%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AE%E0%AF%8D/rssfeed/?id=340&getXmlFeed=true";
+
     //public static String IELeadUrl ="https://indianexpress.com/section/opinion/editorials/feed/";
 
     public List<String> LoadHindu()
@@ -148,6 +150,12 @@ public class AppConstants {
     public List<String> LoadTribune() {
         List<String> list = new ArrayList<>();
         list.add(BS);
+        return list;
+    }
+
+    public List<String> LoadDinamani() {
+        List<String> list = new ArrayList<>();
+        list.add(Dinamani);
         return list;
     }
 }

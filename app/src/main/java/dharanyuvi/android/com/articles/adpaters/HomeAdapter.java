@@ -92,6 +92,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
                     Intent intent = new Intent(context,Article_Webview.class);
                     intent.putExtra("Bhaskar",false+"");
                     intent.putExtra("ETNow",false+"");
+                    intent.putExtra("DinaMani",false+"");
+
 
                 if((list.get(position).getCategory().equalsIgnoreCase("Bhaskar -  editorial")))
                     {
@@ -100,6 +102,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
                     else if(list.get(position).getCategory().equalsIgnoreCase("ETNow -  opinion"))
                     {
                         intent.putExtra("ETNow",true+"");
+                    }
+                    else if(list.get(position).getCategory().equalsIgnoreCase("DinaMani -  editorial"))
+                    {
+                        intent.putExtra("DinaMani",true+"");
                     }
 
                         intent.putExtra("URL",list.get(position).getLink());

@@ -34,6 +34,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/dharanyuvi/android/com/articles/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/dharanyuvi/android/com/articles/R.java" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/compat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/compat/R$id.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/constraint/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/constraint/R$id.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/coreui/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/coreui/R$id.class" />
@@ -62,25 +63,32 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/R$style.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/R$styleable.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$10.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$11.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$12.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$13.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$14.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$15.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$2.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$3.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$4.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$5.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$6.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$7.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$8.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings$9.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/Settings.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/XmlParsing/LiveMint.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/XmlParsing/LiveMint.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/XmlParsing/XmlParser.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/XmlParsing/XmlParser.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/adpaters/HomeAdapter$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/adpaters/HomeAdapter$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/adpaters/HomeAdapter$MyViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/adpaters/HomeAdapter$MyViewHolder.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/adpaters/HomeAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/adpaters/HomeAdapter.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/utilities/SharedPreference.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/dharanyuvi/android/com/articles/utilities/SharedPreference.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/KkB_ZoR1S9ka9Qsg9do3q+idX8c=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/KkB_ZoR1S9ka9Qsg9do3q+idX8c=" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/SLU4Tw4R28ULhO9InjXYRBAHoSo=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/SLU4Tw4R28ULhO9InjXYRBAHoSo=" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_list_of_wishlist.xml.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_list_of_wishlist.xml.flat" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_settings.xml.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_settings.xml.flat" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/android/support/compat/R$id.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/android/support/compat/R$id.dex" />
@@ -111,33 +119,36 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/R$style.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/R$style.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/R$styleable.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/R$styleable.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$1.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$1.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$10.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$10.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$11.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$11.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$12.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$12.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$13.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$13.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$14.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$14.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$15.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$15.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$2.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$2.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$3.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$3.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$4.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$4.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$5.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$5.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$6.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$6.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$7.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$7.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$8.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$8.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$9.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings$9.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/Settings.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/XmlParsing/LiveMint.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/XmlParsing/LiveMint.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/XmlParsing/XmlParser.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/XmlParsing/XmlParser.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/adpaters/HomeAdapter$1.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/adpaters/HomeAdapter$1.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/adpaters/HomeAdapter$MyViewHolder.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/adpaters/HomeAdapter$MyViewHolder.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/adpaters/HomeAdapter.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/adpaters/HomeAdapter.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/utilities/SharedPreference.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/25/dharanyuvi/android/com/articles/utilities/SharedPreference.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/0.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/0.jar" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/AppConstants.java" afterPath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/AppConstants.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/AppController.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Article_Webview.java" afterPath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Article_Webview.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Settings.java" afterPath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Settings.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java" afterPath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/adpaters/HomeAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/adpaters/HomeAdapter.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/utilities/SharedPreference.java" afterPath="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/utilities/SharedPreference.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_of_wishlist.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_of_wishlist.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/settings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/settings.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -164,69 +175,62 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4076">
-              <caret line="223" column="31" lean-forward="false" selection-start-line="223" selection-start-column="31" selection-end-line="223" selection-end-column="31" />
+            <state relative-caret-position="464">
+              <caret line="902" column="31" lean-forward="false" selection-start-line="902" selection-start-column="31" selection-end-line="902" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4490#4521#0" expanded="true" />
-                <element signature="e#4523#4555#0" expanded="true" />
-                <element signature="e#5235#5243#0" expanded="true" />
-                <element signature="e#6007#6008#0" expanded="true" />
-                <element signature="e#6069#6070#0" expanded="true" />
-                <element signature="e#12042#12043#0" expanded="true" />
-                <element signature="e#12090#12091#0" expanded="true" />
-                <element signature="e#12217#12218#0" expanded="true" />
-                <element signature="e#12257#12258#0" expanded="true" />
-                <element signature="e#12308#12309#0" expanded="true" />
-                <element signature="e#12343#12344#0" expanded="true" />
-                <element signature="e#35054#35055#0" expanded="true" />
-                <element signature="e#35092#35093#0" expanded="true" />
+                <element signature="e#4628#4659#0" expanded="true" />
+                <element signature="e#4661#4693#0" expanded="true" />
+                <element signature="e#5373#5381#0" expanded="true" />
+                <element signature="e#6145#6146#0" expanded="true" />
+                <element signature="e#6207#6208#0" expanded="true" />
+                <element signature="e#12332#12333#0" expanded="true" />
+                <element signature="e#12380#12381#0" expanded="true" />
+                <element signature="e#12507#12508#0" expanded="true" />
+                <element signature="e#12547#12548#0" expanded="true" />
+                <element signature="e#12598#12599#0" expanded="true" />
+                <element signature="e#12633#12634#0" expanded="true" />
+                <element signature="e#36626#36627#0" expanded="true" />
+                <element signature="e#36664#36665#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/settings.xml">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="130" column="51" lean-forward="false" selection-start-line="130" selection-start-column="51" selection-end-line="130" selection-end-column="51" />
+            <state relative-caret-position="342">
+              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LiveMint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XmlParser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="82" column="40" lean-forward="false" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav_header_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
+      <file leaf-file-name="content_main.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+            <state relative-caret-position="20">
+              <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_bar_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="57" column="49" lean-forward="true" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -235,51 +239,58 @@
       <file leaf-file-name="HomeAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/adpaters/HomeAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-193">
-              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="402">
+              <caret line="105" column="100" lean-forward="false" selection-start-line="105" selection-start-column="100" selection-end-line="105" selection-end-column="100" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_of_wishlist.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_of_wishlist.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="Article_Webview.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Article_Webview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="503" column="42" lean-forward="false" selection-start-line="503" selection-start-column="42" selection-end-line="503" selection-end-column="42" />
+            <state relative-caret-position="310">
+              <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Settings.java">
+      <file leaf-file-name="DinaManis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/DinaManis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="365" column="92" lean-forward="false" selection-start-line="365" selection-start-column="92" selection-end-line="365" selection-end-column="92" />
+            <state relative-caret-position="359">
+              <caret line="83" column="62" lean-forward="false" selection-start-line="83" selection-start-column="62" selection-end-line="83" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SharedPreference.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/utilities/SharedPreference.java">
+      <file leaf-file-name="XmlParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+            <state relative-caret-position="373">
+              <caret line="94" column="2" lean-forward="false" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/AppConstants.java">
+      <file leaf-file-name="DinaKaran.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/DinaKaran.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="147" column="35" lean-forward="false" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
+            <state relative-caret-position="1386">
+              <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LiveMint.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1747">
+              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -2362,14 +2373,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/Dinakaran.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/settings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/adpaters/HomeAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Article_Webview.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_of_wishlist.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Settings.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/utilities/SharedPreference.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/AppConstants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Settings.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/DinaMani.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Article_Webview.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/adpaters/HomeAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/DinaManis.java" />
       </list>
     </option>
   </component>
@@ -2722,6 +2735,39 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.011254019" sideWeight="0.511713" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.71953255" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.017684888" sideWeight="0.48828697" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36655948" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2306003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -2731,19 +2777,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>876</line>
+          <line>915</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>877</line>
+          <line>916</line>
           <properties />
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>874</line>
+          <line>913</line>
           <properties />
           <option name="timeStamp" value="63" />
         </line-breakpoint>
@@ -2785,7 +2831,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>335</line>
+          <line>343</line>
           <properties />
           <option name="timeStamp" value="96" />
         </line-breakpoint>
@@ -2808,148 +2854,22 @@
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
-          <line>31</line>
-          <properties />
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>548</line>
+          <line>560</line>
           <properties />
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>574</line>
+          <line>586</line>
           <properties />
           <option name="timeStamp" value="179" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>581</line>
-          <properties />
-          <option name="timeStamp" value="180" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>592</line>
+          <line>604</line>
           <properties />
           <option name="timeStamp" value="181" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="188" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="189" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="190" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>577</line>
-          <properties />
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>579</line>
-          <properties />
-          <option name="timeStamp" value="212" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
-          <line>580</line>
-          <properties />
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="219" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>73</line>
-          <properties />
-          <option name="timeStamp" value="220" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="221" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="222" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="223" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="224" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="225" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>84</line>
-          <properties />
-          <option name="timeStamp" value="227" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>88</line>
-          <properties />
-          <option name="timeStamp" value="228" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java</url>
@@ -2963,20 +2883,192 @@
           <properties />
           <option name="timeStamp" value="233" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>871</line>
+          <properties />
+          <option name="timeStamp" value="248" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>335</line>
+          <properties />
+          <option name="timeStamp" value="249" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>337</line>
+          <properties />
+          <option name="timeStamp" value="250" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>873</line>
+          <properties />
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>874</line>
+          <properties />
+          <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>879</line>
+          <properties />
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>877</line>
+          <properties />
+          <option name="timeStamp" value="255" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>882</line>
+          <properties />
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>82</line>
+          <properties />
+          <option name="timeStamp" value="259" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>85</line>
+          <properties />
+          <option name="timeStamp" value="260" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>88</line>
+          <properties />
+          <option name="timeStamp" value="261" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>93</line>
+          <properties />
+          <option name="timeStamp" value="262" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="263" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="264" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>102</line>
+          <properties />
+          <option name="timeStamp" value="266" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="267" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>105</line>
+          <properties />
+          <option name="timeStamp" value="268" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>106</line>
+          <properties />
+          <option name="timeStamp" value="269" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>107</line>
+          <properties />
+          <option name="timeStamp" value="270" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>886</line>
+          <properties />
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java</url>
+          <line>892</line>
+          <properties />
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="273" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>86</line>
+          <properties />
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="276" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>104</line>
+          <properties />
+          <option name="timeStamp" value="278" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>142</line>
+          <properties />
+          <option name="timeStamp" value="279" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java</url>
+          <line>143</line>
+          <properties />
+          <option name="timeStamp" value="280" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="234" />
+      <option name="time" value="281" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/sampledata/XmlParser.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-27/android/os/AsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -3064,17 +3156,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/toggle.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Routing.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -3145,28 +3226,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="54" column="53" lean-forward="false" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3216,14 +3275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/DinaKaran.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/settins_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3243,42 +3294,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Article_Webview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/IndianExpress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/adpaters/HomeAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3310,63 +3329,152 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="503" column="42" lean-forward="false" selection-start-line="503" selection-start-column="42" selection-end-line="503" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="365" column="92" lean-forward="false" selection-start-line="365" selection-start-column="92" selection-end-line="365" selection-end-column="92" />
+        <state relative-caret-position="164">
+          <caret line="532" column="48" lean-forward="false" selection-start-line="532" selection-start-column="48" selection-end-line="532" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/utilities/SharedPreference.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+        <state relative-caret-position="702">
+          <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/AppConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="147" column="35" lean-forward="false" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
+        <state relative-caret-position="269">
+          <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="196" column="19" lean-forward="false" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="94" column="2" lean-forward="false" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/DinaKaran.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/DinaMani.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/Article_Webview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/adpaters/HomeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="105" column="100" lean-forward="false" selection-start-line="105" selection-start-column="100" selection-end-line="105" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/LiveMint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1747">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/DinaManis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="83" column="62" lean-forward="false" selection-start-line="83" selection-start-column="62" selection-end-line="83" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4076">
-          <caret line="223" column="31" lean-forward="false" selection-start-line="223" selection-start-column="31" selection-end-line="223" selection-end-column="31" />
+        <state relative-caret-position="464">
+          <caret line="902" column="31" lean-forward="false" selection-start-line="902" selection-start-column="31" selection-end-line="902" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4490#4521#0" expanded="true" />
-            <element signature="e#4523#4555#0" expanded="true" />
-            <element signature="e#5235#5243#0" expanded="true" />
-            <element signature="e#6007#6008#0" expanded="true" />
-            <element signature="e#6069#6070#0" expanded="true" />
-            <element signature="e#12042#12043#0" expanded="true" />
-            <element signature="e#12090#12091#0" expanded="true" />
-            <element signature="e#12217#12218#0" expanded="true" />
-            <element signature="e#12257#12258#0" expanded="true" />
-            <element signature="e#12308#12309#0" expanded="true" />
-            <element signature="e#12343#12344#0" expanded="true" />
-            <element signature="e#35054#35055#0" expanded="true" />
-            <element signature="e#35092#35093#0" expanded="true" />
+            <element signature="e#4628#4659#0" expanded="true" />
+            <element signature="e#4661#4693#0" expanded="true" />
+            <element signature="e#5373#5381#0" expanded="true" />
+            <element signature="e#6145#6146#0" expanded="true" />
+            <element signature="e#6207#6208#0" expanded="true" />
+            <element signature="e#12332#12333#0" expanded="true" />
+            <element signature="e#12380#12381#0" expanded="true" />
+            <element signature="e#12507#12508#0" expanded="true" />
+            <element signature="e#12547#12548#0" expanded="true" />
+            <element signature="e#12598#12599#0" expanded="true" />
+            <element signature="e#12633#12634#0" expanded="true" />
+            <element signature="e#36626#36627#0" expanded="true" />
+            <element signature="e#36664#36665#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dharanyuvi/android/com/articles/XmlParsing/XmlParser.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="82" column="40" lean-forward="false" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+        <state relative-caret-position="342">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="57" column="49" lean-forward="true" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
           <folding />
         </state>
       </provider>

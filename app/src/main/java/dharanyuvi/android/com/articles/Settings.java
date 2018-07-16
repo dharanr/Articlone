@@ -59,6 +59,7 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         Switch sh11 = findViewById(R.id.SwitchBhaskar);
         Switch sh12 = findViewById(R.id.SwitchETNow);
         Switch sh13 = findViewById(R.id.SwitchTribune);
+        Switch sh14 = findViewById(R.id.SwitchDinamani);
 
 
 
@@ -76,6 +77,7 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         String Bhaskar =SharedPreference.Instance.read(getApplicationContext(),"Bhaskar");
         String ETNow =SharedPreference.Instance.read(getApplicationContext(),"ETNow");
         String Tribune =SharedPreference.Instance.read(getApplicationContext(),"Tribune");
+        String DinaMani =SharedPreference.Instance.read(getApplicationContext(),"DinaMani");
 
 
         //Toggle control - the hindu
@@ -191,6 +193,13 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         else
             sh13.setChecked(false);
 
+        //Toggle control - DinaMani
+        if(DinaMani.equals("true"))
+        {
+            sh14.setChecked(true);
+        }
+        else
+            sh14.setChecked(false);
 
         RelativeLayout relativeLayout = findViewById(R.id.wish);
         relativeLayout.setOnClickListener(new View.OnClickListener(){
@@ -364,6 +373,17 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                     SharedPreference.Instance.storeWishList(getApplicationContext(),"Tribune",true);
                 } else {
                     SharedPreference.Instance.storeWishList(getApplicationContext(),"Tribune",false);
+                }
+            }
+        });
+
+        //Toggle function for the Dinamani
+        sh14.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Dinamani",true);
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Dinamani",false);
                 }
             }
         });
