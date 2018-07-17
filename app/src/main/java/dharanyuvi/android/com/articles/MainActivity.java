@@ -219,7 +219,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this,Splash.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
-
+            Intent intent = new Intent(MainActivity.this,Write  .class);
+            startActivity(intent);
         } else if (id == R.id.nav_send) {
 
         }

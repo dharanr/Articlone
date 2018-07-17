@@ -568,12 +568,12 @@
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\e250c2bd0688aedbcc1b9c7e0036c82a\\res\\layout\\notification_template_media_custom.xml"
     },
     {
-        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5f1f65eba463524c512fa783c65abff0\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_down.png.flat",
         "source": "C:\\work\\Articles\\app\\src\\main\\res\\drawable-mdpi\\down.png"
+    },
+    {
+        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5f1f65eba463524c512fa783c65abff0\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_show_password.xml.flat",
@@ -882,6 +882,10 @@
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5f1f65eba463524c512fa783c65abff0\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\layout_write_main.xml.flat",
+        "source": "C:\\work\\Articles\\app\\src\\main\\res\\layout\\write_main.xml"
     },
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -1408,6 +1412,10 @@
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5f1f65eba463524c512fa783c65abff0\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
+        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable_feedback_border.xml.flat",
+        "source": "C:\\work\\Articles\\app\\src\\main\\res\\drawable\\feedback_border.xml"
+    },
+    {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5f1f65eba463524c512fa783c65abff0\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1882,6 +1890,10 @@
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5f1f65eba463524c512fa783c65abff0\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\layout_write_to_us.xml.flat",
+        "source": "C:\\work\\Articles\\app\\src\\main\\res\\layout\\write_to_us.xml"
     },
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_design_ic_visibility.png.flat",
