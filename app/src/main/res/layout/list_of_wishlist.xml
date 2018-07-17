@@ -5,6 +5,35 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
     <RelativeLayout
+        android:id="@+id/general"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        >
+        <TextView
+            android:id="@+id/generaltext"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/rufina_bold"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            android:text="General"/>
+        <View
+            android:layout_width="50dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/generaltext"
+            android:background="@color/colorPrimaryDark"/>
+
+        <Switch
+            android:id="@+id/SwitchGeneral"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/theHindu"
         android:paddingTop="10dp"
         android:paddingRight="15dp"
@@ -114,6 +143,143 @@
 </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/Hintustan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/logo5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="image1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_send" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/logo5"
+            android:fontFamily="@font/neuton"
+            android:text="Hindustan Times"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/SwitchHindustan"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TelegraphIndia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/logo11"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="image1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_send" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/logo11"
+            android:fontFamily="@font/neuton"
+            android:text="Telegraph"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/SwitchTelegraph"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/BS"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/logo14"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_menu_send"
+            android:contentDescription="image1"
+            android:scaleType="fitXY"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/logo14"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/neuton"
+            android:text="Tribune"/>
+
+        <Switch
+            android:id="@+id/SwitchTribune"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/BusinessText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rufina_bold"
+            android:text="Business"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/BusinessText"
+            android:background="@color/colorPrimaryDark" />
+
+        <Switch
+            android:id="@+id/SwitchBusiness"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/BusinessLine"
         android:paddingTop="10dp"
         android:paddingRight="15dp"
@@ -142,42 +308,6 @@
 
         <Switch
             android:id="@+id/SwitchBusinessLine"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/Hintustan"
-        android:paddingTop="10dp"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/logo5"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_menu_send"
-            android:contentDescription="image1"
-            android:scaleType="fitXY"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:layout_toRightOf="@id/logo5"
-            android:layout_centerVertical="true"
-            android:textSize="20sp"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/neuton"
-            android:text="Hindustan Times"/>
-
-        <Switch
-            android:id="@+id/SwitchHindustan"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -221,44 +351,9 @@
         android:layout_centerVertical="true"
         />
     </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/TheTamilHindu"
-            android:paddingTop="10dp"
-            android:paddingRight="15dp"
-            android:paddingLeft="15dp"
-            android:paddingBottom="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/logo7"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_menu_send"
-                android:contentDescription="image1"
-                android:scaleType="fitXY"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:layout_toRightOf="@id/logo7"
-                android:layout_centerVertical="true"
-                android:textSize="20sp"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/neuton"
-                android:text="The Hindu (Tamil)"/>
-
-            <Switch
-                android:id="@+id/SwitchTamilHindu"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                />
-        </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/Dinakaran"
+        android:id="@+id/ETNow"
         android:paddingTop="10dp"
         android:paddingRight="15dp"
         android:paddingLeft="15dp"
@@ -266,7 +361,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/logo8"
+            android:id="@+id/logo13"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_menu_send"
@@ -277,15 +372,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
-            android:layout_toRightOf="@id/logo8"
+            android:layout_toRightOf="@id/logo13"
             android:layout_centerVertical="true"
             android:textSize="20sp"
             android:layout_marginLeft="30dp"
             android:fontFamily="@font/neuton"
-            android:text="Dinakaran"/>
+            android:text="ETNow"/>
 
         <Switch
-            android:id="@+id/SwitchDinakaran"
+            android:id="@+id/SwitchETNow"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -293,6 +388,35 @@
             />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/Hindi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        >
+        <TextView
+            android:id="@+id/HindiText"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/rufina_bold"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            android:text="Hindi"/>
+        <View
+            android:layout_width="45dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/HindiText"
+            android:background="@color/colorPrimaryDark"/>
+
+        <Switch
+            android:id="@+id/SwitchHindi"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/Jagran"
         android:paddingTop="10dp"
@@ -322,78 +446,6 @@
 
         <Switch
             android:id="@+id/SwitchJagraan"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/LiveHindustan"
-        android:paddingTop="10dp"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/logo10"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_menu_send"
-        android:contentDescription="image1"
-        android:scaleType="fitXY"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:layout_toRightOf="@id/logo10"
-        android:layout_centerVertical="true"
-        android:textSize="20sp"
-        android:layout_marginLeft="30dp"
-        android:fontFamily="@font/neuton"
-        android:text="LiveHindustan"/>
-
-    <Switch
-        android:id="@+id/SwitchLiveHindustan"
-        android:layout_width="55dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/TelegraphIndia"
-        android:paddingTop="10dp"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/logo11"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_menu_send"
-            android:contentDescription="image1"
-            android:scaleType="fitXY"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:layout_toRightOf="@id/logo11"
-            android:layout_centerVertical="true"
-            android:textSize="20sp"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/neuton"
-            android:text="Telegraph"/>
-
-        <Switch
-            android:id="@+id/SwitchTelegraph"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -436,9 +488,111 @@
             android:layout_centerVertical="true"
             />
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/LiveHindustan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/logo10"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="image1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_send" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/logo10"
+            android:fontFamily="@font/neuton"
+            android:text="LiveHindustan"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/SwitchLiveHindustan"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
 
     <RelativeLayout
-        android:id="@+id/ETNow"
+        android:id="@+id/Tamil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        >
+        <TextView
+            android:id="@+id/TamilText"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/rufina_bold"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            android:text="Tamil"/>
+        <View
+            android:layout_width="45dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/TamilText"
+            android:background="@color/colorPrimaryDark"/>
+
+        <Switch
+            android:id="@+id/SwitchTamil"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/TheTamilHindu"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/logo7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_menu_send"
+                android:contentDescription="image1"
+                android:scaleType="fitXY"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_toRightOf="@id/logo7"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/neuton"
+                android:text="The Hindu (Tamil)"/>
+
+            <Switch
+                android:id="@+id/SwitchTamilHindu"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/Dinakaran"
         android:paddingTop="10dp"
         android:paddingRight="15dp"
         android:paddingLeft="15dp"
@@ -446,7 +600,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/logo13"
+            android:id="@+id/logo8"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_menu_send"
@@ -457,58 +611,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
-            android:layout_toRightOf="@id/logo13"
+            android:layout_toRightOf="@id/logo8"
             android:layout_centerVertical="true"
             android:textSize="20sp"
             android:layout_marginLeft="30dp"
             android:fontFamily="@font/neuton"
-            android:text="ETNow"/>
+            android:text="Dinakaran"/>
 
         <Switch
-            android:id="@+id/SwitchETNow"
+            android:id="@+id/SwitchDinakaran"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             />
     </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/BS"
-        android:paddingTop="10dp"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/logo14"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_menu_send"
-            android:contentDescription="image1"
-            android:scaleType="fitXY"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:layout_toRightOf="@id/logo14"
-            android:layout_centerVertical="true"
-            android:textSize="20sp"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/neuton"
-            android:text="Tribune"/>
-
-        <Switch
-            android:id="@+id/SwitchTribune"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            />
-    </RelativeLayout>
-
 
     <RelativeLayout
         android:id="@+id/Dinamani"

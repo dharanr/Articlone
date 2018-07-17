@@ -98,7 +98,7 @@ public class LiveMint {
                                         theHinduArticle.SetDescription(string);
                                     }
                                     else
-                                    theHinduArticle.SetDescription(str[str.length-1].trim());
+                                    theHinduArticle.SetDescription(str[str.length-1].trim());  //str[str.length-1]
 
                                 } else if (tagname.equalsIgnoreCase("pubDate")) {
                                     theHinduArticle.SetCategory(Name);

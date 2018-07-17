@@ -381,9 +381,9 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         sh14.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Dinamani",true);
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"DinaMani",true);
                 } else {
-                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Dinamani",false);
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"DinaMani",false);
                 }
             }
         });

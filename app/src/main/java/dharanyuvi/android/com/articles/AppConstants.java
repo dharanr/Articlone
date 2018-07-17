@@ -24,9 +24,9 @@ public class AppConstants {
 
     public static String BusinessWorldUrl = "http://www.businessworld.in/rss/todays-article.xml";
 
-    public static String TamilHindu = "http://tamil.thehindu.com/opinion/editorial/feeder/default.rss";
+    public static String TamilHindu = "https://tamil.thehindu.com/opinion/editorial/feeder/default.rss";
 
-    public static String TamilLeadHindu ="http://tamil.thehindu.com/opinion/columns/feeder/default.rss";
+    public static String TamilLeadHindu ="https://tamil.thehindu.com/opinion/columns/feeder/default.rss";
 
     public static String DinakaranUrl ="http://www.dinakaran.com/rss_news.asp?id=8";
 

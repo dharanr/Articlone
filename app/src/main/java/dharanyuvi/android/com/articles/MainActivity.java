@@ -18,6 +18,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.Xml;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -108,8 +110,10 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this,Settings.class);
+                startActivity(intent);
             }
         });
 
@@ -219,7 +223,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this,Splash.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
-            Intent intent = new Intent(MainActivity.this,Write  .class);
+            Intent intent = new Intent(MainActivity.this,Write.class);
             startActivity(intent);
         } else if (id == R.id.nav_send) {
 
@@ -618,25 +622,42 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("TamilHindu")) {
                         int count=0;
-                        while(count<2)
-                        {
-                            String geturl = TamilHindu.get(count);
-                            URL url = new URL(geturl);
-                            urlConnection = (HttpURLConnection) url.openConnection();
+                        try{
+                            while(count<2)
+                            {
+                                String geturl = TamilHindu.get(count);
+                                URL url = new URL(geturl);
+                                urlConnection = (HttpURLConnection) url.openConnection();
 
-                            bar.setProgress(50);
-                            urlConnection.setRequestMethod("GET");
-                            urlConnection.connect();
+                                bar.setProgress(50);
+                                urlConnection.setRequestMethod("GET");
+                                urlConnection.connect();
 
-                            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                            bar.setProgress(70);
-                            if(list==null)
-                                list=(XmlParser.Instance.parse(in,bar,name));
-                            else
-                                list.addAll(XmlParser.Instance.parse(in,bar,name));
+                                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                                bar.setProgress(70);
 
-                            count++;
+                                List<TheHinduArticle> temp = null;
+                                temp = (XmlParser.Instance.parse(in,bar,name));
+                                if(temp!=null)
+                                {
+                                    if(list==null)
+                                        list=temp;
+                                    else
+                                        list.addAll(temp);
+                                }
+                                else
+                                {
+                                    Toast.makeText(MainActivity.this,"temp=null",Toast.LENGTH_LONG).show();
+                                }
+
+                                count++;
+                            }
                         }
+                        catch (Exception e)
+                        {
+                            Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                        }
+
 
                     }
                     else if(name.equals("Dinakaran"))
@@ -885,13 +906,13 @@ public class MainActivity extends AppCompatActivity
 
                         if(list==null)
                         {
-                            List<TheHinduArticle> temp = DinaManis.Instance.parse(in,bar,name+" -  EDITORIAl");
+                            List<TheHinduArticle> temp = DinaManis.Instance.parse(in,bar,name);
                             if(temp!=null)
                                 list=(temp);
                         }
                         else
                         {
-                            List<TheHinduArticle> temp =DinaManis.Instance.parse(in,bar,name+" -  EDITORIAl");
+                            List<TheHinduArticle> temp =DinaManis.Instance.parse(in,bar,name);
                             if(temp!=null)
                                 list.addAll(temp);
                         }

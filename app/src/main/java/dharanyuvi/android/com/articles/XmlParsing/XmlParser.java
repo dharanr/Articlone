@@ -1,7 +1,9 @@
 package dharanyuvi.android.com.articles.XmlParsing;
 
+import android.util.Log;
 import android.util.Xml;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -28,9 +30,15 @@ public class XmlParser {
             bar.setProgress(70);
             parser.nextTag();
             return readFeed(parser,bar,Name);
-        } finally {
+        }
+        catch (Exception e)
+        {
+                Log.d("Exception",e.getMessage());
+        }
+        finally {
             in.close();
         }
+        return null;
     }
 
     private List<TheHinduArticle> readFeed(XmlPullParser parser,ProgressBar bar,String Name) throws XmlPullParserException, IOException {
