@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity
         {
             List<String> URLlist = new ArrayList<String>();
             //accessing the wishlist
-            URLlist = LoadSharedPreferences();
+            URLlist = LoadPreferences.Instance.LoadSharedPreferences(getApplicationContext());
 
             TheHindu task =new TheHindu(URLlist);
             task.setProgressBar(simpleProgressBar);
@@ -164,8 +164,6 @@ public class MainActivity extends AppCompatActivity
                     public void onRefresh() {
                         doYourUpdate();
                     }
-
-
                 }
         );
 
@@ -248,7 +246,7 @@ public class MainActivity extends AppCompatActivity
 
             List<String> URLlist = new ArrayList<>();
             //accessing the wishlist
-            URLlist = LoadSharedPreferences();
+            URLlist = LoadPreferences.Instance.LoadSharedPreferences(getApplicationContext());
 
             TheHindu task =new TheHindu(URLlist);
             task.setProgressBar(simpleProgressBar);
@@ -262,91 +260,6 @@ public class MainActivity extends AppCompatActivity
             no_connection.setVisibility(View.VISIBLE);
         }
 
-    }
-
-    //returns the list of selected agencies
-    private List<String> LoadSharedPreferences(){
-
-        List<String> URLlist = new ArrayList<>();
-        if(SharedPreference.Instance.read(getApplicationContext(),"TheHindu").equals("true"))
-        {
-           URLlist.add("TheHindu");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"IE").equals("true"))
-        {
-            URLlist.add("IE");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"LiveMint").equals("true"))
-        {
-            URLlist.add("LiveMint");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"BusinessLine").equals("true"))
-        {
-            URLlist.add("BusinessLine");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"Hindustan").equals("true"))
-        {
-            URLlist.add("Hindustan");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"BusinessWorld").equals("true"))
-        {
-            URLlist.add("BusinessWorld");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"TamilHindu").equals("true"))
-        {
-            URLlist.add("TamilHindu");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"Dinakaran").equals("true"))
-        {
-            URLlist.add("Dinakaran");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"Jagraan").equals("true"))
-        {
-            URLlist.add("Jagraan");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"LiveHindustan").equals("true"))
-        {
-            URLlist.add("LiveHindustan");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"Telegraph").equals("true"))
-        {
-            URLlist.add("Telegraph");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"Bhaskar").equals("true"))
-        {
-            URLlist.add("Bhaskar");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"ETNow").equals("true"))
-        {
-            URLlist.add("ETNow");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"Tribune").equals("true"))
-        {
-            URLlist.add("Tribune");
-        }
-
-        if(SharedPreference.Instance.read(getApplicationContext(),"DinaMani").equals("true"))
-        {
-            URLlist.add("DinaMani");
-        }
-        else
-        {
-            Toast.makeText(MainActivity.this,"sharedPreferences- false",Toast.LENGTH_LONG).show();
-        }
-        return URLlist;
     }
 
 
@@ -389,54 +302,16 @@ public class MainActivity extends AppCompatActivity
 
                 for(int i=0;i<listOfSelect.size();i++) {
                     String name = listOfSelect.get(i);
-                    List<String> HinduURLlist;
-                    HinduURLlist = AppConstants.Instance.LoadHindu();
 
-                    List<String> IE;
-                    IE = AppConstants.Instance.LoadIE();
 
-                    List<String> LMList;
-                    LMList=AppConstants.Instance.LoadLM();
 
-                    List<String> BusinessLine;
-                    BusinessLine=AppConstants.Instance.LoadBusinessLine();
 
-                    List<String> Hindustan;
-                    Hindustan=AppConstants.Instance.LoadHindustan();
-
-                    List<String> BusinessWorld;
-                    BusinessWorld=AppConstants.Instance.LoadBusinessWorld();
-
-                    List<String> TamilHindu;
-                    TamilHindu=AppConstants.Instance.LoadTamilHindu();
-
-                    List<String> Dinakaran;
-                    Dinakaran=AppConstants.Instance.LoadDinakaran();
-
-                    List<String> Jagraan;
-                    Jagraan=AppConstants.Instance.LoadJagraan();
-
-                    List<String> LiveHindustan;
-                    LiveHindustan=AppConstants.Instance.LoadLiveHindustan();
-
-                    List<String> TelegraphList;
-                    TelegraphList = AppConstants.Instance.LoadTelegraph();
-
-                    List<String> BhaskarList;
-                    BhaskarList = AppConstants.Instance.LoadBhaskar();
-
-                    List<String> ETNow;
-                    ETNow = AppConstants.Instance.LoadETNow();
-
-                    List<String> Tribune;
-                    Tribune = AppConstants.Instance.LoadTribune();
-
-                    List<String> DinaMani;
-                    DinaMani = AppConstants.Instance.LoadDinamani();
 
 
                     if(name.equals("TheHindu")) {
                        int count=0;
+                        List<String> HinduURLlist;
+                        HinduURLlist = AppConstants.Instance.LoadHindu();
                         while(count<2)
                         {
                             String geturl = HinduURLlist.get(count);
@@ -459,6 +334,8 @@ public class MainActivity extends AppCompatActivity
 
                     }
                     else if(name.equals("IE")){
+                        List<String> IE;
+                        IE = AppConstants.Instance.LoadIE();
                         int count=0;
                         while(count<2)
                         {
@@ -489,6 +366,9 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("LiveMint"))
                     {
+                        List<String> LMList;
+                        LMList=AppConstants.Instance.LoadLM();
+
                         int count=0;
                         while(count<1)
                         {
@@ -519,6 +399,9 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("BusinessLine"))
                     {
+                        List<String> BusinessLine;
+                        BusinessLine=AppConstants.Instance.LoadBusinessLine();
+
                         int count=0;
                         while(count<1)
                         {
@@ -558,6 +441,9 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("Hindustan"))
                     {
+                        List<String> Hindustan;
+                        Hindustan=AppConstants.Instance.LoadHindustan();
+
                         int count=0;
                         while(count<2)
                         {
@@ -591,6 +477,10 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("BusinessWorld"))
                     {
+
+                        List<String> BusinessWorld;
+                        BusinessWorld=AppConstants.Instance.LoadBusinessWorld();
+
                         int count=0;
                         while(count<1)
                         {
@@ -621,6 +511,11 @@ public class MainActivity extends AppCompatActivity
                         }
                     }
                     else if(name.equals("TamilHindu")) {
+
+                        List<String> TamilHindu;
+                        TamilHindu=AppConstants.Instance.LoadTamilHindu();
+
+
                         int count=0;
                         try{
                             while(count<2)
@@ -662,6 +557,9 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("Dinakaran"))
                     {
+                        List<String> Dinakaran;
+                        Dinakaran=AppConstants.Instance.LoadDinakaran();
+
                         int count=0;
                         while(count<1)
                         {
@@ -706,6 +604,11 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("Jagraan"))
                     {
+
+                        List<String> Jagraan;
+                        Jagraan=AppConstants.Instance.LoadJagraan();
+
+
                         int count=0;
                         while(count<2)
                         {
@@ -736,6 +639,9 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("LiveHindustan"))
                     {
+                        List<String> LiveHindustan;
+                        LiveHindustan=AppConstants.Instance.LoadLiveHindustan();
+
                         int count=0;
                         while(count<2)
                         {
@@ -770,6 +676,10 @@ public class MainActivity extends AppCompatActivity
                         }
                     }
                     else if(name.equals("Telegraph")) {
+
+                        List<String> TelegraphList;
+                        TelegraphList = AppConstants.Instance.LoadTelegraph();
+
                         int count=0;
                         while(count<1)
                         {
@@ -800,6 +710,9 @@ public class MainActivity extends AppCompatActivity
 
                     }
                     else if(name.equals("Bhaskar")) {
+                        List<String> BhaskarList;
+                        BhaskarList = AppConstants.Instance.LoadBhaskar();
+
                         int count=0;
                         while(count<1)
                         {
@@ -831,6 +744,9 @@ public class MainActivity extends AppCompatActivity
                     }
 
                     else if(name.equals("ETNow")) {
+                        List<String> ETNow;
+                        ETNow = AppConstants.Instance.LoadETNow();
+
                         int count=0;
                         while(count<1)
                         {
@@ -862,6 +778,10 @@ public class MainActivity extends AppCompatActivity
                     }
 
                     else if(name.equals("Tribune")) {
+
+                        List<String> Tribune;
+                        Tribune = AppConstants.Instance.LoadTribune();
+
                         int count=0;
                         while(count<1)
                         {
@@ -893,6 +813,10 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("DinaMani"))
                     {
+
+                        List<String> DinaMani;
+                        DinaMani = AppConstants.Instance.LoadDinamani();
+
                         String geturl = DinaMani.get(0);
                         URL url = new URL(geturl);
                         urlConnection = (HttpURLConnection) url.openConnection();

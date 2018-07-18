@@ -31,7 +31,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         public TextView title, description, time,label;
         public Button save;
         private click clickListener;
-
+        public View vi;
 
         public MyViewHolder(View view) {
             super(view);
@@ -40,6 +40,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             time = (TextView) view.findViewById(R.id.time);
             label = (TextView) view.findViewById(R.id.label);
             save =(Button)view.findViewById(R.id.save);
+//            vi=view.findViewById(R.id.view);
 
             view.setTag(view);
             view.setOnClickListener(this);
@@ -83,6 +84,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             holder.description.setText(theHinduArticle.getDescription());
             holder.time.setText(theHinduArticle.getPubDate());
             holder.label.setText(theHinduArticle.getCategory());
+
+//            if(position==list.size()-1)
+//                holder.vi.setVisibility(View.VISIBLE);
 
         holder.setClickListener(new click() {
             @Override
