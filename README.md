@@ -17,8 +17,8 @@
                      *Telegraph
                      *Bhaskar
                      *ETNow
-                     *Business-Standard
                      *Tribune
+                     *Dinamani
                 -->Still more to come!!
    
     Bookmark this page for the future updates
