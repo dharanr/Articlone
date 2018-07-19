@@ -119,27 +119,244 @@
 
 
     </RelativeLayout>
+
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wish">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/wish">
+                    <RelativeLayout
+                        android:id="@+id/General"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:background="@drawable/ripple"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/heart1"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/smile"
+                            />
+
+                        <TextView
+                            android:id="@+id/Generaltext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@id/heart1"
+                            android:fontFamily="@font/rufina_bold"
+                            android:text="General"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp"
+                            app:fontFamily="@font/neuton" />
+                        <ImageView
+                            android:id="@+id/down1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/down"/>
+
+
+                    </RelativeLayout>
+
+                    <ScrollView android:layout_width="wrap_content"
+                            android:id="@+id/scroll1"
+                        android:layout_height="wrap_content"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_below="@id/General"
+                        >
+                        <include
+                            android:id="@+id/list"
+                            layout="@layout/list_of_wishlist"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/wish"
+                            android:visibility="gone"/>
+                    </ScrollView>
+                    <RelativeLayout
+                        android:id="@+id/Business"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:layout_below="@id/scroll1"
+                        android:background="@drawable/ripple"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/heart2"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/smile"
+                            />
+
+                        <TextView
+                            android:id="@+id/BusinessText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@id/heart2"
+                            android:fontFamily="@font/rufina_bold"
+                            android:text="Business"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp"
+                            app:fontFamily="@font/neuton" />
+                        <ImageView
+                            android:id="@+id/down2"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/down"/>
+
+
+                    </RelativeLayout>
+
+                    <ScrollView android:layout_width="wrap_content"
+                        android:id="@+id/scroll2"
+                        android:layout_height="wrap_content"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_below="@id/Business"
+                        >
+                        <include
+                            android:id="@+id/list1"
+                            layout="@layout/business_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/wish"
+                            android:visibility="gone"/>
+                    </ScrollView>
+
+                    <RelativeLayout
+                        android:id="@+id/Hindi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:layout_below="@id/scroll2"
+                        android:background="@drawable/ripple"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/heart3"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/smile"
+                            />
+
+                        <TextView
+                            android:id="@+id/HindiText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@id/heart3"
+                            android:fontFamily="@font/rufina_bold"
+                            android:text="Hindi"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp"
+                            app:fontFamily="@font/neuton" />
+                        <ImageView
+                            android:id="@+id/down3"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/down"/>
+
+
+                    </RelativeLayout>
+                    <ScrollView android:layout_width="wrap_content"
+                        android:id="@+id/scroll3"
+                        android:layout_height="wrap_content"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_below="@id/Hindi"
+                        >
+                        <include
+                            android:id="@+id/list2"
+                            layout="@layout/hindi_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/Hindi"
+                            android:visibility="gone"/>
+                    </ScrollView>
+                    <RelativeLayout
+                        android:id="@+id/Tamil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:layout_below="@id/scroll3"
+                        android:background="@drawable/ripple"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/heart4"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/smile"
+                            />
+
+                        <TextView
+                            android:id="@+id/TamilText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@id/heart4"
+                            android:fontFamily="@font/rufina_bold"
+                            android:text="Tamil"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp"
+                            app:fontFamily="@font/neuton" />
+                        <ImageView
+                            android:id="@+id/down4"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/down"/>
+
+
+                    </RelativeLayout>
+                    <ScrollView android:layout_width="wrap_content"
+                        android:id="@+id/scroll4"
+                        android:layout_height="wrap_content"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_below="@id/Tamil"
+                        >
+                        <include
+                            android:id="@+id/list3"
+                            layout="@layout/tamil_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"/>
+                    </ScrollView>
+                </RelativeLayout>
+            </ScrollView>
+
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
         android:layout_below="@id/wish"/>
         </RelativeLayout>
-            <ScrollView android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_below="@id/wishlist1"
-                >
-    <include
-        android:id="@+id/list"
-        layout="@layout/list_of_wishlist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/wish"
-        android:visibility="visible"/>
 
-
-
-    </ScrollView>
 </RelativeLayout>
 

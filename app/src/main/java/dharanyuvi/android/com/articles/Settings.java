@@ -27,7 +27,16 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settins_main);
         final LinearLayout linearLayout = findViewById(R.id.list);
+        final LinearLayout linearLayout1 = findViewById(R.id.list1);
+        final LinearLayout linearLayout2 = findViewById(R.id.list2);
+        final LinearLayout linearLayout3 = findViewById(R.id.list3);
+
         final ImageView imageView = findViewById(R.id.down);
+        final ImageView imageView1 = findViewById(R.id.down1);
+        final ImageView imageView2 = findViewById(R.id.down2);
+        final ImageView imageView3 = findViewById(R.id.down3);
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -208,19 +217,99 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                 if(linearLayout.getVisibility()==View.GONE)
                 {
                     linearLayout.setVisibility(View.VISIBLE);
-                       imageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
+                    linearLayout1.setVisibility(View.VISIBLE);
+                    linearLayout2.setVisibility(View.VISIBLE);
+                    linearLayout3.setVisibility(View.VISIBLE);
+                    imageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
                 }
                 else
                 {
                     linearLayout.setVisibility(View.GONE);
+                    linearLayout1.setVisibility(View.GONE);
+                    linearLayout2.setVisibility(View.GONE);
+                    linearLayout3.setVisibility(View.GONE);
                     imageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.down));
 
                 }
             }
         });
 
+        RelativeLayout General = findViewById(R.id.General);
+        General.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(linearLayout.getVisibility()==View.GONE)
+                {
+                    linearLayout.setVisibility(View.VISIBLE);
 
 
+                    imageView1.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
+                }
+                else
+                {
+                    linearLayout.setVisibility(View.GONE);
+
+                    imageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.down));
+
+                }
+            }
+        });
+
+        RelativeLayout Business = findViewById(R.id.Business);
+        Business.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(linearLayout1.getVisibility()==View.GONE)
+                {
+                    linearLayout1.setVisibility(View.VISIBLE);
+                    imageView1.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
+                }
+                else
+                {
+                    linearLayout1.setVisibility(View.GONE);
+                    imageView1.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.down));
+
+                }
+            }
+        });
+
+
+        RelativeLayout Hindi = findViewById(R.id.Hindi);
+        Hindi.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(linearLayout2.getVisibility()==View.GONE)
+                {
+                    linearLayout2.setVisibility(View.VISIBLE);
+                    imageView2.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
+                }
+                else
+                {
+                    linearLayout2.setVisibility(View.GONE);
+                    imageView2.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.down));
+
+                }
+            }
+        });
+
+
+        RelativeLayout Tamil = findViewById(R.id.Tamil);
+        Tamil.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(linearLayout3.getVisibility()==View.GONE)
+                {
+                    linearLayout3.setVisibility(View.VISIBLE);
+                    imageView3.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
+                }
+                else
+                {
+                    linearLayout3.setVisibility(View.GONE);
+                    imageView3.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.down));
+
+                }
+            }
+        });
 
         //Toggle function for the hindu
         sh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

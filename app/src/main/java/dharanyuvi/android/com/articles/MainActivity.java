@@ -74,11 +74,15 @@ public class MainActivity extends AppCompatActivity
     RelativeLayout relativeLayout,NoArticles;
     WebView webView;
     TextView no_connection;
+    List<String> URLlist = new ArrayList<>();
+    private List<TheHinduArticle> list = new ArrayList<>();
+    //List<TheHinduArticle> LoadingList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
@@ -134,16 +138,15 @@ public class MainActivity extends AppCompatActivity
         recyclerView = findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
-
-
+        homeAdapter = new HomeAdapter(MainActivity.this,list);
+        recyclerView.setAdapter(homeAdapter);
 
 
         //checking for the internet connection for the application
         if(NetInfo.Instance.checkConnection(getApplicationContext()))
         {
-            List<String> URLlist = new ArrayList<String>();
             //accessing the wishlist
-            URLlist = LoadPreferences.Instance.LoadSharedPreferences(getApplicationContext());
+            URLlist = LoadPreferences.Instance.LoadMore(getApplicationContext(),true);
 
             TheHindu task =new TheHindu(URLlist);
             task.setProgressBar(simpleProgressBar);
@@ -167,6 +170,29 @@ public class MainActivity extends AppCompatActivity
                 }
         );
 
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+            // for this tutorial, this is the ONLY method that we need, ignore the rest
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy > 0) {
+                    // Recycle view scrolling downwards...
+                    // this if statement detects when user reaches the end of recyclerView, this is only time we should load more
+                    if (!recyclerView.canScrollVertically(RecyclerView.FOCUS_DOWN)) {
+                        // remember "!" is the same as "== false"
+                        // here we are now allowed to load more, but we need to be careful
+                        // we must check if itShouldLoadMore variable is true [unlocked]
+                        List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
+
+                        TheHindu task =new TheHindu(list);
+                        task.setProgressBar(simpleProgressBar);
+                        task.execute();
+                    }
+
+                }
+            }
+        });
 
     }
 
@@ -244,11 +270,11 @@ public class MainActivity extends AppCompatActivity
             }
             recyclerView.setVisibility(View.VISIBLE);
 
-            List<String> URLlist = new ArrayList<>();
-            //accessing the wishlist
-            URLlist = LoadPreferences.Instance.LoadSharedPreferences(getApplicationContext());
 
-            TheHindu task =new TheHindu(URLlist);
+            //accessing the wishlist
+            List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
+
+            TheHindu task =new TheHindu(list);
             task.setProgressBar(simpleProgressBar);
             task.execute();
         }
@@ -266,7 +292,6 @@ public class MainActivity extends AppCompatActivity
 
     //AsyncTask class to run the background task to obtain the rss data
     public class TheHindu extends AsyncTask<String, String, String> {
-        private List<TheHinduArticle> list = new ArrayList<>();
         private List<String> listOfSelect;
 
         private TheHindu(List<String> list)
@@ -277,9 +302,9 @@ public class MainActivity extends AppCompatActivity
         @SuppressLint("StaticFieldLeak")
         ProgressBar bar;
 
-        private void setList(List<TheHinduArticle> list) {
-            this.list = list;
-        }
+//        private void setList(List<TheHinduArticle> list) {
+//            this.list = list;
+//        }
 
 
         public List<TheHinduArticle> getList() {
@@ -298,14 +323,10 @@ public class MainActivity extends AppCompatActivity
         try {
                 bar.setProgress(30);
 
-                list = null;
+//                list = null;
 
                 for(int i=0;i<listOfSelect.size();i++) {
                     String name = listOfSelect.get(i);
-
-
-
-
 
 
                     if(name.equals("TheHindu")) {
@@ -859,21 +880,20 @@ public class MainActivity extends AppCompatActivity
         protected void onPostExecute(String result) {
             bar.setVisibility(View.INVISIBLE);
 
-            if (result.equals("success"))
-                    setList(list);
+//            if (result.equals("success"))
+//                    setList(list);
 
             if(list!=null)
             {
                 if(NoArticles.getVisibility()==View.VISIBLE)
                     NoArticles.setVisibility(View.GONE);
 
-
-                homeAdapter = new HomeAdapter(MainActivity.this,list);
-
-            //recyclerView.setAnimation(new DefaultItemAnimator());
-                recyclerView.setAdapter(homeAdapter);
-
-
+//                LoadingList.addAll(list);
+//                homeAdapter = new HomeAdapter(MainActivity.this,list);
+//
+//            //recyclerView.setAnimation(new DefaultItemAnimator());
+//                recyclerView.setAdapter(homeAdapter);
+                homeAdapter.notifyDataSetChanged();
             }
             else
             {

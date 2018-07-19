@@ -1,6 +1,7 @@
 package dharanyuvi.android.com.articles;
 
 import android.content.Context;
+import android.content.UriMatcher;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -9,6 +10,13 @@ import java.util.List;
 import dharanyuvi.android.com.articles.utilities.SharedPreference;
 
 public class LoadPreferences {
+    List<String> TotalList;
+    private static int Length = 1;
+    private static int Pointer;
+
+    private static List<String> Previous;
+
+
     //returns the list of selected agencies
     public static  LoadPreferences Instance = new LoadPreferences();
     public List<String> LoadSharedPreferences(Context context){
@@ -93,5 +101,56 @@ public class LoadPreferences {
             Toast.makeText(context,"sharedPreferences- false",Toast.LENGTH_LONG).show();
         }
         return URLlist;
+    }
+
+    public List<String> LoadMore(Context context,Boolean isFirst)
+    {
+        TotalList=new ArrayList<>();
+        TotalList= LoadSharedPreferences(context);
+
+        List<String> list = new ArrayList<>();
+
+        //during the first load of the app
+        if(isFirst)
+        {
+            for(int i=0;i<Length;i++)
+            {
+                if(i==TotalList.size())
+                    return list;
+                else
+                {
+                    list.add(TotalList.get(i));
+                    Pointer++;
+                }
+            }
+            Previous = new ArrayList<>(TotalList);
+            return list;
+        }
+        //during the load more in the app
+        else
+        {
+            List<String> temp =new ArrayList<>(TotalList);
+            temp.removeAll(Previous);
+
+            if(temp.size()>0)
+            {
+              TotalList.addAll(temp);
+            }
+
+            int value =Pointer;
+            for(int i=value;i<value+Length;i++)
+            {
+                if(i==TotalList.size())
+                    return list;
+                else
+                {
+                    list.add(TotalList.get(i));
+                    Pointer++;
+                }
+
+            }
+        }
+        Previous =new ArrayList<>(TotalList);
+      return list;
     }
 }
