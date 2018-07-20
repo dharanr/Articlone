@@ -119,16 +119,17 @@
                     android:background="@drawable/feedback_border"
                     android:layout_below="@id/Author"
                     android:padding="15dp">
+
                     <EditText
-                        android:layout_width="280dp"
+                        android:id="@+id/feedback"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Enter the FeedBack"
-                        android:textColorHint="@android:color/darker_gray"
                         android:background="@android:color/transparent"
-                        android:gravity="top|left"
                         android:fontFamily="@font/neuton"
+                        android:gravity="top|left"
+                        android:hint="Enter the FeedBack"
                         android:textColor="@android:color/black"
-                         />
+                        android:textColorHint="@android:color/darker_gray" />
                 </RelativeLayout>
 
 
@@ -136,14 +137,17 @@
 
 
             </RelativeLayout>
+
             <Button
+                android:id="@+id/send"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:background="@drawable/savebutton"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/FeedBackMsg"
-                android:text="SEND"
-                />
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/savebutton"
+                android:text="SEND" />
+
+
         </RelativeLayout>
 
 

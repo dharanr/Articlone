@@ -10,7 +10,7 @@ import java.util.List;
 import dharanyuvi.android.com.articles.utilities.SharedPreference;
 
 public class LoadPreferences {
-    List<String> TotalList;
+    List<String> TotalList=new ArrayList<>();;
     private static int Length = 1;
     private static int Pointer;
 
@@ -105,8 +105,8 @@ public class LoadPreferences {
 
     public List<String> LoadMore(Context context,Boolean isFirst)
     {
-        TotalList=new ArrayList<>();
-        TotalList= LoadSharedPreferences(context);
+        int flag=0;
+        TotalList = LoadSharedPreferences(context);
 
         List<String> list = new ArrayList<>();
 
@@ -129,13 +129,19 @@ public class LoadPreferences {
         //during the load more in the app
         else
         {
-            List<String> temp =new ArrayList<>(TotalList);
-            temp.removeAll(Previous);
 
-            if(temp.size()>0)
-            {
-              TotalList.addAll(temp);
-            }
+            //if the current fetched and the previous list is not the same
+                List<String> temp = new ArrayList<>(TotalList);
+                temp.removeAll(Previous);
+                TotalList.removeAll(temp);
+                //TotalList.addAll(temp);
+
+                if(temp.size()>0)
+                {
+                    TotalList.addAll(temp);
+                }
+
+
 
             int value =Pointer;
             for(int i=value;i<value+Length;i++)
