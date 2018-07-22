@@ -14,7 +14,6 @@ public class LoadPreferences {
     private static int Length = 1;
     private static int Pointer;
 
-    private static List<String> Previous;
 
 
     //returns the list of selected agencies
@@ -38,7 +37,7 @@ public class LoadPreferences {
         }
 
         if(SharedPreference.Instance.read(context,"BusinessLine").equals("true"))
-        {
+            {
             URLlist.add("BusinessLine");
         }
 
@@ -107,56 +106,85 @@ public class LoadPreferences {
     {
         int flag=0;
         TotalList = LoadSharedPreferences(context);
-
         List<String> list = new ArrayList<>();
+        List<String> FeedList = new ArrayList<>();
+        FeedList = Cache_List.Instance.GetFeed();
 
         //during the first load of the app
         if(isFirst)
         {
+            Cache_List.Instance.SetList(TotalList);
+            FeedList = Cache_List.Instance.GetFeed();
+
+            //Loading first-set data from the feedlist
             for(int i=0;i<Length;i++)
             {
-                if(i==TotalList.size())
+                if(i==FeedList.size())
                     return list;
                 else
                 {
-                    list.add(TotalList.get(i));
+                    list.add(FeedList.get(i));
                     Pointer++;
                 }
             }
-            Previous = new ArrayList<>(TotalList);
             return list;
         }
+
         //during the load more in the app
         else
         {
 
-            //if the current fetched and the previous list is not the same
+                //Checking for the increment of filters
                 List<String> temp = new ArrayList<>(TotalList);
-                temp.removeAll(Previous);
-                TotalList.removeAll(temp);
-                //TotalList.addAll(temp);
+                temp.removeAll(FeedList);
+                //Checking for the decrement of filters
+                List<String> temp1 = new ArrayList<>(FeedList);
+                temp1.removeAll(TotalList);
+
 
                 if(temp.size()>0)
                 {
+                    TotalList.removeAll(temp);
                     TotalList.addAll(temp);
+                    Cache_List.Instance.SetList(TotalList);
                 }
 
+                if(temp1.size()>0)
+                {
+                    List<String> list1 = new ArrayList<>();
+                    List<String> list2 = new ArrayList<>();
+
+                    for(int i =0;i<FeedList.size();i++)
+                    {
+                        if(i>=Pointer)
+                        {
+                            list1.add(FeedList.get(i));
+                        }
+                        else
+                            list2.add(FeedList.get(i));
+                    }
+
+                    list1.removeAll(temp1);
+                    list2.addAll(list1);
+
+                    Cache_List.Instance.SetList(list2);
+                }
 
 
             int value =Pointer;
             for(int i=value;i<value+Length;i++)
             {
-                if(i==TotalList.size())
+                FeedList = Cache_List.Instance.GetFeed();
+                if(i==FeedList.size() && temp.size()==0 )
                     return list;
                 else
                 {
-                    list.add(TotalList.get(i));
+                    list.add(FeedList.get(i));
                     Pointer++;
                 }
 
             }
         }
-        Previous =new ArrayList<>(TotalList);
       return list;
     }
 }

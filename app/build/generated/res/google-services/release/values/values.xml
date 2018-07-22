@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">717771097457-88li0en2mljau8sumnaj10ltjsc7ao3p.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://articlone-71d8e.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">717771097457</string>
+    <string name="google_api_key" translatable="false">AIzaSyBUJ1UnODF4abu0vhWerPxw1m812HNIBu0</string>
+    <string name="google_app_id" translatable="false">1:717771097457:android:14a0c02f4267e94a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBUJ1UnODF4abu0vhWerPxw1m812HNIBu0</string>
+    <string name="google_storage_bucket" translatable="false">articlone-71d8e.appspot.com</string>
+    <string name="project_id" translatable="false">articlone-71d8e</string>
+</resources>
