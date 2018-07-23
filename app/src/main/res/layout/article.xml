@@ -18,6 +18,24 @@
             android:layout_centerVertical="true"
             android:contentDescription="efve"
             />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/Pocket"
+            android:layout_toLeftOf="@id/share"
+            android:src="@drawable/ic_stat_name"
+            android:layout_centerVertical="true"
+            android:contentDescription="efve"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/share"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_stat_name"
+            android:layout_centerVertical="true"
+            android:contentDescription="efve"
+            />
 
     </RelativeLayout>
     <View

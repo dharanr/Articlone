@@ -1,13 +1,16 @@
 package dharanyuvi.android.com.articles;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -45,6 +48,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -75,6 +79,9 @@ public class MainActivity extends AppCompatActivity
     List<String> URLlist = new ArrayList<>();
     private List<TheHinduArticle> list = new ArrayList<>();
     //List<TheHinduArticle> LoadingList = new ArrayList<>();
+    AlarmManager alarmManager;
+    Intent alarmIntent;
+    PendingIntent pendingIntent;
 
 
     @Override
@@ -192,6 +199,26 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        alarmIntent = new Intent(MainActivity.this, Broadcast.class);
+        // AlarmReceiver1 = broadcast receiver
+
+        pendingIntent = PendingIntent.getBroadcast(  MainActivity.this, 0, alarmIntent, 0);
+        alarmIntent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+        //alarmManager.cancel(pendingIntent);
+
+        Calendar alarmStartTime = Calendar.getInstance();
+        Calendar now = Calendar.getInstance();
+        alarmStartTime.set(Calendar.HOUR_OF_DAY, 2);
+        alarmStartTime.set(Calendar.MINUTE,10);
+        alarmStartTime.set(Calendar.SECOND, 0);
+//        if (now.after(alarmStartTime)) {
+////            Log.d("Hey","Added a day");
+////            alarmStartTime.add(Calendar.DATE, 1);
+////        }
+
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        Log.d("Alarm","Alarms set for everyday 8 am.");
     }
 
 

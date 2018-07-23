@@ -111,7 +111,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
                     {
                         intent.putExtra("DinaMani",true+"");
                     }
-
+                        intent.putExtra("Title",list.get(position).getTitle());
                         intent.putExtra("URL",list.get(position).getLink());
                     context.startActivity(intent);
 
