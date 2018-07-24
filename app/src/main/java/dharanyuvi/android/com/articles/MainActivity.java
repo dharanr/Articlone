@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
@@ -16,6 +17,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -93,6 +96,29 @@ public class MainActivity extends AppCompatActivity
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
 
         SharedPreference.Instance.FirstTime(getApplicationContext());
+        SharedPreferences sharedPreferences = this.getSharedPreferences(
+                "wishlist", MODE_PRIVATE);
+        String data=(sharedPreferences.getString("TheFirstTime", null));
+
+        if( data==null || data.equals("true") )
+        {
+//            IntentFilter intent = new IntentFilter( "dharanyuvi.android.com.articles.Broadcast" );
+//            this.registerReceiver(new Broadcast(), intent);
+
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.down)
+                        .setContentTitle("Welcome to Articlone")
+                        .setContentText("You are a new member to our excited community")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("You are a new member to our excited community...Stay connected!! Let's be updated with what you liked the most"))
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+// notificationId is a unique int for each notification that you must define
+            notificationManager.notify(12,mBuilder.build());
+        }
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setElevation(0);
@@ -209,13 +235,13 @@ public class MainActivity extends AppCompatActivity
 
         Calendar alarmStartTime = Calendar.getInstance();
         Calendar now = Calendar.getInstance();
-        alarmStartTime.set(Calendar.HOUR_OF_DAY, 2);
-        alarmStartTime.set(Calendar.MINUTE,10);
+        alarmStartTime.set(Calendar.HOUR_OF_DAY, 9);
+        alarmStartTime.set(Calendar.MINUTE,20);
         alarmStartTime.set(Calendar.SECOND, 0);
-//        if (now.after(alarmStartTime)) {
-////            Log.d("Hey","Added a day");
-////            alarmStartTime.add(Calendar.DATE, 1);
-////        }
+        if (now.after(alarmStartTime)) {
+            Log.d("Hey","Added a day");
+            alarmStartTime.add(Calendar.DATE, 1);
+        }
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
         Log.d("Alarm","Alarms set for everyday 8 am.");
