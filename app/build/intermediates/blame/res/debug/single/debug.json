@@ -1020,6 +1020,10 @@
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1a8209c1eb14d2cf994f4d926fd103f3\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
+        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\anim_drag.xml.flat",
+        "source": "C:\\work\\Articles\\app\\src\\main\\res\\anim\\drag.xml"
+    },
+    {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\537ceb534b18709cf3c59f127e75ae35\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -1298,6 +1302,10 @@
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\537ceb534b18709cf3c59f127e75ae35\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\layout_digest.xml.flat",
+        "source": "C:\\work\\Articles\\app\\src\\main\\res\\layout\\digest.xml"
     },
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_design_ic_visibility_off.png.flat",
@@ -1902,6 +1910,10 @@
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\537ceb534b18709cf3c59f127e75ae35\\res\\drawable-xhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\anim_layout_animation_fall_down.xml.flat",
+        "source": "C:\\work\\Articles\\app\\src\\main\\res\\anim\\layout_animation_fall_down.xml"
     },
     {
         "merged": "C:\\work\\Articles\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_default.xml.flat",

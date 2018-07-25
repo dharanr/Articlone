@@ -1,6 +1,12 @@
 package dharanyuvi.android.com.articles;
 
+import android.app.AlarmManager;
+import android.app.DialogFragment;
+import android.app.PendingIntent;
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -18,12 +24,28 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
+import java.util.Calendar;
 
 import dharanyuvi.android.com.articles.utilities.SharedPreference;
 
 public class Settings extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    int hour;
+    int minute;
+    AlarmManager alarmManager;
+    Intent alarmIntent;
+    PendingIntent pendingIntent;
+    PendingIntent pendingIntent1;
+    PendingIntent pendingIntent2;
+    PendingIntent pendingIntent3;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settins_main);
         final LinearLayout linearLayout = findViewById(R.id.list);
@@ -31,10 +53,15 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         final LinearLayout linearLayout2 = findViewById(R.id.list2);
         final LinearLayout linearLayout3 = findViewById(R.id.list3);
 
-        final ImageView imageView = findViewById(R.id.down);
-        final ImageView imageView1 = findViewById(R.id.down1);
-        final ImageView imageView2 = findViewById(R.id.down2);
-        final ImageView imageView3 = findViewById(R.id.down3);
+        final ImageView imageView = findViewById(R.id.down1);
+        final ImageView imageView1 = findViewById(R.id.down2);
+        final ImageView imageView2 = findViewById(R.id.down3);
+        final ImageView imageView3 = findViewById(R.id.down4);
+
+        final TextView MorningText = findViewById(R.id.time);
+        final TextView NoonText = findViewById(R.id.time2);
+        final TextView EveningText = findViewById(R.id.time3);
+        final TextView NightText = findViewById(R.id.time4);
 
 
 
@@ -69,6 +96,11 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         Switch sh12 = findViewById(R.id.SwitchETNow);
         Switch sh13 = findViewById(R.id.SwitchTribune);
         Switch sh14 = findViewById(R.id.SwitchDinamani);
+        Switch sh15 = findViewById(R.id.SwitchMorning);
+        Switch sh16 = findViewById(R.id.SwitchNoon);
+        Switch sh17 = findViewById(R.id.SwitchEvening);
+        Switch sh18 = findViewById(R.id.SwitchNight);
+
 
 
 
@@ -87,6 +119,10 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         String ETNow =SharedPreference.Instance.read(getApplicationContext(),"ETNow");
         String Tribune =SharedPreference.Instance.read(getApplicationContext(),"Tribune");
         String DinaMani =SharedPreference.Instance.read(getApplicationContext(),"DinaMani");
+        String Morning =SharedPreference.Instance.read(getApplicationContext(),"Morning");
+        String Noon =SharedPreference.Instance.read(getApplicationContext(),"Noon");
+        String Evening =SharedPreference.Instance.read(getApplicationContext(),"Evening");
+        String Night =SharedPreference.Instance.read(getApplicationContext(),"Night");
 
 
         //Toggle control - the hindu
@@ -210,6 +246,88 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
         else
             sh14.setChecked(false);
 
+        //Toggle control - Morning
+        if(Morning.equals("true"))
+        {
+            sh15.setChecked(true);
+            String time = SharedPreference.Instance.read(Settings.this,"MorningTime");
+            String[] time1 = time.split(" ");
+            String time2 = time1[0]+" : "+time1[1];
+            MorningText.setText(time2);
+            MorningText.setTextColor(getResources().getColor(R.color.Black));
+
+        }
+        else
+        {
+            sh15.setChecked(false);
+            String time = SharedPreference.Instance.read(Settings.this,"MorningTime");
+            String[] time1 = time.split(" ");
+            String time2 = time1[0]+" : "+time1[1];
+            MorningText.setText(time2);
+            MorningText.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+
+
+        //Toggle control - Noon
+        if(Noon.equals("true"))
+        {
+            sh16.setChecked(true);
+            String time = SharedPreference.Instance.read(Settings.this,"NoonTime");
+            String[] time1 = time.split(" ");
+            String time2 = time1[0]+" : "+time1[1];
+            NoonText.setText(time2);
+            NoonText.setTextColor(getResources().getColor(R.color.Black));
+        }
+        else
+        {
+            sh16.setChecked(false);
+            String time = SharedPreference.Instance.read(Settings.this,"NoonTime");
+            String[] time1 = time.split(" ");
+            String time2 = time1[0]+" : "+time1[1];
+            NoonText.setText(time2);
+            NoonText.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+
+
+        //Toggle control - Evening
+        if(Evening.equals("true"))
+        {
+            sh17.setChecked(true);
+            String time = SharedPreference.Instance.read(Settings.this,"EveningTime");
+            String[] time1 = time.split(" ");
+            String time2 = time1[0]+" : "+time1[1];
+            EveningText.setText(time2);
+            EveningText.setTextColor(getResources().getColor(R.color.Black));        }
+        else {
+            sh17.setChecked(false);
+            String time = SharedPreference.Instance.read(Settings.this,"EveningTime");
+            String[] time1 = time.split(" ");
+            String time2 = time1[0]+" : "+time1[1];
+            EveningText.setText(time2);
+            EveningText.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+
+        //Toggle control - Night
+        if(Night.equals("true"))
+        {
+            sh18.setChecked(true);
+            String time = SharedPreference.Instance.read(Settings.this,"NightTime");
+            String[] time1 = time.split(" ");
+            String time2 = time1[0]+" : "+time1[1];
+            NightText.setText(time2);
+            NightText.setTextColor(getResources().getColor(R.color.Black));
+        }
+        else
+        {
+            sh18.setChecked(false);
+            String time = SharedPreference.Instance.read(Settings.this,"NightTime");
+            String[] time1 = time.split(" ");
+            String time2 = time1[0]+" : "+time1[1];
+            NightText.setText(time2);
+            NightText.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+
+
         RelativeLayout relativeLayout = findViewById(R.id.wish);
         relativeLayout.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -229,7 +347,6 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                     linearLayout2.setVisibility(View.GONE);
                     linearLayout3.setVisibility(View.GONE);
                     imageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.down));
-
                 }
             }
         });
@@ -243,7 +360,7 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                     linearLayout.setVisibility(View.VISIBLE);
 
 
-                    imageView1.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
+                    imageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
                 }
                 else
                 {
@@ -306,6 +423,27 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                 {
                     linearLayout3.setVisibility(View.GONE);
                     imageView3.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.down));
+
+                }
+            }
+        });
+
+
+        RelativeLayout Digest = findViewById(R.id.Digest);
+        final LinearLayout DigestLayout = findViewById(R.id.digest);
+        final ImageView DigestImage = findViewById(R.id.digestdown);
+        Digest.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(DigestLayout.getVisibility()==View.GONE)
+                {
+                    DigestLayout.setVisibility(View.VISIBLE);
+                    DigestImage.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.up));
+                }
+                else
+                {
+                    DigestLayout.setVisibility(View.GONE);
+                    DigestImage.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.down));
 
                 }
             }
@@ -474,9 +612,216 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
                 } else {
                     SharedPreference.Instance.storeWishList(getApplicationContext(),"DinaMani",false);
                 }
+
             }
         });
+
+        //Toggle function for the Morning
+        sh15.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Morning",true);
+                       TimePickerDialog timePickerDialog = new TimePickerDialog(Settings.this, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                       public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                           SetTimeFromTimePicker(hourOfDay,minute);
+
+                            String time=hour+" "+minute;
+                            SharedPreference.Instance.storeDigest(Settings.this,"MorningTime",time);
+
+                            //Morning
+                            alarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                            alarmIntent = new Intent(Settings.this, Broadcast.class);
+                            alarmIntent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+                            alarmIntent.putExtra("time","morning");
+                            // AlarmReceiver1 = broadcast receiver
+                            pendingIntent = PendingIntent.getBroadcast(  Settings.this, 0, alarmIntent, 0);
+                            Calendar alarmStartTime = AlarmManagerBroadcast.Instance.Alarm(Settings.this,hourOfDay,minute);
+                            alarmManager.setRepeating(android.app.AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), android.app.AlarmManager.INTERVAL_DAY, pendingIntent);
+
+                            time=hour+":"+minute;
+                            MorningText.setText(time);
+                            MorningText.setTextColor(getResources().getColor(R.color.Black));
+
+
+                        }
+                       },hour,minute,true);
+                               timePickerDialog.show();
+
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Morning",false);
+                    //gets the morning value from the shared preferences!!
+                    String time = SharedPreference.Instance.read(Settings.this,"MorningTime");
+                    String[] timesplit = time.split(" ");
+                    String timeString= timesplit[0]+" : "+timesplit[1];
+
+                    //Noon
+
+
+                    MorningText.setText(timeString);
+                    MorningText.setTextColor(getResources().getColor(R.color.colorAccent));
+                }
+
+            }
+        });
+
+
+        //Toggle function for the Noon
+        sh16.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Noon",true);
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(Settings.this, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                            SetTimeFromTimePicker(hourOfDay,minute);
+
+                            String time=hour+" "+minute;
+                            SharedPreference.Instance.storeDigest(Settings.this,"NoonTime",time);
+
+                            alarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                            alarmIntent = new Intent(Settings.this, Broadcast.class);
+                            alarmIntent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+                            alarmIntent.putExtra("time","noon");
+                            pendingIntent1 = PendingIntent.getBroadcast(  Settings.this, 1, alarmIntent, 0);
+                            Calendar alarmStartTime1 = AlarmManagerBroadcast.Instance.Alarm(Settings.this,hourOfDay,minute);
+                            alarmManager.setRepeating(android.app.AlarmManager.RTC_WAKEUP, alarmStartTime1.getTimeInMillis(), android.app.AlarmManager.INTERVAL_DAY, pendingIntent1);
+
+                            time=hour+":"+minute;
+                            NoonText.setText(time);
+                            NoonText.setTextColor(getResources().getColor(R.color.Black));
+
+                        }
+                    },hour,minute,true);
+                    timePickerDialog.show();
+
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Noon",false);
+                    //gets the morning value from the shared preferences!!
+                    String time = SharedPreference.Instance.read(Settings.this,"NoonTime");
+                    String[] timesplit = time.split(" ");
+                    String timeString= timesplit[0]+" : "+timesplit[1];
+
+                    NoonText.setText(timeString);
+                    NoonText.setTextColor(getResources().getColor(R.color.colorAccent));
+                }
+
+            }
+        });
+
+
+        //Toggle function for the Evening
+        sh17.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Evening",true);
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(Settings.this, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                            SetTimeFromTimePicker(hourOfDay,minute);
+
+                            String time=hour+" "+minute;
+                            SharedPreference.Instance.storeDigest(Settings.this,"EveningTime",time);
+
+                            alarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                            alarmIntent = new Intent(Settings.this, Broadcast.class);
+                            alarmIntent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+                            alarmIntent.putExtra("time","evening");
+                            pendingIntent2 = PendingIntent.getBroadcast(  Settings.this, 2, alarmIntent, 0);
+                            Calendar alarmStartTime2 = AlarmManagerBroadcast.Instance.Alarm(Settings.this,hourOfDay,minute);
+                            alarmManager.setRepeating(android.app.AlarmManager.RTC_WAKEUP, alarmStartTime2.getTimeInMillis(), android.app.AlarmManager.INTERVAL_DAY, pendingIntent2);
+
+                            time=hour+":"+minute;
+                            EveningText.setText(time);
+                            EveningText.setTextColor(getResources().getColor(R.color.Black));
+
+                        }
+                    },hour,minute,true);
+                    timePickerDialog.show();
+
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Evening",false);
+                    //gets the morning value from the shared preferences!!
+                    String time = SharedPreference.Instance.read(Settings.this,"EveningTime");
+                    String[] timesplit = time.split(" ");
+                    String timeString= timesplit[0]+" : "+timesplit[1];
+
+                    EveningText.setText(timeString);
+                    EveningText.setTextColor(getResources().getColor(R.color.colorAccent));
+                }
+
+            }
+        });
+
+
+
+        //Toggle function for the Night
+        sh18.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Night",true);
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(Settings.this, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                            SetTimeFromTimePicker(hourOfDay,minute);
+
+                            String time=hour+" "+minute;
+                            SharedPreference.Instance.storeDigest(Settings.this,"NightTime",time);
+
+                            //Night
+                            alarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                            alarmIntent = new Intent(Settings.this, Broadcast.class);
+                            alarmIntent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+                            alarmIntent.putExtra("time","night");
+                            pendingIntent3 = PendingIntent.getBroadcast(  Settings.this, 3, alarmIntent, 0);
+                            Calendar alarmStartTime3 = AlarmManagerBroadcast.Instance.Alarm(Settings.this,hourOfDay,minute);
+                            alarmManager.setRepeating(android.app.AlarmManager.RTC_WAKEUP, alarmStartTime3.getTimeInMillis(), android.app.AlarmManager.INTERVAL_DAY, pendingIntent3);
+
+                            time=hour+":"+minute;
+                            NightText.setText(time);
+                            NightText.setTextColor(getResources().getColor(R.color.Black));
+
+                        }
+                    },hour,minute,true);
+                    timePickerDialog.show();
+
+                } else {
+                    SharedPreference.Instance.storeWishList(getApplicationContext(),"Night",false);
+                    //gets the morning value from the shared preferences!!
+                    String time = SharedPreference.Instance.read(Settings.this,"NightTime");
+                    String[] timesplit = time.split(" ");
+                    String timeString= timesplit[0]+" : "+timesplit[1];
+
+                    NightText.setText(timeString);
+                    NightText.setTextColor(getResources().getColor(R.color.colorAccent));
+                }
+
+            }
+        });
+
+//        //Toggle function for the Dinamani
+//        sh14.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    SharedPreference.Instance.storeWishList(getApplicationContext(),"DinaMani",true);
+//                } else {
+//                    SharedPreference.Instance.storeWishList(getApplicationContext(),"DinaMani",false);
+//                }
+//
+//            }
+//        });
+
+
     }
+
+
+
+
+//
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
@@ -484,6 +829,13 @@ public class Settings extends AppCompatActivity implements NavigationView.OnNavi
 //        getMenuInflater().inflate(R.menu.main, menu);
 //        return true;
 //    }
+    public void SetTimeFromTimePicker(int Hour,int Minute)
+    {
+        hour = Hour;
+        minute = Minute;
+        String time = "Selected "+hour+" : "+minute;
+        Toast.makeText(Settings.this,time,Toast.LENGTH_LONG).show();
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

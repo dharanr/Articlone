@@ -35,6 +35,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -81,10 +83,10 @@ public class MainActivity extends AppCompatActivity
     TextView no_connection;
     List<String> URLlist = new ArrayList<>();
     private List<TheHinduArticle> list = new ArrayList<>();
+    int pastVisiblesItems, visibleItemCount, totalItemCount;
+
     //List<TheHinduArticle> LoadingList = new ArrayList<>();
-    AlarmManager alarmManager;
-    Intent alarmIntent;
-    PendingIntent pendingIntent;
+
 
 
     @Override
@@ -95,12 +97,12 @@ public class MainActivity extends AppCompatActivity
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
 
+        //Happens during the first time
         SharedPreference.Instance.FirstTime(getApplicationContext());
         SharedPreferences sharedPreferences = this.getSharedPreferences(
                 "wishlist", MODE_PRIVATE);
         String data=(sharedPreferences.getString("TheFirstTime", null));
-
-        if( data==null || data.equals("true") )
+        if( data==null )
         {
 //            IntentFilter intent = new IntentFilter( "dharanyuvi.android.com.articles.Broadcast" );
 //            this.registerReceiver(new Broadcast(), intent);
@@ -116,7 +118,7 @@ public class MainActivity extends AppCompatActivity
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
 // notificationId is a unique int for each notification that you must define
-            notificationManager.notify(12,mBuilder.build());
+            notificationManager.notify(12, mBuilder.build());
         }
 
         setSupportActionBar(toolbar);
@@ -167,7 +169,12 @@ public class MainActivity extends AppCompatActivity
 
         //RecyclerView
         recyclerView = findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
+
+//        int resId = R.anim.layout_animation_fall_down;
+//        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(MainActivity.this,resId);
+//        recyclerView.setLayoutAnimation(animation);
+
+        final LinearLayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
         homeAdapter = new HomeAdapter(MainActivity.this,list);
         recyclerView.setAdapter(homeAdapter);
@@ -207,44 +214,34 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                if (dy > 0) {
+
                     // Recycle view scrolling downwards...
                     // this if statement detects when user reaches the end of recyclerView, this is only time we should load more
-                    if (!recyclerView.canScrollVertically(RecyclerView.FOCUS_DOWN)) {
+                   // if (!recyclerView.canScrollVertically(RecyclerView.FOCUS_DOWN)) {
                         // remember "!" is the same as "== false"
                         // here we are now allowed to load more, but we need to be careful
                         // we must check if itShouldLoadMore variable is true [unlocked]
-                        List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
+                        visibleItemCount = mLayoutManager.getChildCount();
+                        totalItemCount = mLayoutManager.getItemCount();
+                        pastVisiblesItems = mLayoutManager.findFirstVisibleItemPosition();
 
-                        TheHindu task =new TheHindu(list);
-                        task.setProgressBar(simpleProgressBar);
-                        task.execute();
-                    }
+                        if( ((totalItemCount - pastVisiblesItems) <= 5) )
+                        {
+
+                            List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
+
+                            TheHindu task =new TheHindu(list);
+                            task.setProgressBar(simpleProgressBar);
+                            task.execute();
+                        }
+
+                   // }
 
                 }
-            }
+
         });
 
-        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        alarmIntent = new Intent(MainActivity.this, Broadcast.class);
-        // AlarmReceiver1 = broadcast receiver
 
-        pendingIntent = PendingIntent.getBroadcast(  MainActivity.this, 0, alarmIntent, 0);
-        alarmIntent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
-        //alarmManager.cancel(pendingIntent);
-
-        Calendar alarmStartTime = Calendar.getInstance();
-        Calendar now = Calendar.getInstance();
-        alarmStartTime.set(Calendar.HOUR_OF_DAY, 9);
-        alarmStartTime.set(Calendar.MINUTE,20);
-        alarmStartTime.set(Calendar.SECOND, 0);
-        if (now.after(alarmStartTime)) {
-            Log.d("Hey","Added a day");
-            alarmStartTime.add(Calendar.DATE, 1);
-        }
-
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-        Log.d("Alarm","Alarms set for everyday 8 am.");
     }
 
 

@@ -169,12 +169,18 @@
 
 
                     </RelativeLayout>
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_below="@id/General"/>
 
                     <ScrollView android:layout_width="wrap_content"
-                            android:id="@+id/scroll1"
+                        android:id="@+id/scroll1"
                         android:layout_height="wrap_content"
                         xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:layout_below="@id/General"
+                        android:layout_below="@id/view1"
                         >
                         <include
                             android:id="@+id/list"
@@ -224,12 +230,18 @@
 
 
                     </RelativeLayout>
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_below="@id/Business"/>
 
                     <ScrollView android:layout_width="wrap_content"
                         android:id="@+id/scroll2"
                         android:layout_height="wrap_content"
                         xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:layout_below="@id/Business"
+                        android:layout_below="@id/view2"
                         >
                         <include
                             android:id="@+id/list1"
@@ -280,11 +292,17 @@
 
 
                     </RelativeLayout>
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_below="@id/Hindi"/>
                     <ScrollView android:layout_width="wrap_content"
                         android:id="@+id/scroll3"
                         android:layout_height="wrap_content"
                         xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:layout_below="@id/Hindi"
+                        android:layout_below="@id/view3"
                         >
                         <include
                             android:id="@+id/list2"
@@ -334,11 +352,17 @@
 
 
                     </RelativeLayout>
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_below="@id/Tamil"/>
                     <ScrollView android:layout_width="wrap_content"
                         android:id="@+id/scroll4"
                         android:layout_height="wrap_content"
                         xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:layout_below="@id/Tamil"
+                        android:layout_below="@id/view4"
                         >
                         <include
                             android:id="@+id/list3"
@@ -347,14 +371,74 @@
                             android:layout_height="match_parent"
                             android:visibility="gone"/>
                     </ScrollView>
+                    <RelativeLayout
+                        android:id="@+id/Digest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/scroll4"
+                        android:clickable="true"
+                        android:background="@drawable/ripple"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/Digest1"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/smile"
+                            />
+
+                        <TextView
+                            android:id="@+id/digesttext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@id/Digest1"
+                            android:fontFamily="@font/rufina_bold"
+                            android:text="Digest"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp"
+                            app:fontFamily="@font/neuton" />
+                        <ImageView
+                            android:id="@+id/digestdown"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/down"/>
+
+                    </RelativeLayout>
+                    <View
+                        android:id="@+id/view5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_below="@id/Digest"/>
+                    
+                    <ScrollView android:layout_width="wrap_content"
+                        android:id="@+id/scroll5"
+                        android:layout_height="wrap_content"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_below="@id/view5"
+                        >
+                    <include
+                        android:id="@+id/digest"
+                        layout="@layout/digest"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"/>
+                    </ScrollView>
                 </RelativeLayout>
+
             </ScrollView>
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
+        android:background="@color/colorPrimaryDark"
         android:layout_below="@id/wish"/>
         </RelativeLayout>
 

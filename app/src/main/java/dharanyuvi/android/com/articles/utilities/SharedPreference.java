@@ -28,6 +28,19 @@ public class SharedPreference   {
         editor.apply();
     }
 
+    //Function to store the digest timings
+    public void storeDigest(Context context, String Name, String Time) {
+        // used for store arrayList in json format
+        SharedPreferences settings;
+        SharedPreferences.Editor editor;
+        settings = context.getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
+        editor = settings.edit();
+
+
+        editor.putString(Name ,Time+"");
+        editor.apply();
+    }
+
     //Function to get the List of Urls to load
     public String read(Context context, String key) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(
@@ -67,6 +80,16 @@ public class SharedPreference   {
             storeWishList(context,"ETNow",true);
             storeWishList(context,"Tribune",true);
             storeWishList(context,"DinaMani",true);
+
+            storeWishList(context,"Morning",true);
+            storeWishList(context,"Noon",true);
+            storeWishList(context,"Evening",true);
+            storeWishList(context,"Night",true);
+
+            storeDigest(context,"MorningTime","8 00");
+            storeDigest(context,"NoonTime","14 00");
+            storeDigest(context,"EveningTime","19 00");
+            storeDigest(context,"NightTime","1 00");
 
 
             storeWishList(context,"TheFirstTime",true);

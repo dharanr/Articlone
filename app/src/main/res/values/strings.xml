@@ -7,6 +7,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name = "quote">I Think it\'s very important to have a feedback loop, Where you are constantly thinking about what you\'ve done and how you could be doing it better
+    <string name="quote">I Think it\'s very important to have a feedback loop, Where you are constantly thinking about what you\'ve done and how you could be doing it better
                     </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

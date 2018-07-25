@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:id="@+id/TheTamilHindu"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/logo7"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/neuton"
+            android:text="Morning-digest"/>
+
+        <Switch
+            android:id="@+id/SwitchMorning"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="08:00"
+            android:textColor="@android:color/black"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/SwitchMorning"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/Dinakaran"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/logo8"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/neuton"
+            android:text="Noon digest"/>
+
+        <Switch
+            android:id="@+id/SwitchNoon"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14:00"
+            android:textColor="@android:color/black"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/SwitchNoon"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Dinamani"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/logo15"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/neuton"
+            android:text="Evening digest"/>
+
+        <Switch
+            android:id="@+id/SwitchEvening"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/time3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19:00"
+            android:textColor="@android:color/black"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/SwitchEvening"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Midnight"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/logo15"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/neuton"
+            android:text="Night digest"/>
+
+        <Switch
+            android:id="@+id/SwitchNight"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/time4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01:00"
+            android:textColor="@android:color/black"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/SwitchNight"/>
+    </RelativeLayout>
+
+</LinearLayout>

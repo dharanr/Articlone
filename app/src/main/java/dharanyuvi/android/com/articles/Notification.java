@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import dharanyuvi.android.com.articles.utilities.SharedPreference;
+
 public class Notification extends IntentService {
     private NotificationManager notificationManager;
     private PendingIntent pendingIntent;
@@ -34,58 +36,55 @@ public class Notification extends IntentService {
         Intent mIntent = new Intent(this, Write.class);
         Bundle bundle = new Bundle();
         bundle.putString("test", "test");
+        String data="";
         mIntent.putExtras(bundle);
-        pendingIntent = PendingIntent.getActivity(context, 0, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        if(intent.getStringExtra("time").equals("morning"))
+        {
+            pendingIntent = PendingIntent.getActivity(context, 0, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            data="Morning Digest Ready";
+        }
+        else if(intent.getStringExtra("time").equals("noon"))
+        {
+            pendingIntent = PendingIntent.getActivity(context, 1, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            data="Good AfterNoon...Here's your digest";
+        }
+        else if(intent.getStringExtra("time").equals("evening"))
+        {
+            pendingIntent = PendingIntent.getActivity(context, 2, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            data="Yipee Evening starts with your digest";
+        }
+        else if(intent.getStringExtra("time").equals("night"))
+        {
+            pendingIntent = PendingIntent.getActivity(context, 3, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            data="Early digest...Here's your digest";
+        }
 
         Resources res = this.getResources();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        SharedPreferences sharedPreferences = context.getSharedPreferences(
-                "wishlist", MODE_PRIVATE);
-
-        if( (sharedPreferences.getString("TheFirstTime", null)).equals("true") )
-        {
-            notification = new NotificationCompat.Builder(this)
-                    .setContentIntent(pendingIntent)
-                    .setSmallIcon(R.drawable.down)
-                    .setTicker("ticker value")
-                    .setPriority(8)
-                    .setSound(soundUri)
-                    .setContentTitle("Welcome to Articlone")
-                    .setContentText("Come lets Explore the world of editorials and opinions from Today").build();
-//        notification.flags |= Notification.FLAG_AUTO_CANCEL | Notification.FLAG_SHOW_LIGHTS;
-//        notification.defaults |= Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE;
-//        notification.ledARGB = 0xFFFFA500;
-//        notification.ledOnMS = 800;
-//        notification.ledOffMS = 1000;
+        notification = new NotificationCompat.Builder(this)
+                .setContentIntent(pendingIntent)
+                .setSmallIcon(R.drawable.down)
+                .setTicker("ticker value")
+                .setPriority(8)
+                .setAutoCancel(true)
+                .setSound(soundUri)
+                .setContentTitle(data)
+                .setContentText("Keep updated with the recent articles and opinions...")
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText("Keep updated with the recent editorials and opinions..Come Lets Explore..!! "))
+                .build();
+//                   notification.flags |= Notification.FLAG_AUTO_CANCEL | Notification.FLAG_SHOW_LIGHTS;
+//                    notification.defaults |= Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE;
+        //        notification.ledARGB = 0xFFFFA500;
+        //        notification.ledOnMS = 800;
+        //        notification.ledOffMS = 1000;
             notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
             assert notificationManager != null;
             notificationManager.notify(NOTIFICATION_ID, notification);
             Log.i("notif","Notifications sent.");
-        }
-        else
-        {
-            notification = new NotificationCompat.Builder(this)
-                    .setContentIntent(pendingIntent)
-                    .setSmallIcon(R.drawable.down)
-                    .setTicker("ticker value")
-                    .setPriority(8)
-                    .setSound(soundUri)
-                    .setContentTitle("Morning Digest Ready")
-                    .setContentText("Keep upated with the recent articles and opinions...").build();
-//        notification.flags |= Notification.FLAG_AUTO_CANCEL | Notification.FLAG_SHOW_LIGHTS;
-//        notification.defaults |= Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE;
-//        notification.ledARGB = 0xFFFFA500;
-//        notification.ledOnMS = 800;
-//        notification.ledOffMS = 1000;
-            notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-            assert notificationManager != null;
-            notificationManager.notify(NOTIFICATION_ID, notification);
-            Log.i("notif","Notifications sent.");
-        }
-
-
 
 
     }
