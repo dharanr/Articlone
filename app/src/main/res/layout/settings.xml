@@ -416,7 +416,7 @@
                         android:layout_height="1dp"
                         android:background="@android:color/darker_gray"
                         android:layout_below="@id/Digest"/>
-                    
+
                     <ScrollView android:layout_width="wrap_content"
                         android:id="@+id/scroll5"
                         android:layout_height="wrap_content"

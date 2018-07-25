@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -102,12 +103,12 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences sharedPreferences = this.getSharedPreferences(
                 "wishlist", MODE_PRIVATE);
         String data=(sharedPreferences.getString("TheFirstTime", null));
-        if( data==null )
+        if( data.equals("true") )
         {
 //            IntentFilter intent = new IntentFilter( "dharanyuvi.android.com.articles.Broadcast" );
 //            this.registerReceiver(new Broadcast(), intent);
 
-                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this,"1")
                         .setSmallIcon(R.drawable.down)
                         .setContentTitle("Welcome to Articlone")
                         .setContentText("You are a new member to our excited community")
@@ -118,7 +119,9 @@ public class MainActivity extends AppCompatActivity
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
 // notificationId is a unique int for each notification that you must define
-            notificationManager.notify(12, mBuilder.build());
+            notificationManager.notify(10, mBuilder.build());
+
+            SharedPreference.Instance.storeWishList(MainActivity.this,"TheFirstTime",false);
         }
 
         setSupportActionBar(toolbar);
@@ -252,6 +255,7 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();    //close the app with the alert box in it
+                finish();
         }
     }
 
@@ -289,11 +293,9 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this,Settings.class);
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(MainActivity.this,Article_Webview.class);
-            startActivity(intent);
+
         } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(MainActivity.this,Splash.class);
-            startActivity(intent);
+
         } else if (id == R.id.nav_share) {
             Intent intent = new Intent(MainActivity.this,Write.class);
             startActivity(intent);

@@ -60,11 +60,11 @@ public class Notification extends IntentService {
             data="Early digest...Here's your digest";
         }
 
-        Resources res = this.getResources();
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+//        Resources res = this.getResources();
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        notification = new NotificationCompat.Builder(this)
+        notification = new NotificationCompat.Builder(this,"12")
                 .setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.down)
                 .setTicker("ticker value")

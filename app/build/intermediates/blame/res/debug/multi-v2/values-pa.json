@@ -4,24 +4,7 @@
             "outputFile": "C:\\work\\Articles\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pa\\values-pa.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1a8209c1eb14d2cf994f4d926fd103f3\\res\\values-pa\\values-pa.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "39",
-                        "startColumns": "4",
-                        "startOffsets": "4760",
-                        "endColumns": "100",
-                        "endOffsets": "4856"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-17.1.0.aar\\f0be0c227ccadfe8501d5d460580a9d4\\res\\values-pa\\values.xml",
+                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-17.1.0.aar\\01f584355f63396fc8839a4b4de1a5ec\\res\\values-pa\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\537ceb534b18709cf3c59f127e75ae35\\res\\values-pa\\values-pa.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,305,410,496,596,709,786,862,941,1042,1146,1243,1352,1451,1561,1720,1820",
-                        "endColumns": "102,96,104,85,99,112,76,75,78,100,103,96,108,98,109,158,99,79",
-                        "endOffsets": "203,300,405,491,591,704,781,857,936,1037,1141,1238,1347,1446,1556,1715,1815,1895"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,38",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,305,410,496,596,709,786,862,941,1042,1146,1243,1352,1451,1561,1720,4680",
-                        "endColumns": "102,96,104,85,99,112,76,75,78,100,103,96,108,98,109,158,99,79",
-                        "endOffsets": "203,300,405,491,591,704,781,857,936,1037,1141,1238,1347,1446,1556,1715,1815,4755"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\6ab64036cf69d3ca9664a86a9e057078\\res\\values-pa\\values.xml",
+                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\20185f47ae57b2ea7686f3b34edc2246\\res\\values-pa\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -72,7 +38,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\de42394b8c9152d060dac0073eb23553\\res\\values-pa\\values.xml",
+                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\878a6b34ecd5e0a9173699ec3dc15df6\\res\\values-pa\\values-pa.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,208,305,410,496,596,709,786,862,941,1042,1146,1243,1352,1451,1561,1720,1820",
+                        "endColumns": "102,96,104,85,99,112,76,75,78,100,103,96,108,98,109,158,99,79",
+                        "endOffsets": "203,300,405,491,591,704,781,857,936,1037,1141,1238,1347,1446,1556,1715,1815,1895"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,38",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,208,305,410,496,596,709,786,862,941,1042,1146,1243,1352,1451,1561,1720,4680",
+                        "endColumns": "102,96,104,85,99,112,76,75,78,100,103,96,108,98,109,158,99,79",
+                        "endOffsets": "203,300,405,491,591,704,781,857,936,1037,1141,1238,1347,1446,1556,1715,1815,4755"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\4e0f7fd6d3c9b996108b2c3d8db339ca\\res\\values-pa\\values-pa.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "39",
+                        "startColumns": "4",
+                        "startOffsets": "4760",
+                        "endColumns": "100",
+                        "endOffsets": "4856"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\d22c8ebe9a67e4a14474e9b11e92d5e9\\res\\values-pa\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

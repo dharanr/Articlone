@@ -11,7 +11,7 @@ import dharanyuvi.android.com.articles.utilities.SharedPreference;
 
 public class LoadPreferences {
     List<String> TotalList=new ArrayList<>();;
-    private static int Length = 1;
+    private static int Length =1;
     private static int Pointer;
 
 
@@ -117,14 +117,15 @@ public class LoadPreferences {
             FeedList = Cache_List.Instance.GetFeed();
 
             //Loading first-set data from the feedlist
-            for(int i=0;i<Length;i++)
+            for(int i=0;i<1;i++)
             {
                 if(i==FeedList.size())
                     return list;
                 else
                 {
                     list.add(FeedList.get(i));
-                    Pointer++;
+                    Pointer=1
+                    ;
                 }
             }
             return list;

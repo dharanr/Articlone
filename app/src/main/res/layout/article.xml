@@ -26,14 +26,16 @@
             android:src="@drawable/ic_stat_name"
             android:layout_centerVertical="true"
             android:contentDescription="efve"
+            android:visibility="gone"
             />
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:id="@+id/share"
             android:layout_alignParentRight="true"
-            android:src="@drawable/ic_stat_name"
+            android:src="@drawable/share"
             android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
             android:contentDescription="efve"
             />
 
