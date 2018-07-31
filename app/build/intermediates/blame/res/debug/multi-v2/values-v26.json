@@ -1,29 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\work\\Articles\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "/home/dharanyuvi/Articlone/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\34395fb90b3c25e368984453a35af550\\res\\values-v26\\values-v26.xml",
-                    "from": {
-                        "startLines": "2,6",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,299",
-                        "endLines": "5,6",
-                        "endColumns": "12,96",
-                        "endOffsets": "294,391"
-                    },
-                    "to": {
-                        "startLines": "16,21",
-                        "startColumns": "4,4",
-                        "startOffsets": "896,1233",
-                        "endLines": "19,21",
-                        "endColumns": "12,96",
-                        "endOffsets": "1135,1325"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\878a6b34ecd5e0a9173699ec3dc15df6\\res\\values-v26\\values-v26.xml",
+                    "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/274c64265e83e0e2b565079ad7cbb270/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -39,6 +20,25 @@
                         "endLines": "2,3,7,11,15,20",
                         "endColumns": "74,86,12,12,12,92",
                         "endOffsets": "125,212,426,652,891,1228"
+                    }
+                },
+                {
+                    "source": "/root/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/ea7e7f07b92ddfb7e7af5fd0256a9b8b/res/values-v26/values-v26.xml",
+                    "from": {
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,299",
+                        "endLines": "5,6",
+                        "endColumns": "12,96",
+                        "endOffsets": "294,391"
+                    },
+                    "to": {
+                        "startLines": "16,21",
+                        "startColumns": "4,4",
+                        "startOffsets": "896,1233",
+                        "endLines": "19,21",
+                        "endColumns": "12,96",
+                        "endOffsets": "1135,1325"
                     }
                 }
             ]

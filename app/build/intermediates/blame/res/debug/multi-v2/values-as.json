@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\work\\Articles\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-as\\values-as.xml",
+            "outputFile": "/home/dharanyuvi/Articlone/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-as/values-as.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dharan.r\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-17.1.0.aar\\01f584355f63396fc8839a4b4de1a5ec\\res\\values-as\\values.xml",
+                    "source": "/root/.gradle/caches/transforms-1/files-1.1/firebase-messaging-17.1.0.aar/687bb804022103122a77abb791e704f7/res/values-as/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

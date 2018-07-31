@@ -21,7 +21,7 @@ public class Notification extends IntentService {
     private PendingIntent pendingIntent;
     private static int NOTIFICATION_ID = 1;
     android.app.Notification notification;
-
+    String time;
 
     public Notification() {
         super("name");
@@ -33,32 +33,53 @@ public class Notification extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Context context = this.getApplicationContext();
         notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
-        Intent mIntent = new Intent(this, Write.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("test", "test");
-        String data="";
-        mIntent.putExtras(bundle);
+        Intent mIntent = new Intent(this, MainActivity.class);
+        mIntent.putExtra("isFromNotification", "true");
 
+
+        String data="";
+
+
+        //Assigning the action for the each time based notification
         if(intent.getStringExtra("time").equals("morning"))
         {
+            time = SharedPreference.Instance.read(getApplicationContext(),"MorningTime");
+            mIntent.putExtra("Date", time);
+            mIntent.putExtra("Session","Morning");
             pendingIntent = PendingIntent.getActivity(context, 0, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             data="Morning Digest Ready";
+            //mIntent.putExtra("Date", time);
         }
+
         else if(intent.getStringExtra("time").equals("noon"))
         {
+            time = SharedPreference.Instance.read(getApplicationContext(),"NoonTime");
+            mIntent.putExtra("Date", time);
+            mIntent.putExtra("Session","Noon");
             pendingIntent = PendingIntent.getActivity(context, 1, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             data="Good AfterNoon...Here's your digest";
+            //mIntent.putExtra("Date", time);
         }
+
         else if(intent.getStringExtra("time").equals("evening"))
         {
+            time = SharedPreference.Instance.read(getApplicationContext(),"EveningTime");
+            mIntent.putExtra("Date", time);
+            mIntent.putExtra("Session","Evening");
             pendingIntent = PendingIntent.getActivity(context, 2, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             data="Yipee Evening starts with your digest";
+            //mIntent.putExtra("Date", time);
         }
+
         else if(intent.getStringExtra("time").equals("night"))
         {
+            time = SharedPreference.Instance.read(getApplicationContext(),"NightTime");
+            mIntent.putExtra("Date", time);
+            mIntent.putExtra("Session","Night");
             pendingIntent = PendingIntent.getActivity(context, 3, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             data="Early digest...Here's your digest";
         }
+
 
 //        Resources res = this.getResources();
 //        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);

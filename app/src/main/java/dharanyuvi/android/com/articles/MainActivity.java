@@ -44,6 +44,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.BufferedInputStream;
@@ -73,8 +74,10 @@ import dharanyuvi.android.com.articles.utilities.SharedPreference;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    int hour,minute;
     String a;
     TextView textView;
+    TextView title;
     private ProgressBar simpleProgressBar;
     private RecyclerView recyclerView;
     private HomeAdapter homeAdapter;
@@ -85,6 +88,12 @@ public class MainActivity extends AppCompatActivity
     List<String> URLlist = new ArrayList<>();
     private List<TheHinduArticle> list = new ArrayList<>();
     int pastVisiblesItems, visibleItemCount, totalItemCount;
+    String isFromNotification="",pubDate="",session="";
+
+    String MorningTime="";
+    String Noontime="";
+    String EveningTime="";
+    String NightTime="";
 
     //List<TheHinduArticle> LoadingList = new ArrayList<>();
 
@@ -97,6 +106,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
+        title = findViewById(R.id.title);
 
         //Happens during the first time
         SharedPreference.Instance.FirstTime(getApplicationContext());
@@ -128,6 +138,44 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setElevation(0);
 
+        //To check for the intent getExtras
+        Bundle intent = getIntent().getExtras();
+        if(intent!=null){
+            isFromNotification = intent.getString("isFromNotification");
+            //pubDate = intent.getString("Date");
+            session = intent.getString("Session");
+
+           // String[] date1 = pubDate.split(" ");
+//
+//            hour=Integer.parseInt( date1[0]);
+//            minute = Integer.parseInt(date1[1]);
+        }
+
+        //for the digest, we are enabling the green info
+        if(isFromNotification.equals("true"))
+        {
+            title.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            title.setVisibility(View.GONE);
+        }
+
+        Toast.makeText(MainActivity.this,isFromNotification+" - "+pubDate,Toast.LENGTH_LONG).show();
+
+        //Assigning the time for the different sessions
+        if(SharedPreference.Instance.read(getApplicationContext(),"Morning").equals("true"))
+            MorningTime = SharedPreference.Instance.read(getApplicationContext(),"MorningTime");
+
+        if(SharedPreference.Instance.read(getApplicationContext(),"Noon").equals("true"))
+            Noontime =  SharedPreference.Instance.read(getApplicationContext(),"NoonTime");
+        if(SharedPreference.Instance.read(getApplicationContext(),"Evening").equals("true"))
+            EveningTime =  SharedPreference.Instance.read(getApplicationContext(),"EveningTime");
+        if(SharedPreference.Instance.read(getApplicationContext(),"Night").equals("true"))
+            NightTime =  SharedPreference.Instance.read(getApplicationContext(),"NightTime");
+
+
+
         //progress bar
         simpleProgressBar=findViewById(R.id.progressBar); // initiate the progress bar
         simpleProgressBar.setMax(100); // 100 maximum value for the progress value
@@ -142,8 +190,6 @@ public class MainActivity extends AppCompatActivity
 
         //Layouts if there is No Artices
         NoArticles = findViewById(R.id.NoArticles);
-
-
 
         //fab
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -211,38 +257,60 @@ public class MainActivity extends AppCompatActivity
                 }
         );
 
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
-            // for this tutorial, this is the ONLY method that we need, ignore the rest
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
+
+        if(isFromNotification.equals("true"))
+        {
+            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+                // for this tutorial, this is the ONLY method that we need, ignore the rest
+                @Override
+                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                    super.onScrolled(recyclerView, dx, dy);
+
+                    if(dy>0)
+                    {
+                        List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
+                        TheHindu task =new TheHindu(list);
+                        task.setProgressBar(simpleProgressBar);
+                        task.execute();
+                    }
+                }
+            });
+        }
+        else
+        {
+            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+                // for this tutorial, this is the ONLY method that we need, ignore the rest
+                @Override
+                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                    super.onScrolled(recyclerView, dx, dy);
 
                     // Recycle view scrolling downwards...
                     // this if statement detects when user reaches the end of recyclerView, this is only time we should load more
-                   // if (!recyclerView.canScrollVertically(RecyclerView.FOCUS_DOWN)) {
-                        // remember "!" is the same as "== false"
-                        // here we are now allowed to load more, but we need to be careful
-                        // we must check if itShouldLoadMore variable is true [unlocked]
-                        visibleItemCount = mLayoutManager.getChildCount();
-                        totalItemCount = mLayoutManager.getItemCount();
-                        pastVisiblesItems = mLayoutManager.findFirstVisibleItemPosition();
+                    // if (!recyclerView.canScrollVertically(RecyclerView.FOCUS_DOWN)) {
+                    // remember "!" is the same as "== false"
+                    // here we are now allowed to load more, but we need to be careful
+                    // we must check if itShouldLoadMore variable is true [unlocked]
+                    visibleItemCount = mLayoutManager.getChildCount();
+                    totalItemCount = mLayoutManager.getItemCount();
+                    pastVisiblesItems = mLayoutManager.findFirstVisibleItemPosition();
 
-                        if( ((totalItemCount - pastVisiblesItems) <= 5) )
-                        {
+                    if( ((totalItemCount - pastVisiblesItems) <= 5) )
+                    {
+                        List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
+                        TheHindu task =new TheHindu(list);
+                        task.setProgressBar(simpleProgressBar);
+                        task.execute();
+                    }
 
-                            List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
-
-                            TheHindu task =new TheHindu(list);
-                            task.setProgressBar(simpleProgressBar);
-                            task.execute();
-                        }
-
-                   // }
-
+                    // }
                 }
 
-        });
+            });
+        }
+
 
 
     }
@@ -289,6 +357,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            Intent intent = new Intent(MainActivity.this,Settings.class);
+            startActivity(intent);
         } else if (id == R.id.nav_gallery) {
             Intent intent = new Intent(MainActivity.this,Settings.class);
             startActivity(intent);
@@ -395,10 +465,27 @@ public class MainActivity extends AppCompatActivity
 
                             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
                             bar.setProgress(70);
-                            if(list==null)
-                                list=(XmlParser.Instance.parse(in,bar,name));
+
+                            if(isFromNotification.equals("true"))
+                            {
+                                 List<TheHinduArticle> temp = XmlParser.Instance.parse(in,bar,name);
+                                 for(TheHinduArticle theHinduArticle : temp)
+                                 {
+                                     if(CheckTime1( theHinduArticle.getPubDate()))
+                                     {
+                                         list.add(theHinduArticle);
+                                     }
+                                 }
+
+                            }
                             else
-                            list.addAll(XmlParser.Instance.parse(in,bar,name));
+                            {
+                                if(list==null)
+                                    list=(XmlParser.Instance.parse(in,bar,name));
+                                else
+                                    list.addAll(XmlParser.Instance.parse(in,bar,name));
+                            }
+
 
                             count++;
                         }
@@ -420,19 +507,36 @@ public class MainActivity extends AppCompatActivity
 
                             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
                             bar.setProgress(70);
-                            if(list==null)
+
+                            if(isFromNotification.equals("true"))
                             {
-                                List<TheHinduArticle> temp =IndianExpress.Instance.parse(in,bar,name);
-                                if(temp!=null)
-                                    list=(temp);
+                                List<TheHinduArticle> temp = IndianExpress.Instance.parse(in,bar,name);
+                                for(TheHinduArticle theHinduArticle : temp)
+                                {
+                                    if(CheckTime1( theHinduArticle.getPubDate()))
+                                    {
+                                        list.add(theHinduArticle);
+                                    }
+                                }
+
                             }
                             else
                             {
-                                List<TheHinduArticle> temp =IndianExpress.Instance.parse(in,bar,name);
-                                if(temp!=null)
-                                    list.addAll(temp);
+                                if(list==null)
+                                {
+                                    List<TheHinduArticle> temp =IndianExpress.Instance.parse(in,bar,name);
+                                    if(temp!=null)
+                                        list=(temp);
+                                }
+                                else
+                                {
+                                    List<TheHinduArticle> temp =IndianExpress.Instance.parse(in,bar,name);
+                                    if(temp!=null)
+                                        list.addAll(temp);
+                                }
+                                count++;
                             }
-                            count++;
+
                         }
                     }
                     else if(name.equals("LiveMint"))
@@ -957,5 +1061,58 @@ public class MainActivity extends AppCompatActivity
         private void setProgressBar(ProgressBar bar) {
             this.bar = bar;
         }
+    }
+
+
+    //Format - Mon, 30 jul 2018 07:47:45 GMT
+    public boolean CheckTime1(String time)
+    {
+        String[] time1 = time.split(" ");
+        String reqTime = time1[4];
+
+        //time for the given post from the newspaper's article
+        time1 = reqTime.split(":");
+        int hour1 = Integer.parseInt(time1[0]);
+        int minute1 = Integer.parseInt(time1[1]);
+
+        //some defined variables
+        //from the intent getString
+        //session, date, isFromNotification
+        String[] timeMorning = MorningTime.split(" ");
+        String[] timeNoon = Noontime.split(" ");
+        String[] timeEvening = EveningTime.split(" ");
+        String[] timeNight = NightTime.split(" ");
+
+
+        switch (session)
+        {
+                //after morning
+            case "Morning" :
+                 if( (hour1 < Integer.parseInt(timeMorning[0]) ) && (minute1 < Integer.parseInt(timeMorning[1])) )
+                 {
+                     return true;
+                 }
+                //after morning , and before the noon
+            case "Noon" :
+                if( (hour1 < Integer.parseInt(timeNoon[0]) ) && (minute1 < Integer.parseInt(timeNoon[1])) && (hour1 > Integer.parseInt(timeMorning[0]) ) && (minute1 > Integer.parseInt(timeMorning[1])))
+                {
+                    return true;
+                }
+                //after Noon , and before the Evening
+            case "Evening" :
+                if( ((hour1 < Integer.parseInt(timeEvening[0]) ) && (minute1 < Integer.parseInt(timeEvening[1])) ) && ((hour1 > Integer.parseInt(timeNoon[0]) ) && (minute1 > Integer.parseInt(timeNoon[1])) ) )
+                {
+                    return true;
+                }
+                //after Evening , and before the Night
+            case "Night" :
+                if( (hour1 < Integer.parseInt(timeNight[0]) ) && (minute1 < Integer.parseInt(timeNight[1])) && (hour1 > Integer.parseInt(timeEvening[0]) ) && (minute1 > Integer.parseInt(timeEvening[1]) ))
+                {
+                    return true;
+                }
+        }
+
+
+        return false;
     }
 }
