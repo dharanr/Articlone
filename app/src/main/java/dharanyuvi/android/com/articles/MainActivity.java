@@ -54,12 +54,17 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import dharanyuvi.android.com.articles.XmlParsing.DinaKaran;
@@ -261,22 +266,22 @@ public class MainActivity extends AppCompatActivity
 
         if(isFromNotification.equals("true"))
         {
-            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-
-                // for this tutorial, this is the ONLY method that we need, ignore the rest
-                @Override
-                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                    super.onScrolled(recyclerView, dx, dy);
-
-                    if(dy>0)
-                    {
-                        List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
-                        TheHindu task =new TheHindu(list);
-                        task.setProgressBar(simpleProgressBar);
-                        task.execute();
-                    }
-                }
-            });
+//            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//
+//                // for this tutorial, this is the ONLY method that we need, ignore the rest
+//                @Override
+//                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                    super.onScrolled(recyclerView, dx, dy);
+//
+//                    if(dy>0)
+//                    {
+//                        List<String> list= LoadPreferences.Instance.LoadMore(getApplicationContext(),false);
+//                        TheHindu task =new TheHindu(list);
+//                        task.setProgressBar(simpleProgressBar);
+//                        task.execute();
+//                    }
+//                }
+//            });
         }
         else
         {
@@ -413,7 +418,6 @@ public class MainActivity extends AppCompatActivity
     //AsyncTask class to run the background task to obtain the rss data
     public class TheHindu extends AsyncTask<String, String, String> {
         private List<String> listOfSelect;
-
         private TheHindu(List<String> list)
         {
             this.listOfSelect = list;
@@ -534,8 +538,9 @@ public class MainActivity extends AppCompatActivity
                                     if(temp!=null)
                                         list.addAll(temp);
                                 }
-                                count++;
+
                             }
+                            count++;
 
                         }
                     }
@@ -557,18 +562,34 @@ public class MainActivity extends AppCompatActivity
 
                             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
                             bar.setProgress(70);
-                            if(list==null)
+                            if(isFromNotification.equals("true"))
                             {
-                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  OPINION");
-                                if(temp!=null)
-                                    list=(temp);
+                                List<TheHinduArticle> temp = LiveMint.Instance.parse(in,bar,name+" -  OPINION");
+                                for(TheHinduArticle theHinduArticle : temp)
+                                {
+                                    if(CheckTime1( theHinduArticle.getPubDate()))
+                                    {
+                                        list.add(theHinduArticle);
+                                    }
+                                }
+
                             }
                             else
                             {
-                                List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name);
-                                if(temp!=null)
-                                    list.addAll(temp);
+                                if(list==null)
+                                {
+                                    List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name+" -  OPINION");
+                                    if(temp!=null)
+                                        list=(temp);
+                                }
+                                else
+                                {
+                                    List<TheHinduArticle> temp =LiveMint.Instance.parse(in,bar,name);
+                                    if(temp!=null)
+                                        list.addAll(temp);
+                                }
                             }
+
                             count++;
                         }
                     }
@@ -1067,52 +1088,88 @@ public class MainActivity extends AppCompatActivity
     //Format - Mon, 30 jul 2018 07:47:45 GMT
     public boolean CheckTime1(String time)
     {
+        Date dt=new Date(),dtMorning=new Date(),dtNoon=new Date(),dtEvening=new Date(),dtNight=new Date(),dtInitial=new Date();
         String[] time1 = time.split(" ");
         String reqTime = time1[4];
 
+        String DateTime = time1[1]+" "+ time1[2]+" "+time1[3]+" "+time1[4];
+
+
         //time for the given post from the newspaper's article
-        time1 = reqTime.split(":");
-        int hour1 = Integer.parseInt(time1[0]);
-        int minute1 = Integer.parseInt(time1[1]);
+//        time1 = reqTime.split(":");
+//        int hour1 = Integer.parseInt(time1[0]);  //07
+//        int minute1 = Integer.parseInt(time1[1]); //47
 
         //some defined variables
         //from the intent getString
         //session, date, isFromNotification
+
         String[] timeMorning = MorningTime.split(" ");
         String[] timeNoon = Noontime.split(" ");
         String[] timeEvening = EveningTime.split(" ");
         String[] timeNight = NightTime.split(" ");
 
+        //Datetime for the given Post Date and time
+        Date currenthDate = new Date();
+        System.out.println(currenthDate);
+        //Datetime for the current Date and the time will be parsed by joining with the session time
+        String[] currentDateString = (currenthDate.toString()).split(" ");
+        String currentDateBit = currentDateString[2]+" "+currentDateString[1]+" "+currentDateString[5];
+        String InitialDateTime = currentDateBit + " "+"00:00" ;
+        DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy HH:mm");
+        try {
+            dt = dateFormat.parse(DateTime);
+            dtInitial = dateFormat.parse(InitialDateTime);
+            dtMorning = dateFormat.parse(currentDateBit+" "+timeMorning[0]+":"+timeMorning[1]);
+            dtNoon = dateFormat.parse(currentDateBit+" "+timeNoon[0]+":"+timeNoon[1]);
+            dtEvening = dateFormat.parse(currentDateBit+" "+timeEvening[0]+":"+timeEvening[1]);
+            dtNight = dateFormat.parse(currentDateBit+" "+timeNight[0]+":"+timeNight[1]);
+
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
 
         switch (session)
         {
-                //after morning
+                //after morning from 00 to the morning sh
             case "Morning" :
-                 if( (hour1 < Integer.parseInt(timeMorning[0]) ) && (minute1 < Integer.parseInt(timeMorning[1])) )
+                 if( (dt.compareTo(dtMorning) < 0) && (dt.compareTo(dtInitial)>0) )
                  {
                      return true;
                  }
+                 break;
                 //after morning , and before the noon
             case "Noon" :
-                if( (hour1 < Integer.parseInt(timeNoon[0]) ) && (minute1 < Integer.parseInt(timeNoon[1])) && (hour1 > Integer.parseInt(timeMorning[0]) ) && (minute1 > Integer.parseInt(timeMorning[1])))
+                if( (dt.compareTo(dtMorning))>0  && (dt.compareTo(dtNoon)<0) )
                 {
                     return true;
                 }
+                break;
                 //after Noon , and before the Evening
             case "Evening" :
-                if( ((hour1 < Integer.parseInt(timeEvening[0]) ) && (minute1 < Integer.parseInt(timeEvening[1])) ) && ((hour1 > Integer.parseInt(timeNoon[0]) ) && (minute1 > Integer.parseInt(timeNoon[1])) ) )
+                if( (dt.compareTo(dtNoon))>0  && (dt.compareTo(dtEvening)<0) )
                 {
                     return true;
                 }
+                break;
                 //after Evening , and before the Night
             case "Night" :
-                if( (hour1 < Integer.parseInt(timeNight[0]) ) && (minute1 < Integer.parseInt(timeNight[1])) && (hour1 > Integer.parseInt(timeEvening[0]) ) && (minute1 > Integer.parseInt(timeEvening[1]) ))
+                if((dt.compareTo(dtEvening))>0  && (dt.compareTo(dtNight)<0) )
                 {
                     return true;
                 }
+                break;
         }
 
 
         return false;
     }
+
+
+//    public void TimingUpdate()
+//    {
+//
+//    }
 }
