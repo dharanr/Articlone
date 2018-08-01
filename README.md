@@ -20,6 +20,10 @@
                      *Tribune
                      *Dinamani
                 -->Still more to come!!
+                
+    Features:
+        1.Preparing digest for the Articles and alert us back
+        2.Saving the articles - "Available from the stable version"
    
     Bookmark this page for the future updates
      
